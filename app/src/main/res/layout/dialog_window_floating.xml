@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/dialog_window_floating_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
+
+        >
+
+
+        <View
+            android:id="@+id/dialog_window_floating"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#ffffff"
+            />
+        <View
+            android:id="@+id/dialog_window_floating1"
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+
+            />
+    </FrameLayout>
+    <TextView
+        android:id="@+id/dialog_window_floating_tv"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/black"
+        android:textSize="14sp"
+        />
+    <TextView
+        android:id="@+id/dialog_window_floating_close_tv"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="120dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_dark"
+        android:textSize="14sp"
+        android:layout_gravity="right"
+        android:text="关闭"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/dialog_window_floating_scal_tv"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_gravity="right"
+        android:text="缩放"
+        android:layout_marginRight="60dp"
+        />
+    <TextView
+        android:id="@+id/dialog_window_floating_change_tv"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_red_dark"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:layout_gravity="right"
+        android:text="变色"
+        />
+</FrameLayout>

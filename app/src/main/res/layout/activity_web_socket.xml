@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.myapp.activity.WebSocketActivity">
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="客服端"
+            android:onClick="@{click}"
+            android:id="@+id/websocket_c"
+            />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="客服端_关闭"
+            android:onClick="@{click}"
+            android:id="@+id/websocket_close"
+            />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="客服端_reopen"
+            android:onClick="@{click}"
+            android:id="@+id/websocket_reopen"
+            />
+    </LinearLayout>
+</layout>

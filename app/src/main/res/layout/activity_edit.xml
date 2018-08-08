@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/focusable_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.myapp.activity.EditActivity"
+        android:onClick="@{click}"
+        android:paddingBottom="50dp"
+        >
+        <TextView
+            android:id="@+id/focusable_tv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:onClick="@{click}"
+            android:background="@android:color/holo_green_light"
+            />
+        <EditText
+            android:id="@+id/focusable_et"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_orange_light"
+            />
+    </LinearLayout>
+</layout>
