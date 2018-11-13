@@ -21,6 +21,18 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="rsa_加密"
+                android:onClick="@{click}"
+                android:id="@+id/rsa"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="json_gson"
+                android:onClick="@{click}"
+                android:id="@+id/json_gson"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="bendi扫码"
                 android:onClick="@{click}"
                 android:id="@+id/local_scan"

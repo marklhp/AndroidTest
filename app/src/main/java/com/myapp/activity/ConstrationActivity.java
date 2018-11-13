@@ -5,10 +5,15 @@ import android.databinding.ViewDataBinding;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.util.Log;
 
 import com.myapp.R;
 import com.myapp.databinding.ActivityConstrationBinding;
+
+import org.json.JSONObject;
+
+import okhttp3.OkHttpClient;
 
 public class ConstrationActivity extends AppCompatActivity {
 

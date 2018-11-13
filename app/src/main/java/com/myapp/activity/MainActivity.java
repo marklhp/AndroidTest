@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.rsa:
+                skip(RSAActivity.class);
+                break;
+            case R.id.json_gson:
+                skip(JsonActivity.class);
+                break;
             case R.id.local_scan:
                 skip(LocalScanActivity.class);
                 break;

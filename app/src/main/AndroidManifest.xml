@@ -60,7 +60,9 @@
         <service android:name=".service.ScannerService" />
 
         <activity android:name=".activity.ZxingScanActivity" />
-        <activity android:name=".activity.LocalScanActivity"></activity>
+        <activity android:name=".activity.LocalScanActivity" />
+        <activity android:name=".activity.JsonActivity" />
+        <activity android:name=".activity.RSAActivity"></activity>
     </application>
 
 </manifest>
