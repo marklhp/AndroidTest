@@ -1,17 +1,10 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.design.widget.AppBarLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
+import com.google.android.material.appbar.AppBarLayout;
 import com.myapp.R;
 import com.myapp.adapter.RefreshAdapter;
 import com.myapp.databinding.ActivityCoordinatorBinding;
@@ -19,12 +12,14 @@ import com.myapp.databinding.ActivityCoordinatorBinding;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
-public class CoordinatorActivity extends AppCompatActivity {
+import androidx.databinding.DataBindingUtil;
+
+public class CoordinatorActivity extends Activity {
     ArrayList<String> list=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-            final ActivityCoordinatorBinding binding=DataBindingUtil.setContentView(this,R.layout.activity_coordinator);
+            final ActivityCoordinatorBinding binding= DataBindingUtil.setContentView(this,R.layout.activity_coordinator);
         for (int i=0;i<20;i++){
             list.add(""+i);
         }

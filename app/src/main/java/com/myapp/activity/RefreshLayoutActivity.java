@@ -1,11 +1,8 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
+import android.app.Activity;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,7 +15,11 @@ import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 
-public class RefreshLayoutActivity extends AppCompatActivity implements OnRefreshListener, OnLoadMoreListener {
+import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+public class RefreshLayoutActivity extends Activity implements OnRefreshListener, OnLoadMoreListener {
     ArrayList<String> list=new ArrayList();
     RefreshAdapter refreshAdapter;
     ActivityRefreshLayoutBinding binding;

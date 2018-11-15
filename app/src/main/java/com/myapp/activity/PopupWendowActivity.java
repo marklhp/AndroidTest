@@ -1,11 +1,11 @@
 package com.myapp.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.myapp.R;
 
-public class PopupWendowActivity extends AppCompatActivity {
+public class PopupWendowActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,7 @@
 
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.myapp.activity.ZxingScanActivity">
@@ -40,5 +40,5 @@
             app:qrcv_tipTextSize="12sp"
             app:qrcv_toolbarHeight="56dp"
             app:qrcv_topOffset="90dp" />
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

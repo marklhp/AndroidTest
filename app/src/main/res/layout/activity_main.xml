@@ -9,7 +9,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="src"
-            type="android.databinding.ObservableInt"/>
+            type="androidx.databinding.ObservableInt"/>
     </data>
     <ScrollView
         android:layout_width="match_parent"

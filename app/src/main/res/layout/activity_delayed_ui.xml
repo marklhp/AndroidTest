@@ -5,19 +5,22 @@
 
     <data>
         <variable
+            name="s"
+            type="String"/>
+        <variable
             name="click"
             type="android.view.View.OnClickListener"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/floating_window_cl"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:onClick="@{click}"
-        tools:context="com.myapp.activity.FloatingWindowActivity">
+        android:orientation="vertical"
+        tools:context=".activity.DelayedUIActivity">
 
-        <com.myapp.customview.ShaderView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/delayed_ui_tv"
+            style="@style/MyTextviewStyle"
+            android:text="@{s}"/>
+    </LinearLayout>
 </layout>

@@ -1,7 +1,5 @@
 package com.myapp.utils.glide;
 
-import android.databinding.BindingAdapter;
-import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -9,6 +7,8 @@ import com.bumptech.glide.Priority;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.myapp.R;
+
+import androidx.databinding.BindingAdapter;
 
 /**
  * Created by lihaipeng on 2018/5/3.

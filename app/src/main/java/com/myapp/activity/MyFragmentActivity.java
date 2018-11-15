@@ -1,22 +1,22 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-
+import androidx.fragment.app.FragmentActivity;
 import com.myapp.R;
 import com.myapp.databinding.ActivityFragmentBinding;
 import com.myapp.fragment.LifeFragment1;
 import com.myapp.fragment.LifeFragment2;
 
-public class FragmentActivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.databinding.DataBindingUtil;
+
+public class MyFragmentActivity extends FragmentActivity implements View.OnClickListener {
     LifeFragment1 fragment1=new LifeFragment1();
     LifeFragment2 fragment2=new LifeFragment2();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityFragmentBinding binding=DataBindingUtil.setContentView(this,R.layout.activity_fragment);
+        ActivityFragmentBinding binding= DataBindingUtil.setContentView(this,R.layout.activity_fragment);
         binding.setClick(this);
     }
 

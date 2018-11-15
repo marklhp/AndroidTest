@@ -1,13 +1,13 @@
 package com.myapp.activity;
 
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.util.Log;
 
 import com.myapp.R;
 
-public class FlexboxlayoutActivity extends AppCompatActivity {
+public class FlexboxlayoutActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

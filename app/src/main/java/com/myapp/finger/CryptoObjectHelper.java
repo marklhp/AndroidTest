@@ -2,14 +2,14 @@ package com.myapp.finger;
 
 import android.security.keystore.KeyGenParameterSpec;
 import android.security.keystore.KeyProperties;
-import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 
 import java.security.Key;
 import java.security.KeyStore;
-import java.security.KeyStoreException;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
+
+import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
 
 /**
  * Created by lihaipeng on 2018/7/3.

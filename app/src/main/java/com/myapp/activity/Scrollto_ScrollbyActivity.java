@@ -1,11 +1,11 @@
 package com.myapp.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
 import com.myapp.R;
 
-public class Scrollto_ScrollbyActivity extends AppCompatActivity {
+public class Scrollto_ScrollbyActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

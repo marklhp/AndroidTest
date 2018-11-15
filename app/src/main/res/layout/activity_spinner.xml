@@ -7,7 +7,8 @@
 
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/spinner_cl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.myapp.activity.SpinnerActivity">
@@ -15,6 +16,8 @@
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></Spinner>
-    </android.support.constraint.ConstraintLayout>
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

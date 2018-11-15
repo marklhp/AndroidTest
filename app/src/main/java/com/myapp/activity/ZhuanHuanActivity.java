@@ -1,12 +1,10 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.google.gson.Gson;
 import com.myapp.R;
 import com.myapp.databinding.ActivityZhuanHuanBinding;
 import com.myapp.model.OtherUserBean;
@@ -15,7 +13,9 @@ import com.myapp.utils.JSONUtils;
 
 import java.util.ArrayList;
 
-public class ZhuanHuanActivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.databinding.DataBindingUtil;
+
+public class ZhuanHuanActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

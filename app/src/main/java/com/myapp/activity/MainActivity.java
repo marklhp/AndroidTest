@@ -1,13 +1,10 @@
 package com.myapp.activity;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
-import android.databinding.ObservableInt;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Looper;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -21,7 +18,10 @@ import com.myapp.utils.DivideUtils;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableInt;
+
+public class MainActivity extends Activity implements View.OnClickListener {
     ActivityMainBinding binding;
 
     @Override
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 skip(SpinnerActivity.class);
                 break;
             case R.id.fragment_life:
-                skip(FragmentActivity.class);
+                skip(MyFragmentActivity.class);
                 break;
             case R.id.sweet_alert:
                 skip(SweetActivity.class);

@@ -1,16 +1,13 @@
 package com.myapp.activity;
 
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.RequiresApi;
-import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
-import android.support.v4.os.CancellationSignal;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +17,11 @@ import com.myapp.R;
 import com.myapp.finger.CryptoObjectHelper;
 import com.myapp.finger.MyAuthCallback;
 
-public class FingerActivity extends AppCompatActivity {
+import androidx.annotation.RequiresApi;
+import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
+import androidx.core.os.CancellationSignal;
+
+public class FingerActivity extends Activity {
 
 
     private final String TAG = "FingerActivity";

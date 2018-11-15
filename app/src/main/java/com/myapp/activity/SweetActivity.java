@@ -1,7 +1,7 @@
 package com.myapp.activity;
 
+import android.app.Activity;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -9,7 +9,7 @@ import com.myapp.R;
 import com.myapp.customview.sweet_alert.SweetAlertDialog;
 import com.myapp.customview.sweet_alert.SweetDialog;
 
-public class SweetActivity extends AppCompatActivity implements View.OnClickListener {
+public class SweetActivity extends Activity implements View.OnClickListener {
     private int i = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

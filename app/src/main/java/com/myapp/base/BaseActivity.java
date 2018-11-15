@@ -1,23 +1,16 @@
 package com.myapp.base;
 
-import android.content.Context;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+import android.app.Activity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.util.AttributeSet;
-import android.view.View;
 
-import com.myapp.R;
-import com.myapp.databinding.ActivityDataBindingGlideBinding;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 
 /**
  * Created by lihaipeng on 2018/5/16.
  */
 
-public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatActivity {
+public abstract class BaseActivity<T extends ViewDataBinding> extends Activity {
     protected T binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,10 +1,8 @@
 package com.myapp.activity;
 
+import android.app.Activity;
 import android.content.Context;
-import android.databinding.DataBindingUtil;
 import android.graphics.PixelFormat;
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -20,10 +18,12 @@ import com.myapp.App;
 import com.myapp.R;
 import com.myapp.databinding.ActivityFloatingWindowBinding;
 
+import androidx.databinding.DataBindingUtil;
+
 /**
  * 浮动窗口
  */
-public class FloatingWindowActivity extends AppCompatActivity implements View.OnClickListener {
+public class FloatingWindowActivity extends Activity implements View.OnClickListener {
      WindowManager windowManager;
      View view;
     View viewById2;

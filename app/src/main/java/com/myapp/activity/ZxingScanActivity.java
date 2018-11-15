@@ -1,19 +1,17 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
+import android.app.Activity;
 import android.os.Vibrator;
-import android.renderscript.ScriptGroup;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.widget.Toast;
 
 import com.myapp.R;
 import com.myapp.databinding.ActivityZxingScanBinding;
 
+import androidx.databinding.DataBindingUtil;
 import cn.bingoogolapple.qrcode.core.QRCodeView;
 
-public class ZxingScanActivity extends AppCompatActivity implements QRCodeView.Delegate {
+public class ZxingScanActivity extends Activity implements QRCodeView.Delegate {
     ActivityZxingScanBinding binding;
 
     @Override

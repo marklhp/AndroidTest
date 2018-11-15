@@ -1,16 +1,18 @@
 package com.myapp.customview;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 /**
  * Created by lihaipeng on 2018/7/13.
  */
 
-public class TouchTextView extends android.support.v7.widget.AppCompatTextView {
+public class TouchTextView extends TextView {
     public TouchTextView(Context context) {
         super(context);
     }

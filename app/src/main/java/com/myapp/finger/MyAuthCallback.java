@@ -1,9 +1,10 @@
 package com.myapp.finger;
 
 import android.os.Handler;
-import android.support.v4.hardware.fingerprint.FingerprintManagerCompat;
 
 import com.myapp.activity.FingerActivity;
+
+import androidx.core.hardware.fingerprint.FingerprintManagerCompat;
 
 /**
  * Created by lihaipeng on 2018/7/3.

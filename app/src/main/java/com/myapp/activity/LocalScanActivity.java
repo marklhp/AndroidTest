@@ -1,9 +1,9 @@
 package com.myapp.activity;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Message;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.Toast;
@@ -17,7 +17,7 @@ import com.seuic.scanner.ScannerFactory;
 import com.seuic.scanner.ScannerKey;
 import com.seuic.scanner.VideoCallBack;
 
-public class LocalScanActivity extends AppCompatActivity implements DecodeInfoCallBack, VideoCallBack {
+public class LocalScanActivity extends Activity implements DecodeInfoCallBack, VideoCallBack {
     static final String TAG = "ScannerApiTest";
     Scanner scanner;
     private static ServiceActivity mcontext = null;

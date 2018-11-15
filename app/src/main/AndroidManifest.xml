@@ -43,7 +43,7 @@
         <activity android:name=".activity.Scrollto_ScrollbyActivity" />
         <activity android:name=".activity.CoordinatorActivity" />
         <activity android:name=".activity.SpinnerActivity" />
-        <activity android:name=".activity.FragmentActivity" />
+        <activity android:name=".activity.MyFragmentActivity" />
         <activity android:name=".activity.SweetActivity" />
         <activity android:name=".activity.ZhuanHuanActivity" />
         <activity android:name=".activity.FingerActivity" />
@@ -62,7 +62,8 @@
         <activity android:name=".activity.ZxingScanActivity" />
         <activity android:name=".activity.LocalScanActivity" />
         <activity android:name=".activity.JsonActivity" />
-        <activity android:name=".activity.RSAActivity"></activity>
+        <activity android:name=".activity.RSAActivity" />
+        <activity android:name=".activity.DelayedUIActivity"></activity>
     </application>
 
 </manifest>

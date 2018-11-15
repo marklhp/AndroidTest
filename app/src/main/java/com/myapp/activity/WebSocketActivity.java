@@ -1,9 +1,7 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
+import android.app.Activity;
 import android.os.Bundle;
-import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
@@ -18,7 +16,9 @@ import org.java_websocket.handshake.ServerHandshake;
 
 import java.net.URI;
 
-public class WebSocketActivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.databinding.DataBindingUtil;
+
+public class WebSocketActivity extends Activity implements View.OnClickListener {
     ActivityWebSocketBinding binding;
     WebSocketClient webSocketClient;
 

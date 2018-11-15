@@ -1,11 +1,9 @@
 package com.myapp.activity;
 
+import android.app.Activity;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +12,7 @@ import android.widget.PopupWindow;
 
 import com.myapp.R;
 
-public class DateTimePickerActivity extends AppCompatActivity implements View.OnClickListener {
+public class DateTimePickerActivity extends Activity implements View.OnClickListener {
     View view;
 
     @Override

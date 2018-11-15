@@ -1,9 +1,7 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
+import android.app.Activity;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +9,10 @@ import android.view.View;
 import com.myapp.R;
 import com.myapp.databinding.ActivityEditBinding;
 
-public class EditActivity extends AppCompatActivity implements View.OnClickListener {
+import androidx.annotation.RequiresApi;
+import androidx.databinding.DataBindingUtil;
+
+public class EditActivity extends Activity implements View.OnClickListener {
     ActivityEditBinding binding;
 
     @Override

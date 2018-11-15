@@ -22,11 +22,11 @@
             android:gravity="center"
             app:layout_alignSelf="stretch"
             />
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/item_recyclerview_nesting_rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_alignSelf="stretch"
-            ></android.support.v7.widget.RecyclerView>
+            ></androidx.recyclerview.widget.RecyclerView>
     </com.google.android.flexbox.FlexboxLayout>
 </layout>

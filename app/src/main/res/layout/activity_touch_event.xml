@@ -14,7 +14,7 @@
         android:orientation="vertical"
         tools:context="com.myapp.activity.TouchEventActivity">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/touch_tv"
             android:layout_width="120dp"
             android:layout_height="120dp"

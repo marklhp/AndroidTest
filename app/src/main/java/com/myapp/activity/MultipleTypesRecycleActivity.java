@@ -1,15 +1,16 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 
 import com.myapp.R;
 import com.myapp.adapter.MultipleTypesAdapter;
 import com.myapp.databinding.ActivityMultipleTypesRecycleBinding;
 
-public class MultipleTypesRecycleActivity extends AppCompatActivity {
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+public class MultipleTypesRecycleActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

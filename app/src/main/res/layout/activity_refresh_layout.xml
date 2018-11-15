@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         tools:context="com.myapp.activity.RefreshLayoutActivity">
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/refresh_layout_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

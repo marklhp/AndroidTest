@@ -1,16 +1,16 @@
 package com.myapp.fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.myapp.R;
+
+import androidx.fragment.app.Fragment;
+
 
 public class LifeFragment1 extends Fragment {
 
@@ -21,7 +21,7 @@ public class LifeFragment1 extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.v("life_1","oncreate");
     }
@@ -35,7 +35,7 @@ public class LifeFragment1 extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated( Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Log.v("life_1","onactivitycreated");
     }

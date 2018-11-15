@@ -1,6 +1,6 @@
 package com.myapp.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import com.myapp.R;
 
-public class SpinnerActivity extends AppCompatActivity {
+public class SpinnerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

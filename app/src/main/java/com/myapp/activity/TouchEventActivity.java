@@ -1,9 +1,7 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,12 +13,15 @@ import com.myapp.databinding.ActivityTouchEventBinding;
 
 import java.util.ArrayList;
 
-public class TouchEventActivity extends AppCompatActivity {
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+public class TouchEventActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityTouchEventBinding binding=DataBindingUtil.setContentView(this,R.layout.activity_touch_event);
+        ActivityTouchEventBinding binding= DataBindingUtil.setContentView(this,R.layout.activity_touch_event);
 //        binding.touchLl.setOnTouchListener(new View.OnTouchListener() {
 //            @Override
 //            public boolean onTouch(View v, MotionEvent event) {

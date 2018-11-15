@@ -1,16 +1,17 @@
 package com.myapp.fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.myapp.R;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 public class LifeFragment2 extends Fragment {
     @Override
     public void onAttach(Context context) {
@@ -19,7 +20,7 @@ public class LifeFragment2 extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.v("life_2","oncreate");
     }

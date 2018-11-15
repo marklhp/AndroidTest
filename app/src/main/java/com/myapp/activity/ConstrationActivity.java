@@ -1,21 +1,17 @@
 package com.myapp.activity;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+import android.app.Activity;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.JsonReader;
 import android.util.Log;
 
 import com.myapp.R;
 import com.myapp.databinding.ActivityConstrationBinding;
 
-import org.json.JSONObject;
+import androidx.databinding.DataBindingUtil;
 
-import okhttp3.OkHttpClient;
 
-public class ConstrationActivity extends AppCompatActivity {
+public class ConstrationActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +19,7 @@ public class ConstrationActivity extends AppCompatActivity {
 
 
         long time1= SystemClock.currentThreadTimeMillis();
-        ActivityConstrationBinding binding=DataBindingUtil.setContentView(this,R.layout.activity_constration);
+        ActivityConstrationBinding binding= DataBindingUtil.setContentView(this,R.layout.activity_constration);
         long time2= SystemClock.currentThreadTimeMillis();
         Log.d("constration打印时间",time2-time1+"");
     }

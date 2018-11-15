@@ -1,14 +1,15 @@
 package com.myapp.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.myapp.R;
 import com.myapp.adapter.RecyclerAdapter;
 
-public class RecyclerNestingRecyclerActivity extends AppCompatActivity {
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class RecyclerNestingRecyclerActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
