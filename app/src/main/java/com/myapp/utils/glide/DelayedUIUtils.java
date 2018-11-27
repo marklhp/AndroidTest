@@ -7,6 +7,9 @@ import android.util.Log;
 import android.util.Printer;
 import android.view.TextureView;
 
+import com.myapp.App;
+import com.myapp.utils.DivideUtils;
+
 public class DelayedUIUtils {
     static long preTime;
     static long nextTime;
@@ -19,6 +22,8 @@ public class DelayedUIUtils {
                 }else if (x!=null&&x.startsWith("<<<<< Finished to")){
                     nextTime=SystemClock.currentThreadTimeMillis();
                     Log.d("打印时间差",(nextTime-preTime)+"");
+                    Log.d("打印时间差====", DivideUtils.getTopActivityInfo());
+
                 }
             }
         });

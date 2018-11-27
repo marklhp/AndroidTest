@@ -13,6 +13,8 @@ import com.myapp.App;
 import com.myapp.R;
 import com.myapp.databinding.ActivityMainBinding;
 
+import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
+import com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity;
 import com.myapp.service.ServiceActivity;
 import com.myapp.utils.DivideUtils;
 
@@ -30,7 +32,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         binding.setClick(this);
-        ObservableInt observableInt=new ObservableInt();
+        ObservableInt observableInt = new ObservableInt();
         observableInt.set(R.mipmap.ic_launcher);
         binding.setSrc(observableInt);
     }
@@ -38,6 +40,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.mvc:
+                skip(MVCActivity.class);
+                break;
+            case R.id.ordinary:
+                skip(OrdinaryActivity.class);
+                break;
+
+            case R.id.ui_delayed:
+                skip(DelayedUIActivity.class);
+                break;
             case R.id.rsa:
                 skip(RSAActivity.class);
                 break;
@@ -64,7 +76,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                Toast.makeText(App.context,"toast",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(App.context, "toast", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
@@ -74,7 +86,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 skip(WebSocketActivity.class);
                 break;
             case R.id.image_view:
-                ObservableInt observableInt=new ObservableInt();
+                ObservableInt observableInt = new ObservableInt();
                 observableInt.set(R.drawable.error_circle);
                 binding.setSrc(observableInt);
                 break;
@@ -90,9 +102,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
 
             case R.id.hashmap:
-                HashMap<String,Integer> hashMap=new HashMap<>();
-                hashMap.put("12",33);
-                Toast.makeText(this,hashMap.get("12")+"---"+hashMap.get("22"),Toast.LENGTH_SHORT).show();
+                HashMap<String, Integer> hashMap = new HashMap<>();
+                hashMap.put("12", 33);
+                Toast.makeText(this, hashMap.get("12") + "---" + hashMap.get("22"), Toast.LENGTH_SHORT).show();
 
                 break;
             case R.id.multiple_types_recycle:

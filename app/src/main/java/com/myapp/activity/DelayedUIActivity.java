@@ -2,36 +2,38 @@ package com.myapp.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Looper;
 import android.os.SystemClock;
+import android.view.Choreographer;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.myapp.R;
-import com.myapp.databinding.TestLayoutBinding;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
 
-public class DelayedUIActivity extends Activity {
+public class DelayedUIActivity extends Activity implements View.OnClickListener {
 
-    @BindView(R.id.delayed_ui_tv)
     TextView delayedUiTv;
+    TextView delayedUiTv2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delayed_ui);
-        ButterKnife.bind(this);
+        delayedUiTv=findViewById(R.id.delayed_ui_tv);
+        delayedUiTv2=findViewById(R.id.delayed_ui_tv2);
+        delayedUiTv.setOnClickListener(this);
     }
 
-    @OnClick(R.id.delayed_ui_tv)
-    public void onViewClicked(View view) {
-        switch (view.getId()){
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.delayed_ui_tv:
-                SystemClock.sleep(2500);
-                Toast.makeText(this,"dianji",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "dianji----", Toast.LENGTH_SHORT).show();
+                SystemClock.sleep(3000);
+                Toast.makeText(this, "dianji", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
