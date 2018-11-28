@@ -15,12 +15,13 @@ import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
 import androidx.annotation.NonNull;
+import androidx.multidex.MultiDexApplication;
 
 /**
  * Created by lihaipeng on 2018/5/18.
  */
 
-public class App extends Application {
+public class App extends MultiDexApplication {
     public static Context context;
     static {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {

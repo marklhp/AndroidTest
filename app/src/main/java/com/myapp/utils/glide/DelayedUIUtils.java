@@ -21,8 +21,8 @@ public class DelayedUIUtils {
                     preTime=SystemClock.currentThreadTimeMillis();
                 }else if (x!=null&&x.startsWith("<<<<< Finished to")){
                     nextTime=SystemClock.currentThreadTimeMillis();
-                    Log.d("打印时间差",(nextTime-preTime)+"");
-                    Log.d("打印时间差====", DivideUtils.getTopActivityInfo());
+//                    Log.d("打印时间差",(nextTime-preTime)+"");
+//                    Log.d("打印时间差====", DivideUtils.getTopActivityInfo());
 
                 }
             }

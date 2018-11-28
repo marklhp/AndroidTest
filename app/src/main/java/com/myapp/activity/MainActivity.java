@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.myapp.App;
 import com.myapp.R;
+import com.myapp.activity.sip.SipMainActivity;
 import com.myapp.databinding.ActivityMainBinding;
 
 import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
@@ -40,6 +41,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.accessibility:
+                skip(AccessibilityServiceActivity.class);
+                break;
+            case R.id.sip_main:
+                skip(SipMainActivity.class);
+                break;
             case R.id.mvc:
                 skip(MVCActivity.class);
                 break;
