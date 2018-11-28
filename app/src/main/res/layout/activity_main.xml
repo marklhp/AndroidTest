@@ -21,10 +21,17 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="无障碍辅助功能"
+                android:onClick="@{click}"
+                android:id="@+id/accessibility"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="mvc编写"
                 android:onClick="@{click}"
                 android:id="@+id/mvc"
                 />
+
             <TextView
                 style="@style/MyTextviewStyle"
                 android:text="刚开发时代码编写"

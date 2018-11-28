@@ -39,7 +39,7 @@ public class AccessibilityOpenHelperActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accessibility_open_helper);
+        setContentView(R.layout.activity_accessibility_transparent_layout);
         Intent intent = getIntent();
         if (intent != null && intent.getExtras() != null) {
             String action = intent.getStringExtra(ACTION);

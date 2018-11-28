@@ -28,4 +28,5 @@
     <color name="warning_color">#f4511e</color>
     <color name="hint_color">#42000000</color>
     <color name="success_color">#009688</color>
+    <color name="accessibility_transparent">#00000000</color>
 </resources>

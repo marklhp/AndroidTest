@@ -3,12 +3,12 @@ package com.myapp.service;
 import android.accessibilityservice.AccessibilityService;
 import android.annotation.SuppressLint;
 import android.os.Build;
+import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.myapp.accessibilityutils.utils.AccessibilityLog;
 
-import org.linphone.mediastream.Log;
 
 import java.util.List;
 
