@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    
+                 
+                           
+                           
+                 
+                            
+                                             
+                 
+                        
+                                                      
+           
+
+    <LinearLayout
+        android:id="@+id/jetpack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.jetpack.JetpackFragment" android:tag="layout/jetpack_fragment_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <TextView
+            android:id="@+id/message"
+            style="@style/MyTextviewStyle"
+            android:tag="binding_1"    
+                                      
+            />
+        <TextView
+            android:id="@+id/message1"
+            style="@style/MyTextviewStyle"
+            android:tag="binding_2"          
+                                      
+
+            />
+    </LinearLayout>
+         

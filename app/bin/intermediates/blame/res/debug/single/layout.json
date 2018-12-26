@@ -1,0 +1,126 @@
+[
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/jetpack_fragment.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/jetpack_fragment.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/child_item.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/child_item.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_web_socket.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_web_socket.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_edit.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_accessibility_service.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_accessibility_service.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_recyclerview_nesting.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/item_recyclerview_nesting.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_refresh_layout.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_refresh_layout.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_multiple_types_recycle.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_multiple_types_recycle.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_navigation.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_navigation.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_constration.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_constration.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_zhuan_huan.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_zhuan_huan.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_finger.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_finger.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_recycler.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/item_recycler.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_frist.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/fragment_frist.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/pop_layout.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/pop_layout.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_spinner.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_spinner.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_local_scan.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_local_scan.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_second.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/fragment_second.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_coordinator.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_coordinator.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_floating_window.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_floating_window.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_mvvm.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_mvvm.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_linphone.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_linphone.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_json.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_json.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_recycler_nesting_recycler.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_recycler_nesting_recycler.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_touch_event.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_touch_event.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/test_layout.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/test_layout.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_zxing_scan.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_zxing_scan.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_data_binding_glide_.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_data_binding_glide_.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_date_time_picker.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_date_time_picker.xml"
+    },
+    {
+        "merged": "/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_fragment.xml",
+        "source": "/Users/lihaipeng/D/AndroidTest/app/src/main/res/layout/activity_fragment.xml"
+    }
+]

@@ -3,6 +3,7 @@ package com.myapp.base;
 import android.app.Activity;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
@@ -10,7 +11,7 @@ import androidx.databinding.ViewDataBinding;
  * Created by lihaipeng on 2018/5/16.
  */
 
-public abstract class BaseActivity<T extends ViewDataBinding> extends Activity {
+public abstract class BaseActivity<T extends ViewDataBinding> extends AppCompatActivity {
     protected T binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

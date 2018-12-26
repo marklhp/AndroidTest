@@ -29,4 +29,17 @@
     <color name="hint_color">#42000000</color>
     <color name="success_color">#009688</color>
     <color name="accessibility_transparent">#00000000</color>
+    <color name="colorA">#00000000</color>
+    <color name="colorB">#00000000</color>
+    <color name="colorC">#00000000</color>
+    <color name="colorD">#00000000</color>
+    <color name="colorE">#00000000</color>
+    <color name="colorF">#00000000</color>
+    <color name="colorH">#00000000</color>
+    <color name="colorI">#00000000</color>
+    <color name="colorJ">#00000000</color>
+    <color name="colorK">#00000000</color>
+    <color name="colorL">#00000000</color>
+    <color name="colorM">#00000000</color>
+    <color name="buttonLabel">#d3d3d3</color>
 </resources>

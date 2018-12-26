@@ -1,0 +1,531 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:1-126:12
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:1-126:12
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:1-126:12
+MERGED from [androidx.databinding:databinding-adapters:3.2.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/databinding-adapters-3.2.0.aar/4baa9171a80824270374444fd054e58a/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:databinding-runtime:3.2.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/databinding-runtime-3.2.0.aar/88a0f2b188b913aa5dd7baf48a6a4878/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/multidex-2.0.0.aar/f5e6ce93e0b5b42e90a33a4e31941e76/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0-rc01.aar/1e27996f4533f8556f6867fb6d4ab639/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/475710475e72ef0551badfa17a14ee0a/AndroidManifest.xml:2:1-12:12
+MERGED from [com.google.android.material:material:1.1.0-alpha01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha01.aar/68519e4eeba259c437c0c6d62db2c3f2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/constraintlayout-2.0.0-alpha2.aar/f55226c635500cbdb5d1c039e97753a6/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/3a65ba351c8443f4927d82413c8feb19/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/fdf0bcb5950d7e308a715398d99cbe85/AndroidManifest.xml:17:1-25:12
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshLayout-1.1.0-alpha-5.aar/1be290f036ccb5132c5cf4319c909a8c/AndroidManifest.xml:2:1-17:12
+MERGED from [com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshHeader-1.1.0-alpha-5.aar/15c7519e5b456efb4e0a003430ea2e5f/AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.android:flexbox:0.3.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-flexbox-0.3.0.aar/d321484d44ebdf434a60669dd54ec2c5/AndroidManifest.xml:17:1-27:12
+MERGED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:2:1-19:12
+MERGED from [cn.bingoogolapple:bga-zxing:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-zxing-1.1.9.aar/1549a35a3c9ddd00f6e25bb19cb9380d/AndroidManifest.xml:2:1-10:12
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/d8a74d27f1c638b55930568624a49377/AndroidManifest.xml:15:1-20:12
+MERGED from [android.arch.navigation:navigation-fragment:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-fragment-1.0.0-alpha07.aar/fad6d603e4b91c95c53ef3dcf3badd3c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/ebea736c7af5c7ead492b96f075e16d0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0-rc01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/media-1.0.0-rc01.aar/c281829af44e737884257a3f10d88bfa/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/93bfc445de2e8c6ef4961498b3253ee9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/e8ce2b6b360a2178d60b5e5e7dadbd04/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/a792df3b694146dce690726e4c055411/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.navigation:navigation-runtime:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-runtime-1.0.0-alpha07.aar/1ed49f91ade6411229cd561e470fbc43/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/8d953c0518ecf3e64573b02407b7f7fb/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/aa58ba1d1d00df1905bd317c7568f44c/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/transition-1.0.0.aar/6f4c50fde47fcd1c6aa9d0e006444dc9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/13b55a2692a095689f1ad25af18f08fb/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/3a9b209a82af17a3c64a2f71fff8522b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/1e8945f271b8c1df265f884b90d71ec1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/e5f52fd26aa1597890a686327b2608fe/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/cf93a9f66e4d4e71de0769f5e33109b8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/4d975f015067f40a65117e9a3b4535ea/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/9f6eb6dc5585f109d5cc355193748564/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/a9dd97472448bc4aa8a317b9b07d2882/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.navigation:navigation-common:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-common-1.0.0-alpha07.aar/73ccaab2b5e473071cca90509cad2d0a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/988c72a70c3195147ce8d45fda271657/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-service-2.0.0.aar/4942b4873bdf2377afd4198f622316df/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/8645adfeab48a5894bb20fe1248617ed/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/1796b269306371e2a0a143c2e21e7860/AndroidManifest.xml:17:1-25:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/b574cbb55349dd4c915621a7083b6bab/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/e2c5c4d4a15b099c61e71f649d8b8c9f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/782313c74903f3b29025d1e5c7d7251a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/b094bf03065e2e611c9978e5c2777b89/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/9ce6d0c0dfd078beee13c72fd6642d19/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a26bd17dc2ee24109443c4654d450a7a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/b0ada5534deb166d024d4d41ba1f90d2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/725273c8252177296681e32dff935abc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/5520c44dde4a2c3cbf69d39d0cf44572/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/104bb0d19e6e6d126ece2a6dae96bfcb/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/b33b1649b9daa220a13b6662ce013401/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:1-126:12
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:1-126:12
+	package
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:4:5-24
+	android:versionName
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:1-126:12
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:1-126:12
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.AUTHENTICATE_ACCOUNTS
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:6:5-7:67
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:7:9-64
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:8:5-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:8:22-65
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:9:22-65
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:10:5-11:58
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:11:9-55
+uses-permission#android.permission.INTERNET
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:12:22-64
+uses-permission#android.permission.GET_TASKS
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:17:5-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:17:22-65
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:18:5-79
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:18:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:19:5-80
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:19:22-77
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:20:22-63
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:21:5-81
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:21:22-78
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:22:5-74
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:22:22-71
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:23:5-78
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:23:22-75
+uses-permission#android.permission.INTERNAL_SYSTEM_WINDOW
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:24:5-25:68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:25:9-65
+uses-permission#android.permission.CAMERA
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:26:5-65
+MERGED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:9:5-65
+MERGED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:26:22-62
+application
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:29:5-124:19
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/475710475e72ef0551badfa17a14ee0a/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/475710475e72ef0551badfa17a14ee0a/AndroidManifest.xml:10:5-20
+MERGED from [com.google.android.material:material:1.1.0-alpha01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha01.aar/68519e4eeba259c437c0c6d62db2c3f2/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0-alpha01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha01.aar/68519e4eeba259c437c0c6d62db2c3f2/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/constraintlayout-2.0.0-alpha2.aar/f55226c635500cbdb5d1c039e97753a6/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/constraintlayout-2.0.0-alpha2.aar/f55226c635500cbdb5d1c039e97753a6/AndroidManifest.xml:9:5-20
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/fdf0bcb5950d7e308a715398d99cbe85/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/fdf0bcb5950d7e308a715398d99cbe85/AndroidManifest.xml:22:5-23:19
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshLayout-1.1.0-alpha-5.aar/1be290f036ccb5132c5cf4319c909a8c/AndroidManifest.xml:11:5-15:19
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshLayout-1.1.0-alpha-5.aar/1be290f036ccb5132c5cf4319c909a8c/AndroidManifest.xml:11:5-15:19
+MERGED from [com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshHeader-1.1.0-alpha-5.aar/15c7519e5b456efb4e0a003430ea2e5f/AndroidManifest.xml:11:5-15:19
+MERGED from [com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshHeader-1.1.0-alpha-5.aar/15c7519e5b456efb4e0a003430ea2e5f/AndroidManifest.xml:11:5-15:19
+MERGED from [androidx.core:core:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/988c72a70c3195147ce8d45fda271657/AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/988c72a70c3195147ce8d45fda271657/AndroidManifest.xml:22:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/1796b269306371e2a0a143c2e21e7860/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/1796b269306371e2a0a143c2e21e7860/AndroidManifest.xml:22:5-23:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/b574cbb55349dd4c915621a7083b6bab/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/b574cbb55349dd4c915621a7083b6bab/AndroidManifest.xml:9:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/988c72a70c3195147ce8d45fda271657/AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:34:9-35
+	android:label
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:32:9-41
+	android:roundIcon
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:33:9-54
+	android:icon
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:31:9-43
+	android:theme
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:35:9-40
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:30:9-28
+activity#com.myapp.activity.navigation.NavigationActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:36:9-85
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:36:19-73
+activity#com.myapp.activity.JetpackActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:37:9-62
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:37:19-59
+activity#com.myapp.activity.AppLinkActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:38:9-56:20
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:38:19-59
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:host:yaoyi.ypzdw.com+data:pathPrefix:/article+data:scheme:http+data:scheme:https
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:39:13-55:29
+	android:autoVerify
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:40:17-42
+	tools:targetApi
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:41:17-36
+action#android.intent.action.VIEW
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:44:17-69
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:44:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:46:17-76
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:46:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:47:17-78
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:47:27-75
+data
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:49:17-47
+	android:host
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:51:23-53
+	android:scheme
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:49:23-44
+	android:pathPrefix
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:53:23-52
+activity#com.myapp.mvc_mvp_mvvm.mvp3.Mvp3Activity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:57:9-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:57:19-65
+activity#com.myapp.mvc_mvp_mvvm.mvp2.MVP2Activity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:58:9-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:58:19-65
+activity#com.myapp.activity.AccessibilityOpenHelperActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:61:9-67:73
+	android:process
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:65:13-49
+	android:excludeFromRecents
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:63:13-46
+	android:launchMode
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:64:13-44
+	android:theme
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:67:13-70
+	android:taskAffinity
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:66:13-51
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:62:13-69
+activity#com.myapp.activity.AccessibilityServiceActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:68:9-75
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:68:19-72
+activity#com.myapp.mvc_mvp_mvvm.mvvm.MvvmActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:69:9-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:69:19-65
+activity#com.myapp.mvc_mvp_mvvm.mvp.MvpActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:70:9-66
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:70:19-63
+activity#com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:71:9-76
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:71:19-73
+activity#com.myapp.mvc_mvp_mvvm.mvc.MVCActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:72:9-66
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:72:19-63
+activity#com.myapp.activity.MainActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:73:9-79:20
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:73:19-56
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:74:13-78:29
+action#android.intent.action.MAIN
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:75:17-69
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:75:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:77:17-77
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:77:27-74
+activity#com.myapp.activity.DataBinding_Glide_Activity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:80:9-73
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:80:19-70
+activity#com.myapp.activity.RefreshLayoutActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:81:9-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:81:19-65
+activity#com.myapp.activity.FlexboxlayoutActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:82:9-68
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:82:19-65
+activity#com.myapp.activity.ConstrationActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:83:9-66
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:83:19-63
+activity#com.myapp.activity.PopupWendowActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:84:9-66
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:84:19-63
+activity#com.myapp.activity.Scrollto_ScrollbyActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:85:9-72
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:85:19-69
+activity#com.myapp.activity.CoordinatorActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:86:9-66
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:86:19-63
+activity#com.myapp.activity.SpinnerActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:87:9-62
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:87:19-59
+activity#com.myapp.activity.MyFragmentActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:88:9-65
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:88:19-62
+activity#com.myapp.activity.SweetActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:89:9-60
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:89:19-57
+activity#com.myapp.activity.ZhuanHuanActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:90:9-64
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:90:19-61
+activity#com.myapp.activity.FingerActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:91:9-61
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:91:19-58
+activity#com.myapp.activity.RecyclerNestingRecyclerActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:92:9-78
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:92:19-75
+activity#com.myapp.activity.MultipleTypesRecycleActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:93:9-75
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:93:19-72
+activity#com.myapp.activity.TouchEventActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:94:9-65
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:94:19-62
+activity#com.myapp.activity.EditActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:95:9-59
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:95:19-56
+activity#com.myapp.activity.DateTimePickerActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:96:9-69
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:96:19-66
+activity#com.myapp.activity.WebSocketActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:97:9-64
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:97:19-61
+activity#com.myapp.activity.FloatingWindowActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:98:9-69
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:98:19-66
+activity#com.myapp.activity.ScanActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:99:9-59
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:99:19-56
+activity#com.myapp.service.ServiceActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:100:9-61
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:100:19-58
+service#com.myapp.service.ScannerService
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:102:9-59
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:102:18-56
+activity#com.myapp.activity.ZxingScanActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:104:9-64
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:104:19-61
+activity#com.myapp.activity.LocalScanActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:105:9-64
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:105:19-61
+activity#com.myapp.activity.JsonActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:106:9-59
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:106:19-56
+activity#com.myapp.activity.RSAActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:107:9-58
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:107:19-55
+activity#com.myapp.activity.DelayedUIActivity
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:108:9-64
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:108:19-61
+service#com.myapp.service.AccessibilitySampleService
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:110:9-123:19
+	android:process
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:115:13-49
+	android:label
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:113:13-40
+	android:exported
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:112:13-36
+	android:permission
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:114:13-79
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:111:13-63
+intent-filter#action:name:android.accessibilityservice.AccessibilityService
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:116:13-118:29
+action#android.accessibilityservice.AccessibilityService
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:117:17-92
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:117:25-89
+meta-data#android.accessibilityservice
+ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:120:13-122:64
+	android:resource
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:122:17-61
+	android:name
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml:121:17-60
+uses-sdk
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:databinding-adapters:3.2.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/databinding-adapters-3.2.0.aar/4baa9171a80824270374444fd054e58a/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-adapters:3.2.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/databinding-adapters-3.2.0.aar/4baa9171a80824270374444fd054e58a/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.2.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/databinding-runtime-3.2.0.aar/88a0f2b188b913aa5dd7baf48a6a4878/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.2.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/databinding-runtime-3.2.0.aar/88a0f2b188b913aa5dd7baf48a6a4878/AndroidManifest.xml:22:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/multidex-2.0.0.aar/f5e6ce93e0b5b42e90a33a4e31941e76/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/multidex-2.0.0.aar/f5e6ce93e0b5b42e90a33a4e31941e76/AndroidManifest.xml:20:5-43
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0-rc01.aar/1e27996f4533f8556f6867fb6d4ab639/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0-rc01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0-rc01.aar/1e27996f4533f8556f6867fb6d4ab639/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/475710475e72ef0551badfa17a14ee0a/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-glide-4.8.0.aar/475710475e72ef0551badfa17a14ee0a/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.android.material:material:1.1.0-alpha01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha01.aar/68519e4eeba259c437c0c6d62db2c3f2/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0-alpha01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha01.aar/68519e4eeba259c437c0c6d62db2c3f2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/constraintlayout-2.0.0-alpha2.aar/f55226c635500cbdb5d1c039e97753a6/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.0-alpha2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/constraintlayout-2.0.0-alpha2.aar/f55226c635500cbdb5d1c039e97753a6/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/3a65ba351c8443f4927d82413c8feb19/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/3a65ba351c8443f4927d82413c8feb19/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/fdf0bcb5950d7e308a715398d99cbe85/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/fdf0bcb5950d7e308a715398d99cbe85/AndroidManifest.xml:20:5-44
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshLayout-1.1.0-alpha-5.aar/1be290f036ccb5132c5cf4319c909a8c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshLayout-1.1.0-alpha-5.aar/1be290f036ccb5132c5cf4319c909a8c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshHeader-1.1.0-alpha-5.aar/15c7519e5b456efb4e0a003430ea2e5f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-SmartRefreshHeader-1.1.0-alpha-5.aar/15c7519e5b456efb4e0a003430ea2e5f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android:flexbox:0.3.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-flexbox-0.3.0.aar/d321484d44ebdf434a60669dd54ec2c5/AndroidManifest.xml:23:5-25:41
+MERGED from [com.google.android:flexbox:0.3.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-flexbox-0.3.0.aar/d321484d44ebdf434a60669dd54ec2c5/AndroidManifest.xml:23:5-25:41
+MERGED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:5:5-7:41
+MERGED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:5:5-7:41
+MERGED from [cn.bingoogolapple:bga-zxing:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-zxing-1.1.9.aar/1549a35a3c9ddd00f6e25bb19cb9380d/AndroidManifest.xml:6:5-8:41
+MERGED from [cn.bingoogolapple:bga-zxing:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-zxing-1.1.9.aar/1549a35a3c9ddd00f6e25bb19cb9380d/AndroidManifest.xml:6:5-8:41
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/d8a74d27f1c638b55930568624a49377/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava2:rxandroid:2.1.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/rxandroid-2.1.0.aar/d8a74d27f1c638b55930568624a49377/AndroidManifest.xml:18:5-43
+MERGED from [android.arch.navigation:navigation-fragment:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-fragment-1.0.0-alpha07.aar/fad6d603e4b91c95c53ef3dcf3badd3c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-fragment:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-fragment-1.0.0-alpha07.aar/fad6d603e4b91c95c53ef3dcf3badd3c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/ebea736c7af5c7ead492b96f075e16d0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/fragment-1.0.0.aar/ebea736c7af5c7ead492b96f075e16d0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0-rc01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/media-1.0.0-rc01.aar/c281829af44e737884257a3f10d88bfa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0-rc01] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/media-1.0.0-rc01.aar/c281829af44e737884257a3f10d88bfa/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/93bfc445de2e8c6ef4961498b3253ee9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/93bfc445de2e8c6ef4961498b3253ee9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/e8ce2b6b360a2178d60b5e5e7dadbd04/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/recyclerview-1.0.0.aar/e8ce2b6b360a2178d60b5e5e7dadbd04/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/a792df3b694146dce690726e4c055411/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-core-ui-1.0.0.aar/a792df3b694146dce690726e4c055411/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-runtime:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-runtime-1.0.0-alpha07.aar/1ed49f91ade6411229cd561e470fbc43/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-runtime:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-runtime-1.0.0-alpha07.aar/1ed49f91ade6411229cd561e470fbc43/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/8d953c0518ecf3e64573b02407b7f7fb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/legacy-support-core-utils-1.0.0.aar/8d953c0518ecf3e64573b02407b7f7fb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/aa58ba1d1d00df1905bd317c7568f44c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/vectordrawable-1.0.1.aar/aa58ba1d1d00df1905bd317c7568f44c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/transition-1.0.0.aar/6f4c50fde47fcd1c6aa9d0e006444dc9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/transition-1.0.0.aar/6f4c50fde47fcd1c6aa9d0e006444dc9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/13b55a2692a095689f1ad25af18f08fb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/loader-1.0.0.aar/13b55a2692a095689f1ad25af18f08fb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/3a9b209a82af17a3c64a2f71fff8522b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/3a9b209a82af17a3c64a2f71fff8522b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/1e8945f271b8c1df265f884b90d71ec1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-1.0.0.aar/1e8945f271b8c1df265f884b90d71ec1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/e5f52fd26aa1597890a686327b2608fe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/e5f52fd26aa1597890a686327b2608fe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/cf93a9f66e4d4e71de0769f5e33109b8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/cf93a9f66e4d4e71de0769f5e33109b8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/4d975f015067f40a65117e9a3b4535ea/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/customview-1.0.0.aar/4d975f015067f40a65117e9a3b4535ea/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/9f6eb6dc5585f109d5cc355193748564/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-1.0.0.aar/9f6eb6dc5585f109d5cc355193748564/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/a9dd97472448bc4aa8a317b9b07d2882/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-1.0.0.aar/a9dd97472448bc4aa8a317b9b07d2882/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-common:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-common-1.0.0-alpha07.aar/73ccaab2b5e473071cca90509cad2d0a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.navigation:navigation-common:1.0.0-alpha07] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-navigation-common-1.0.0-alpha07.aar/73ccaab2b5e473071cca90509cad2d0a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/988c72a70c3195147ce8d45fda271657/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.1] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-1.0.1.aar/988c72a70c3195147ce8d45fda271657/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-service-2.0.0.aar/4942b4873bdf2377afd4198f622316df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-service-2.0.0.aar/4942b4873bdf2377afd4198f622316df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/8645adfeab48a5894bb20fe1248617ed/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.0.0.aar/8645adfeab48a5894bb20fe1248617ed/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/1796b269306371e2a0a143c2e21e7860/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.0.0.aar/1796b269306371e2a0a143c2e21e7860/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/b574cbb55349dd4c915621a7083b6bab/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.8.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/jetified-gifdecoder-4.8.0.aar/b574cbb55349dd4c915621a7083b6bab/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/e2c5c4d4a15b099c61e71f649d8b8c9f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/e2c5c4d4a15b099c61e71f649d8b8c9f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/782313c74903f3b29025d1e5c7d7251a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/782313c74903f3b29025d1e5c7d7251a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/b094bf03065e2e611c9978e5c2777b89/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/b094bf03065e2e611c9978e5c2777b89/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/9ce6d0c0dfd078beee13c72fd6642d19/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/9ce6d0c0dfd078beee13c72fd6642d19/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a26bd17dc2ee24109443c4654d450a7a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.0.0.aar/a26bd17dc2ee24109443c4654d450a7a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/b0ada5534deb166d024d4d41ba1f90d2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/b0ada5534deb166d024d4d41ba1f90d2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/725273c8252177296681e32dff935abc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/documentfile-1.0.0.aar/725273c8252177296681e32dff935abc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/5520c44dde4a2c3cbf69d39d0cf44572/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/5520c44dde4a2c3cbf69d39d0cf44572/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/104bb0d19e6e6d126ece2a6dae96bfcb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/104bb0d19e6e6d126ece2a6dae96bfcb/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/b33b1649b9daa220a13b6662ce013401/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/interpolator-1.0.0.aar/b33b1649b9daa220a13b6662ce013401/AndroidManifest.xml:20:5-44
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+		ADDED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/lihaipeng/D/AndroidTest/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.FLASHLIGHT
+ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:10:5-69
+	android:name
+		ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:10:22-66
+uses-feature#android.hardware.camera.autofocus
+ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:12:5-14:36
+	android:required
+		ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:14:9-33
+	android:name
+		ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:13:9-57
+uses-feature#android.hardware.camera.flash
+ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:15:5-17:36
+	android:required
+		ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:17:9-33
+	android:name
+		ADDED from [cn.bingoogolapple:bga-qrcodecore:1.1.9] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/bga-qrcodecore-1.1.9.aar/8139bca686ca770cc6ecacfce8589634/AndroidManifest.xml:16:9-53
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/lihaipeng/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/226362c8db6aefb1573127f0f2d5f08b/AndroidManifest.xml:24:13-79

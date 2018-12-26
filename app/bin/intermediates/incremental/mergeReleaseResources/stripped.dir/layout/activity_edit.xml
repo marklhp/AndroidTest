@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    
+                 
+                        
+                                                      
+           
+
+    <LinearLayout
+        android:id="@+id/focusable_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.myapp.activity.EditActivity"
+                                  
+        android:paddingBottom="50dp"
+         android:tag="layout/activity_edit_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+        <TextView
+            android:id="@+id/focusable_tv"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:tag="binding_1"   
+            android:background="@android:color/holo_green_light"
+            />
+        <EditText
+            android:id="@+id/focusable_et"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@android:color/holo_orange_light"
+            />
+    </LinearLayout>
+         

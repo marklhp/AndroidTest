@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.myapp.App;
 import com.myapp.R;
+import com.myapp.activity.fragment.FragmentActivity;
 import com.myapp.databinding.ActivityMainBinding;
 
 import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
@@ -25,7 +26,6 @@ import androidx.databinding.ObservableInt;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +40,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.room:
+                skip(RoomActivity.class);
+                break;
+            case R.id.fragment:
+                skip(FragmentActivity.class);
+                break;
+            case R.id.jet:
+                skip(JetpackActivity.class);
+                break;
             case R.id.accessibility:
                 skip(AccessibilityServiceActivity.class);
                 break;

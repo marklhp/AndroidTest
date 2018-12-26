@@ -1,0 +1,2 @@
+# Referenced at /Users/lihaipeng/D/AndroidTest/app/bin/intermediates/merged_manifests/release/processReleaseManifest/merged/AndroidManifest.xml:39
+-keep class com.myapp.App { <init>(...); }

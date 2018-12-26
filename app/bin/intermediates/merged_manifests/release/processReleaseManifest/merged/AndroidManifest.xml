@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.myapp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="28" />
+
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--
+    Allows Glide to monitor connectivity status and restart failed requests if users go from a
+    a disconnected to a connected network state.
+    -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+
+    <application
+        android:name="com.myapp.App"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Apptheme" >
+        <activity android:name="com.myapp.activity.navigation.NavigationActivity" />
+        <activity android:name="com.myapp.activity.JetpackActivity" />
+        <activity android:name="com.myapp.activity.AppLinkActivity" >
+            <intent-filter android:autoVerify="true" >
+
+                <!-- action 和category 必须这样写！！！ -->
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 接受以 "http://yaoyi.ypzdw.com/article" 或 "https://yaoyi.ypzdw.com/article"开头的URIs -->
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="yaoyi.ypzdw.com" />
+                <!-- android:pathPrefix="/article" 这里表示匹配Path以“/article”开头的uri，可以不写 -->
+                <data android:pathPrefix="/article" />
+                <!-- 注意 "/" 在pathPrefix中是必须的 -->
+            </intent-filter>
+        </activity>
+        <activity android:name="com.myapp.mvc_mvp_mvvm.mvp3.Mvp3Activity" />
+        <activity android:name="com.myapp.mvc_mvp_mvvm.mvp2.MVP2Activity" />
+        <activity
+            android:name="com.myapp.activity.AccessibilityOpenHelperActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:process=":BackgroundService"
+            android:taskAffinity="com.open.helper"
+            android:theme="@style/Accessibility.Transparent.Activity" />
+        <activity android:name="com.myapp.activity.AccessibilityServiceActivity" />
+        <activity android:name="com.myapp.mvc_mvp_mvvm.mvvm.MvvmActivity" />
+        <activity android:name="com.myapp.mvc_mvp_mvvm.mvp.MvpActivity" />
+        <activity android:name="com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity" />
+        <activity android:name="com.myapp.mvc_mvp_mvvm.mvc.MVCActivity" />
+        <activity android:name="com.myapp.activity.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.myapp.activity.DataBinding_Glide_Activity" />
+        <activity android:name="com.myapp.activity.RefreshLayoutActivity" />
+        <activity android:name="com.myapp.activity.FlexboxlayoutActivity" />
+        <activity android:name="com.myapp.activity.ConstrationActivity" />
+        <activity android:name="com.myapp.activity.PopupWendowActivity" />
+        <activity android:name="com.myapp.activity.Scrollto_ScrollbyActivity" />
+        <activity android:name="com.myapp.activity.CoordinatorActivity" />
+        <activity android:name="com.myapp.activity.SpinnerActivity" />
+        <activity android:name="com.myapp.activity.MyFragmentActivity" />
+        <activity android:name="com.myapp.activity.SweetActivity" />
+        <activity android:name="com.myapp.activity.ZhuanHuanActivity" />
+        <activity android:name="com.myapp.activity.FingerActivity" />
+        <activity android:name="com.myapp.activity.RecyclerNestingRecyclerActivity" />
+        <activity android:name="com.myapp.activity.MultipleTypesRecycleActivity" />
+        <activity android:name="com.myapp.activity.TouchEventActivity" />
+        <activity android:name="com.myapp.activity.EditActivity" />
+        <activity android:name="com.myapp.activity.DateTimePickerActivity" />
+        <activity android:name="com.myapp.activity.WebSocketActivity" />
+        <activity android:name="com.myapp.activity.FloatingWindowActivity" />
+        <activity android:name="com.myapp.activity.ScanActivity" />
+        <activity android:name="com.myapp.service.ServiceActivity" />
+
+        <service android:name="com.myapp.service.ScannerService" />
+
+        <activity android:name="com.myapp.activity.ZxingScanActivity" />
+        <activity android:name="com.myapp.activity.LocalScanActivity" />
+        <activity android:name="com.myapp.activity.JsonActivity" />
+        <activity android:name="com.myapp.activity.RSAActivity" />
+        <activity android:name="com.myapp.activity.DelayedUIActivity" />
+
+        <service
+            android:name="com.myapp.service.AccessibilitySampleService"
+            android:exported="true"
+            android:label="辅助lihaipeng"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
+            android:process=":BackgroundService" >
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <!-- 通过xml文件完成辅助功能相关配置，也可以在onServiceConnected中动态配置 -->
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_config" />
+        </service>
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.myapp.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

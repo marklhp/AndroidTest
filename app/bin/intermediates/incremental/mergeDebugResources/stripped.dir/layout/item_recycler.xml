@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                        
+
+    
+
+           
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/recyclerview_nesting_fbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_btn_bg_color"
+        app:flexDirection="column"
+         android:tag="layout/item_recycler_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+        <TextView
+            android:id="@+id/recyclerview_nesting_tv"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:background="@android:color/white"
+            android:text="1"
+            android:gravity="center"
+            app:layout_alignSelf="stretch"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_recyclerview_nesting_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_alignSelf="stretch"
+            ></androidx.recyclerview.widget.RecyclerView>
+    </com.google.android.flexbox.FlexboxLayout>
+         

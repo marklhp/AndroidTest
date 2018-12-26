@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.RoomActivity">
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="add"
+            android:onClick="@{click}"
+            android:id="@+id/room_add"
+            />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="delete"
+            android:onClick="@{click}"
+            android:id="@+id/room_delete"
+            />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="up"
+            android:onClick="@{click}"
+            android:id="@+id/room_up"
+            />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="query"
+            android:onClick="@{click}"
+            android:id="@+id/room_query"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+             />
+
+    </LinearLayout>
+</layout>

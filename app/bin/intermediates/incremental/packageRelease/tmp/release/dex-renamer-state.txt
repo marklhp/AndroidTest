@@ -1,0 +1,4 @@
+#Fri Dec 07 11:33:58 CST 2018
+base.0=/Users/lihaipeng/D/AndroidTest/app/bin/intermediates/transforms/dexMerger/release/0
+path.0=classes.dex
+renamed.0=classes.dex

@@ -21,6 +21,24 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="room"
+                android:onClick="@{click}"
+                android:id="@+id/room"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="fragment"
+                android:onClick="@{click}"
+                android:id="@+id/fragment"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="jet"
+                android:onClick="@{click}"
+                android:id="@+id/jet"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="无障碍辅助功能"
                 android:onClick="@{click}"
                 android:id="@+id/accessibility"

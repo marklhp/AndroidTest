@@ -1,9 +1,14 @@
 package com.myapp.activity;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PixelFormat;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -16,7 +21,9 @@ import android.widget.TextView;
 
 import com.myapp.App;
 import com.myapp.R;
+import com.myapp.callback.IRequestPermission;
 import com.myapp.databinding.ActivityFloatingWindowBinding;
+import com.myapp.utils.PermissionUtil;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -24,17 +31,17 @@ import androidx.databinding.DataBindingUtil;
  * 浮动窗口
  */
 public class FloatingWindowActivity extends Activity implements View.OnClickListener {
-     WindowManager windowManager;
-     View view;
+    WindowManager windowManager;
+    View view;
     View viewById2;
 
     WindowManager.LayoutParams layoutParams;
-     boolean isScal=false;
+    boolean isScal = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityFloatingWindowBinding binding= DataBindingUtil.setContentView(this,R.layout.activity_floating_window);
+        ActivityFloatingWindowBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_floating_window);
         binding.setClick(this);
         new Thread(new Runnable() {
             @Override
@@ -46,18 +53,22 @@ public class FloatingWindowActivity extends Activity implements View.OnClickList
                         windowManager = (WindowManager) App.context.getSystemService(Context.WINDOW_SERVICE);
                         layoutParams = new WindowManager.LayoutParams();
                         //设置windowtype
-                        layoutParams.type = WindowManager.LayoutParams.TYPE_TOAST;
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                            layoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+                        } else {
+                            layoutParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+                        }
 
-                        layoutParams.format= PixelFormat.RGBA_8888;
+                        layoutParams.format = PixelFormat.RGBA_8888;
 
                         //设置Window flag
-                        layoutParams.flags=WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-                        layoutParams.gravity= Gravity.TOP;
+                        layoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+                        layoutParams.gravity = Gravity.TOP;
 
-                        layoutParams.width=WindowManager.LayoutParams.MATCH_PARENT;
-                        layoutParams.height=WindowManager.LayoutParams.WRAP_CONTENT;
+                        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+                        layoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
 
-                        view = LayoutInflater.from(App.context).inflate(R.layout.dialog_window_floating,null,false);
+                        view = LayoutInflater.from(App.context).inflate(R.layout.dialog_window_floating, null, false);
                         viewById2 = view.findViewById(R.id.dialog_window_floating_fl);
                         final View viewById = view.findViewById(R.id.dialog_window_floating);
                         final View viewById1 = view.findViewById(R.id.dialog_window_floating1);
@@ -70,11 +81,10 @@ public class FloatingWindowActivity extends Activity implements View.OnClickList
                         viewById2.setOnTouchListener(new View.OnTouchListener() {
                             @Override
                             public boolean onTouch(View v, MotionEvent event) {
-                                Log.d("触摸打印",event.getRawY()+"");
+                                Log.d("触摸打印", event.getRawY() + "");
                                 int lastX = 0, lastY = 0;
                                 int paramX = 0, paramY = 0;
-                                switch (event.getAction())
-                                {
+                                switch (event.getAction()) {
                                     case MotionEvent.ACTION_DOWN:
                                         lastX = (int) event.getX();
                                         lastY = (int) event.getRawY();
@@ -82,39 +92,56 @@ public class FloatingWindowActivity extends Activity implements View.OnClickList
                                         paramY = layoutParams.y;
                                         break;
                                     case MotionEvent.ACTION_MOVE:
-                                        int dx = (int) event.getRawX() ;
+                                        int dx = (int) event.getRawX();
                                         int dy = (int) event.getRawY();
-                                        params.setMargins(0,dy,0,0);
-                                        params1.setMargins(dx,0,0,0);
+                                        params.setMargins(0, dy, 0, 0);
+                                        params1.setMargins(dx, 0, 0, 0);
                                         viewById.setLayoutParams(params);
                                         viewById1.setLayoutParams(params1);
-                                        textView.setText("宽："+dx+"---"+"高："+dy);
+                                        textView.setText("宽：" + dx + "---" + "高：" + dy);
                                         break;
                                 }
                                 return true;
                             }
                         });
-                        windowManager.addView(view,layoutParams);
+
+                        Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION, Uri.parse("package:" + getPackageName()));
+                        startActivityForResult(intent,1);
+
                     }
                 });
             }
         }).start();
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 10) {
+            if (Build.VERSION.SDK_INT >= 23) {
+                if (!Settings.canDrawOverlays(this)) {
+                    windowManager.addView(view, layoutParams);
+                }
+            }
+        }
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.floating_window_cl:
-
+                new Throwable("jjj");
                 break;
             case R.id.dialog_window_floating_close_tv:
                 windowManager.removeView(view);
                 break;
             case R.id.dialog_window_floating_scal_tv:
 
-                if (viewById2.getVisibility()==View.VISIBLE){
+                if (viewById2.getVisibility() == View.VISIBLE) {
                     viewById2.setVisibility(View.GONE);
-                }else {
+                } else {
                     viewById2.setVisibility(View.VISIBLE);
                 }
                 break;

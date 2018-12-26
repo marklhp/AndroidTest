@@ -23,6 +23,7 @@ import androidx.multidex.MultiDexApplication;
 
 public class App extends MultiDexApplication {
     public static Context context;
+    public static Application application;
     static {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
             @NonNull
@@ -43,6 +44,7 @@ public class App extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         context=this;
+        application=this;
         DelayedUIUtils.checkTime();
     }
 }

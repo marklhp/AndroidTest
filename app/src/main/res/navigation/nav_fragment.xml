@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_fragment"
+    app:startDestination="@id/fristFragment">
+    <fragment
+        android:id="@+id/fristFragment"
+        android:name="com.myapp.activity.navigation.FristFragment"
+        android:label="FristFragment" >
+        <action
+            android:id="@+id/action_fristFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.myapp.activity.navigation.SecondFragment"
+        android:label="SecondFragment" />
+</navigation>

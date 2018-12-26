@@ -1,5 +1,6 @@
 package com.myapp.activity;
 
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Toast;
 
@@ -26,6 +27,18 @@ public class DataBinding_Glide_Activity extends BaseActivity<ActivityDataBinding
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(this,"点击一下",Toast.LENGTH_SHORT).show();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                SystemClock.sleep(4000);
+                binding.setText("点击"+System.currentTimeMillis());
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        binding.dataBindingTvClick.setTextSize(123);
+                    }
+                });
+            }
+        }).start();
     }
 }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userinfo"
+            type="String"/>
+        <variable
+            name="userinfo2"
+            type="com.myapp.model.UserBean"/>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener"/>
+        <variable
+            name="student"
+            type="com.myapp.model.StudentBean"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/jetpack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.jetpack.JetpackFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/message"
+                style="@style/MyTextviewStyle"
+                android:onClick="@{click}"
+                android:bindsolid="@{student.sname}"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                />
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent"/>
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:onClick="@{click}"
+                android:bindsolid="@{student.sage}"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+
+                />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/message1"
+            style="@style/MyTextviewStyle"
+            android:text="@={userinfo2.name}"
+            android:onClick="@{click}"
+
+            />
+    </LinearLayout>
+</layout>

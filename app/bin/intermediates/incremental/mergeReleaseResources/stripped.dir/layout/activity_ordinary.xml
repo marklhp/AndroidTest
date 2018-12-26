@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mvc_mvp_mvvm.ordinary.OrdinaryActivity">
+
+    <TextView
+        android:id="@+id/ordinary_get_user_info"
+        style="@style/MyTextviewStyle"
+        android:text="改变用户信息" />
+    <TextView
+        android:id="@+id/ordinary_user_forget"
+        style="@style/MyTextviewStyle"
+        android:text="用户年龄记错了" />
+    <TextView
+        android:id="@+id/ordinary_userinfo"
+        style="@style/MyTextviewStyle" />
+    <TextView
+        android:id="@+id/ordinary_jobinfo"
+        style="@style/MyTextviewStyle" />
+</LinearLayout>
