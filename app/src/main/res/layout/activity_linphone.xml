@@ -5,15 +5,6 @@
 
     <data>
         <variable
-            name="username"
-            type="String"/>
-        <variable
-            name="password"
-            type="String"/>
-        <variable
-            name="servaladdress"
-            type="String"/>
-        <variable
             name="click"
             type="android.view.View.OnClickListener"/>
         <variable
@@ -26,46 +17,48 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             tools:context=".activity.sip.activity.LinphoneActivity">
-            <EditText
-                android:id="@+id/linphone_et1"
+            <TextView
+                android:id="@+id/linphone_init"
                 style="@style/MyTextviewStyle"
-                android:hint="用户名"
-                android:text="@={username}"
-                />
-            <EditText
-                android:id="@+id/linphone_et2"
-                style="@style/MyTextviewStyle"
-                android:hint="密码"
-                android:text="@={password}"
-                />
-            <EditText
-                android:id="@+id/linphone_et3"
-                style="@style/MyTextviewStyle"
-                android:hint="域名"
-                android:text="@={servaladdress}"
+                android:hint="初始化"
+                android:onClick="@{click}"
                 />
             <TextView
-                android:id="@+id/linphone_et4"
+                android:id="@+id/linphone_register"
                 style="@style/MyTextviewStyle"
                 android:hint="登录"
                 android:onClick="@{click}"
                 />
             <TextView
-                android:id="@+id/linphone_et5"
+                android:id="@+id/linphone_call"
                 style="@style/MyTextviewStyle"
-                android:hint="状态"
+                android:hint="打电话"
+                android:onClick="@{click}"
+                />
+            <TextView
+                android:id="@+id/linphone_accept"
+                style="@style/MyTextviewStyle"
+                android:hint="接听"
                 android:text="@={statu}"
                 />
             <TextView
                 style="@style/MyTextviewStyle"
                 android:hint="异常"
                 android:text="@={mythrow}"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="海"
+                android:textColor="@android:color/black"
                 />
         </LinearLayout>
     </ScrollView>

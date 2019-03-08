@@ -45,7 +45,7 @@ public class OrdinaryActivity extends AppCompatActivity implements View.OnClickL
     private void initData() {
         HttpUtils.getUserInfo(new HttpCallBack<UserInfoBean>() {
             @Override
-            public void call(UserInfoBean userInfoBean) {
+            public void call(final UserInfoBean userInfoBean) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -108,7 +108,7 @@ public class OrdinaryActivity extends AppCompatActivity implements View.OnClickL
     private void changeUserInfo() {
         HttpUtils.changeUserInfo(new HttpCallBack<UserInfoBean>() {
             @Override
-            public void call(UserInfoBean userInfoBean) {
+            public void call(final UserInfoBean userInfoBean) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -120,7 +120,7 @@ public class OrdinaryActivity extends AppCompatActivity implements View.OnClickL
             }
         }, new HttpCallBack<JobInfoBean>() {
             @Override
-            public void call(JobInfoBean jobInfoBean) {
+            public void call(final JobInfoBean jobInfoBean) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

@@ -26,7 +26,7 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> implements V
     protected void initView() {
         binding.setClick(this);
         mWordViewModel = new WordViewModel();
-        WordListAdapter adapter = new WordListAdapter(this);
+        final WordListAdapter adapter = new WordListAdapter(this);
         binding.recyclerview.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerview.setAdapter(adapter);
 

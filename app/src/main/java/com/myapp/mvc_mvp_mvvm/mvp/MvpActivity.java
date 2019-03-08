@@ -75,7 +75,7 @@ public class MvpActivity extends AppCompatActivity implements View.OnClickListen
      * 刷新数据
      * @param jobInfoBean
      */
-    private void refreshUI(JobInfoBean jobInfoBean) {
+    private void refreshUI(final JobInfoBean jobInfoBean) {
         refreshUI();
         runOnUiThread(new Runnable() {
             @Override

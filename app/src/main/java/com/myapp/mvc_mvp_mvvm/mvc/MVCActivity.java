@@ -41,7 +41,7 @@ public class MVCActivity extends AppCompatActivity implements View.OnClickListen
     private void initData() {
         mvcModel.getUserInfo(new HttpCallBack<UserInfoBean>() {
             @Override
-            public void call(UserInfoBean userInfoBean) {
+            public void call(final UserInfoBean userInfoBean) {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

@@ -6,7 +6,7 @@ import com.myapp.mvc_mvp_mvvm.ordinary.entry.JobInfoBean;
 import com.myapp.mvc_mvp_mvvm.ordinary.entry.UserInfoBean;
 
 public class HttpUtils {
-    public static void getUserInfo(HttpCallBack<UserInfoBean> callBack) {
+    public static void getUserInfo(final HttpCallBack<UserInfoBean> callBack) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -20,7 +20,7 @@ public class HttpUtils {
         }).start();
     }
 
-    public static void changeUserInfo(HttpCallBack<UserInfoBean> callBack, HttpCallBack<JobInfoBean> callBack1) {
+    public static void changeUserInfo(final HttpCallBack<UserInfoBean> callBack, final HttpCallBack<JobInfoBean> callBack1) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -40,7 +40,7 @@ public class HttpUtils {
         }).start();
     }
 
-    public static void changeUserInfo2(HttpCallBack2<UserInfoBean,JobInfoBean> callBack) {
+    public static void changeUserInfo2(final HttpCallBack2<UserInfoBean,JobInfoBean> callBack) {
         new Thread(new Runnable() {
             @Override
             public void run() {

@@ -19,7 +19,7 @@ public class PermissionUtil {
 
     //请求权限
     @SuppressLint("CheckResult")
-    public static void reqPermission(Activity activity,final IRequestPermission callBack, String... permissons) {
+    public static void reqPermission(final Activity activity, final IRequestPermission callBack, String... permissons) {
         try {
             RxPermissions rxPermission = new RxPermissions(activity);
             rxPermission.requestEach(permissons)

@@ -21,6 +21,12 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="linphone"
+                android:onClick="@{click}"
+                android:id="@+id/linphone"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="room"
                 android:onClick="@{click}"
                 android:id="@+id/room"

@@ -40,6 +40,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.linphone:
+                skip(LinphoneActivity.class);
+                break;
             case R.id.room:
                 skip(RoomActivity.class);
                 break;

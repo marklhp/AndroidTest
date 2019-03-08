@@ -17,11 +17,11 @@ public class MVCModel {
     public void getUserInfo(HttpCallBack<UserInfoBean> callBack) {
         HttpUtils.getUserInfo(callBack);
     }
-    public void changeUserInfo(Activity activity,HttpCallBack<UserInfoBean> callBack,HttpCallBack<JobInfoBean> callBack1) {
+    public void changeUserInfo(final Activity activity, final HttpCallBack<UserInfoBean> callBack, final HttpCallBack<JobInfoBean> callBack1) {
 
         HttpUtils.changeUserInfo(new HttpCallBack<UserInfoBean>() {
             @Override
-            public void call(UserInfoBean userInfoBean) {
+            public void call(final UserInfoBean userInfoBean) {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -31,7 +31,7 @@ public class MVCModel {
             }
         }, new HttpCallBack<JobInfoBean>() {
             @Override
-            public void call(JobInfoBean jobInfoBean) {
+            public void call(final JobInfoBean jobInfoBean) {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

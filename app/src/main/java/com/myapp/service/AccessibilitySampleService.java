@@ -33,7 +33,7 @@ public class AccessibilitySampleService extends AccessibilityService {
 
     }
     @SuppressLint("CheckResult")
-    private void initevent(AccessibilityEvent event) {
+    private void initevent(final AccessibilityEvent event) {
         Log.d("辅助功能",event.toString());
         Observable.create(new ObservableOnSubscribe<AccessibilityEvent>() {
             @Override
