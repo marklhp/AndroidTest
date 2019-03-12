@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.tasks.Task;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.activity.fragment.FragmentActivity;
@@ -35,11 +37,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ObservableInt observableInt = new ObservableInt();
         observableInt.set(R.mipmap.ic_launcher);
         binding.setSrc(observableInt);
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.phonenumber:
+                skip(PhoneNumberActivity.class);
+                break;
             case R.id.linphone:
                 skip(LinphoneActivity.class);
                 break;
