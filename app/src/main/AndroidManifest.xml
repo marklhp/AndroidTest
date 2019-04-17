@@ -35,7 +35,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Apptheme">
-        <activity android:name=".activity.NewWordActivity"></activity>
+        <activity android:name=".activity.KotlinActivity"></activity>
+        <activity android:name=".activity.AudioManagerActivity" />
+        <activity android:name=".activity.PhoneActivity" />
+
+        <service android:name=".service.PushService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.NewWordActivity" />
         <activity android:name=".activity.RoomActivity" />
         <activity android:name=".activity.fragment.FragmentActivity" />
         <activity
@@ -55,6 +65,8 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
         <activity android:name=".activity.DataBinding_Glide_Activity" />
@@ -77,12 +89,7 @@
         <activity android:name=".activity.WebSocketActivity" />
         <activity android:name=".activity.FloatingWindowActivity" />
         <activity android:name=".activity.ScanActivity" />
-        <activity android:name=".service.ServiceActivity" />
-
-        <service android:name=".service.ScannerService" />
-
         <activity android:name=".activity.ZxingScanActivity" />
-        <activity android:name=".activity.LocalScanActivity" />
         <activity android:name=".activity.JsonActivity" />
         <activity android:name=".activity.RSAActivity" />
         <activity android:name=".activity.DelayedUIActivity" />

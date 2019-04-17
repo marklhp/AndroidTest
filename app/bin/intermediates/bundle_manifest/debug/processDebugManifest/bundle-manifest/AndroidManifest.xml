@@ -111,7 +111,6 @@
         <activity android:name="com.myapp.activity.ScanActivity" />
         <activity android:name="com.myapp.service.ServiceActivity" />
 
-        <service android:name="com.myapp.service.ScannerService" />
 
         <activity android:name="com.myapp.activity.ZxingScanActivity" />
         <activity android:name="com.myapp.activity.LocalScanActivity" />

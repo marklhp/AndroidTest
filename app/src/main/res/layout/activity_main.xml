@@ -21,6 +21,18 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="audiomanager"
+                android:onClick="@{click}"
+                android:id="@+id/audiomanager"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="google号码解析"
+                android:onClick="@{click}"
+                android:id="@+id/phone_google"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="room"
                 android:onClick="@{click}"
                 android:id="@+id/room"
@@ -76,21 +88,9 @@
                 />
             <TextView
                 style="@style/MyTextviewStyle"
-                android:text="bendi扫码"
-                android:onClick="@{click}"
-                android:id="@+id/local_scan"
-                />
-            <TextView
-                style="@style/MyTextviewStyle"
                 android:text="zxing扫码"
                 android:onClick="@{click}"
                 android:id="@+id/zxing_scan_listenee"
-                />
-            <TextView
-                style="@style/MyTextviewStyle"
-                android:text="扫描"
-                android:onClick="@{click}"
-                android:id="@+id/scan_listenee"
                 />
             <TextView
                 style="@style/MyTextviewStyle"

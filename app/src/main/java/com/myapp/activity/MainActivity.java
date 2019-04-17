@@ -16,7 +16,6 @@ import com.myapp.databinding.ActivityMainBinding;
 
 import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
 import com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity;
-import com.myapp.service.ServiceActivity;
 import com.myapp.utils.DivideUtils;
 
 import java.util.HashMap;
@@ -40,6 +39,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.audiomanager:
+
+                break;
+            case R.id.phone_google:
+                skip(PhoneActivity.class);
+                break;
             case R.id.room:
                 skip(RoomActivity.class);
                 break;
@@ -68,14 +73,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.json_gson:
                 skip(JsonActivity.class);
                 break;
-            case R.id.local_scan:
-                skip(LocalScanActivity.class);
-                break;
             case R.id.zxing_scan_listenee:
                 skip(ZxingScanActivity.class);
-                break;
-            case R.id.scan_listenee:
-                skip(ServiceActivity.class);
                 break;
             case R.id.floating_window:
                 skip(FloatingWindowActivity.class);
