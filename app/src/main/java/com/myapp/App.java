@@ -1,15 +1,12 @@
 package com.myapp;
 
 import android.app.Application;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
+import androidx.annotation.NonNull;
+import androidx.multidex.MultiDexApplication;
+
 import com.myapp.utils.ClipboardUtils;
 import com.myapp.utils.glide.DelayedUIUtils;
 import com.scwang.smartrefresh.header.WaterDropHeader;
@@ -20,10 +17,6 @@ import com.scwang.smartrefresh.layout.api.RefreshFooter;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
-import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-
-import androidx.annotation.NonNull;
-import androidx.multidex.MultiDexApplication;
 
 /**
  * Created by lihaipeng on 2018/5/18.
@@ -32,7 +25,6 @@ import androidx.multidex.MultiDexApplication;
 public class App extends MultiDexApplication {
     public static Context context;
     public static Application application;
-    public static Task<InstanceIdResult> instanceId;
 
     static {
         SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
@@ -57,14 +49,7 @@ public class App extends MultiDexApplication {
         context = this;
         application = this;
         DelayedUIUtils.checkTime();
-        instanceId = FirebaseInstanceId.getInstance().getInstanceId();
-        instanceId.addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-            @Override
-            public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                Log.d("app", "打印令牌"+instanceId.getResult().getToken());
-                ClipboardUtils.onClickCopy(task.getResult().getToken());
-            }
-        });
+
     }
 
 }

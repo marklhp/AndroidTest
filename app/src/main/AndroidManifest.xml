@@ -2,61 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.myapp">
-    <meta-data
-        android:name="firebase_messaging_auto_init_enabled"
-        android:value="false" />
-    <meta-data
-        android:name="firebase_analytics_collection_enabled"
-        android:value="false" />
-    <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-    <uses-permission
-        android:name="android.permission.INTERNAL_SYSTEM_WINDOW"
-        tools:ignore="ProtectedPermissions" /> <!-- 在 屏幕最顶部显示addview -->
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
-    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- Needed to allow Linphone to install on tablets, since android.permission.CALL_PHONE implies android.hardware.telephony is required -->
-    <uses-feature
-        android:name="android.hardware.telephony"
-        android:required="false" />
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.CAMERA" /> <!-- Needed to allow Linphone to install on tablets, since android.permission.CAMERA implies android.hardware.camera and android.hardware.camera.autofocus are required -->
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Needed to store received images if the user wants to -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- Needed to use our own Contact editor -->
-    <uses-permission android:name="android.permission.WRITE_CONTACTS" /> <!-- Needed to route the audio to the bluetooth headset if available -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BROADCAST_STICKY" /> <!-- Needed to pre fill the wizard email field (only if enabled in custom settings) -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
-    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" /> <!-- Needed for in-app purchase -->
-    <!-- <uses-permission android:name="com.android.vending.BILLING"/> -->
-    <!-- Needed for overlay widget and floating notifications -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- Needed for kill application yourself -->
-    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-
-    <supports-screens
-        android:anyDensity="true"
-        android:largeScreens="true"
-        android:normalScreens="true"
-        android:smallScreens="true"
-        android:xlargeScreens="true" />
-
+    <!-- To access Google+ APIs: -->
     <application
         android:name=".App"
         android:icon="@mipmap/ic_launcher"
@@ -64,14 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Apptheme">
-        <service
-            android:name=".service.PushService"
-           >
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-
+        <activity android:name=".activity.TestFragmentActivity" />
         <activity android:name=".activity.PhoneNumberActivity" />
         <activity android:name=".activity.LinphoneActivity" />
         <activity android:name=".activity.NewWordActivity" />
@@ -118,15 +58,14 @@
         <activity android:name=".activity.FloatingWindowActivity" />
         <activity android:name=".activity.ScanActivity" />
         <activity android:name=".service.ServiceActivity" />
-
-        <service android:name=".service.ScannerService" />
-
         <activity android:name=".activity.ZxingScanActivity" />
         <activity android:name=".activity.LocalScanActivity" />
         <activity android:name=".activity.JsonActivity" />
         <activity android:name=".activity.RSAActivity" />
         <activity android:name=".activity.DelayedUIActivity" />
+        <activity android:name=".activity.JetpackActivity" />
 
+        <service android:name=".service.ScannerService" />
         <service
             android:name=".service.AccessibilitySampleService"
             android:exported="true"
@@ -141,8 +80,61 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_config" />
         </service>
-
-        <activity android:name=".activity.JetpackActivity" />
     </application>
+
+    <meta-data
+        android:name="firebase_messaging_auto_init_enabled"
+        android:value="false" />
+    <meta-data
+        android:name="firebase_analytics_collection_enabled"
+        android:value="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" /> <!-- 在 屏幕最顶部显示addview -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission
+        android:name="android.permission.INTERNAL_SYSTEM_WINDOW"
+        tools:ignore="ProtectedPermissions" /> <!-- Needed to allow Linphone to install on tablets, since android.permission.CALL_PHONE implies android.hardware.telephony is required -->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- Needed to allow Linphone to install on tablets, since android.permission.CAMERA implies android.hardware.camera and android.hardware.camera.autofocus are required -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> <!-- Needed to store received images if the user wants to -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- Needed to use our own Contact editor -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Needed to route the audio to the bluetooth headset if available -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Needed to pre fill the wizard email field (only if enabled in custom settings) -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" /> <!-- Needed for in-app purchase -->
+    <!-- <uses-permission android:name="com.android.vending.BILLING"/> -->
+    <!-- Needed for overlay widget and floating notifications -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" /> <!-- Needed for kill application yourself -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" /> <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" /> <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
 
 </manifest>

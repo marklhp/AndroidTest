@@ -21,6 +21,12 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="test_fragment"
+                android:onClick="@{click}"
+                android:id="@+id/test_fragment"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="PhoneNumber"
                 android:onClick="@{click}"
                 android:id="@+id/phonenumber"

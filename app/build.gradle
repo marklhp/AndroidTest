@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -58,7 +57,7 @@ dependencies {
     //    room.rxjava2 = "androidx.room:room-rxjava2:$versions.room"
     //    room.testing = "androidx.room:room-testing:$versions.room"
     implementation 'androidx.room:room-runtime:2.1.0-alpha03'
-    implementation 'com.google.firebase:firebase-messaging:17.3.4'
+    implementation 'com.google.android.gms:play-services-plus:17.0.0'
     annotationProcessor "androidx.room:room-compiler:2.1.0-alpha03"
     implementation 'androidx.room:room-rxjava2:2.1.0-alpha03'
     implementation 'androidx.room:room-guava:2.1.0-alpha03'
