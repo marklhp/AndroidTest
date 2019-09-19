@@ -19,6 +19,12 @@ android {
     dataBinding {
         enabled = true
     }
+    externalNativeBuild {
+        cmake {
+            path file('CMakeLists.txt')
+        }
+    }
+
 
 }
 repositories { flatDir { dirs 'libs' } }

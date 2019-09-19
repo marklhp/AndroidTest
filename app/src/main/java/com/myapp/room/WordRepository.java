@@ -2,6 +2,7 @@ package com.myapp.room;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.util.List;
 
@@ -32,7 +33,8 @@ public class WordRepository {
 
         @Override
         protected Void doInBackground(final Word... params) {
-            mAsyncTaskDao.insert(params[0]);
+           long num= mAsyncTaskDao.insert(params[0]);
+            Log.d("打印好数据","==="+num);
             return null;
         }
     }

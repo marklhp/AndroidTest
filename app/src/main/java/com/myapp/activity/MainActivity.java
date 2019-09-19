@@ -26,6 +26,7 @@ import androidx.databinding.ObservableInt;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +42,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.test_jni:
+                skip(JniActivity.class);
+                break;
             case R.id.test_fragment:
                 skip(TestFragmentActivity.class);
                 break;
+
             case R.id.phonenumber:
                 skip(PhoneNumberActivity.class);
                 break;

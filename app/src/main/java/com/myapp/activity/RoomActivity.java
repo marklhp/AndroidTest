@@ -1,6 +1,7 @@
 package com.myapp.activity;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -37,6 +38,7 @@ public class RoomActivity extends BaseActivity<ActivityRoomBinding> implements V
             @Override
             public void onChanged(@Nullable final List<Word> words) {
 //                 Update the cached copy of the words in the adapter.
+
                 adapter.setWords(words);
             }
         });
