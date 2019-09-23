@@ -42,9 +42,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.test_jni:
+            case R.id.android_hook:
+                skip(AndroidHookActivity.class);
+                break;
+                case R.id.test_jni:
                 skip(JniActivity.class);
                 break;
+
             case R.id.test_fragment:
                 skip(TestFragmentActivity.class);
                 break;

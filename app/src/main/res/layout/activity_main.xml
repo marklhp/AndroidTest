@@ -21,6 +21,12 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="android_hook"
+                android:onClick="@{click}"
+                android:id="@+id/android_hook"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="jni"
                 android:onClick="@{click}"
                 android:id="@+id/test_jni"
