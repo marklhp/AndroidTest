@@ -21,10 +21,29 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="thread详解"
+                android:onClick="@{click}"
+                android:id="@+id/thread_id"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="获取流量值"
+                android:onClick="@{click}"
+                android:id="@+id/flow_id"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="android_bg"
+                android:onClick="@{click}"
+                android:id="@+id/android_bg"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="android_hook"
                 android:onClick="@{click}"
                 android:id="@+id/android_hook"
                 />
+
             <TextView
                 style="@style/MyTextviewStyle"
                 android:text="jni"

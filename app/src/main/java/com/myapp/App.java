@@ -49,7 +49,7 @@ public class App extends MultiDexApplication {
         context = this;
         application = this;
         DelayedUIUtils.checkTime();
-
+        Log.d("打印provider数据1","=====");
     }
 
 }

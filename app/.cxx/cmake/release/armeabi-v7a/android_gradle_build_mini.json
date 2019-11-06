@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/haipengli/D/263/AndroidTest/app/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/haipengli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/haipengli/D/263/AndroidTest/app/.cxx/cmake/release/armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-armeabi-v7a": {
+      "artifactName": "native-lib",
+      "buildCommand": "/Users/haipengli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/haipengli/D/263/AndroidTest/app/.cxx/cmake/release/armeabi-v7a --target native-lib",
+      "abi": "armeabi-v7a",
+      "output": "/Users/haipengli/D/263/AndroidTest/app/build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so"
+    }
+  }
+}

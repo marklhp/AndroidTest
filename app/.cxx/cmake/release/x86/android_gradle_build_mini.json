@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/haipengli/D/263/AndroidTest/app/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/haipengli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/haipengli/D/263/AndroidTest/app/.cxx/cmake/release/x86 --target clean"
+  ],
+  "libraries": {
+    "native-lib-Release-x86": {
+      "artifactName": "native-lib",
+      "buildCommand": "/Users/haipengli/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/haipengli/D/263/AndroidTest/app/.cxx/cmake/release/x86 --target native-lib",
+      "abi": "x86",
+      "output": "/Users/haipengli/D/263/AndroidTest/app/build/intermediates/cmake/release/obj/x86/libnative-lib.so"
+    }
+  }
+}

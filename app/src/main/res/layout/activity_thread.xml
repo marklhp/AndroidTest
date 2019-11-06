@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.ThreadActivity">
+        <TextView
+            android:id="@+id/thread_id1"
+            style="@style/MyTextviewStyle"
+            android:text="thread1"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/thread_id2"
+            style="@style/MyTextviewStyle"
+            android:text="thread1"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/thread_id3"
+            style="@style/MyTextviewStyle"
+            android:text="线程池测试"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/thread_id4"
+            style="@style/MyTextviewStyle"
+            android:text="ExecutorService"
+            android:onClick="@{click}"
+            />
+    </LinearLayout>
+</layout>

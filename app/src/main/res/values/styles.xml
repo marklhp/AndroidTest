@@ -32,6 +32,9 @@
     </style>
 
     <style name="Apptheme" parent="Theme.AppCompat">
+    </style>
+    <style name="ActivityTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:fitsSystemWindows">false</item>
 
     </style>
     <style name="Accessibility.Transparent.Activity" parent="android:Theme">

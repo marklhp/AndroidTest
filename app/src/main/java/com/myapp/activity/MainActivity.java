@@ -17,12 +17,16 @@ import com.myapp.databinding.ActivityMainBinding;
 import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
 import com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity;
 import com.myapp.service.ServiceActivity;
+import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.DivideUtils;
+import com.myapp.utils.LogUtils;
 
 import java.util.HashMap;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableInt;
+
+import io.reactivex.functions.Consumer;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     ActivityMainBinding binding;
@@ -36,16 +40,40 @@ public class MainActivity extends Activity implements View.OnClickListener {
         ObservableInt observableInt = new ObservableInt();
         observableInt.set(R.mipmap.ic_launcher);
         binding.setSrc(observableInt);
+        initData();
 
+    }
+
+    private void initData() {
+        DeviceUtils.getIns().blueTooth(new Consumer<Integer>() {
+            @Override
+            public void accept(Integer integer) throws Exception {
+                LogUtils.d("打印连接数量"+integer);
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.thread_id:
+                skip(ThreadActivity.class);
+                LogUtils.d("打印网络类型"+DeviceUtils.connectTypeIsWifi());
+                break;
+                case R.id.flow_id:
+                skip(TrafficStatsActivity.class);
+                break;
+
+
+            case R.id.android_bg:
+                skip(BgActivity.class);
+                break;
+
             case R.id.android_hook:
                 skip(AndroidHookActivity.class);
                 break;
-                case R.id.test_jni:
+
+            case R.id.test_jni:
                 skip(JniActivity.class);
                 break;
 
