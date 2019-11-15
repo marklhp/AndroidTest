@@ -94,4 +94,30 @@ public class DeviceUtils {
         }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread()).subscribe(callBack);
     }
+
+
+    /**
+     * 判断网络是否可用 这里沿用沿用pc机 ping命令，判断，原因是android原生处理不准确
+     * https://blog.csdn.net/tangguotupaopao/article/details/73136516
+     *
+     * @return
+     */
+    @SuppressLint("CheckResult")
+    public static void connectIsAvailable(Consumer<Boolean> consumer) {
+        Observable.create(new ObservableOnSubscribe<Boolean>() {
+            @Override
+            public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
+                Runtime runtime = Runtime.getRuntime();
+                Process p = runtime.exec("ping -c 3 www.baidu.com");
+                int ret = p.waitFor();
+                emitter.onNext(ret == 0);
+                runtime = null;
+                p.destroy();
+                p = null;
+            }
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(consumer);
+
+    }
 }

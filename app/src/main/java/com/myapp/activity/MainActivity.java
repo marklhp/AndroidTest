@@ -20,12 +20,15 @@ import com.myapp.service.ServiceActivity;
 import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.DivideUtils;
 import com.myapp.utils.LogUtils;
+import com.myapp.utils.WifiManage;
 
 import java.util.HashMap;
+import java.util.List;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableInt;
 
+import bean.WifiInfo;
 import io.reactivex.functions.Consumer;
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -56,13 +59,35 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.check_net:
+                DeviceUtils.connectIsAvailable(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) throws Exception {
+                        Toast.makeText(App.context,"网络是否可以用"+aBoolean,Toast.LENGTH_SHORT).show();
+                    }
+                });
+                break;
+            case R.id.bluetooth:
+                skip(BluetoothActivity.class);
+                break;
+            case R.id.web_view_id:
+                skip(WebActivity.class);
+                break;
             case R.id.thread_id:
                 skip(ThreadActivity.class);
                 LogUtils.d("打印网络类型"+DeviceUtils.connectTypeIsWifi());
                 break;
                 case R.id.flow_id:
                 skip(TrafficStatsActivity.class);
-                break;
+                    try {
+                        List<WifiInfo> read = WifiManage.Read();
+                        for (int i = 0; i < read.size(); i++) {
+                            LogUtils.d("打印Wi-Fi信息"+read.get(i).toString());
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
 
 
             case R.id.android_bg:

@@ -80,5 +80,7 @@
     <string name="hint_word">Word...</string>
     <string name="button_save">Save</string>
     <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="url1"><![CDATA[https://webaccount.italkbb.com/oAuthProvider/ultimateLogin/retrieve-password.html?business=fc&source=fc&devicetype=Android&culture=zh-chs]]></string>
+    <string name="url2"><![CDATA[https://webaccount.italkbb.com/oAuthProvider/ultimateLogin/retrieve-password.html?culture=zh-chs&business=fc&source=fc&devicetype=Android]]></string>
 
 </resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.BluetoothActivity">
+        <TextView
+            android:id="@+id/bluetooth1"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth1"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth2"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth2"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth3"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth3"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth4"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth4"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth5"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth5"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth6"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth6"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth7"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth7"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth8"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth8"
+            android:onClick="@{click}"
+            />
+
+    </LinearLayout>
+</layout>
