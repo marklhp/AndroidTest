@@ -3,7 +3,7 @@ arguments :
 -H/Users/haipengli/D/263/AndroidTest/app
 -B/Users/haipengli/D/263/AndroidTest/app/.cxx/cmake/release/x86_64
 -DANDROID_ABI=x86_64
--DANDROID_PLATFORM=android-19
+-DANDROID_PLATFORM=android-21
 -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/haipengli/D/263/AndroidTest/app/build/intermediates/cmake/release/obj/x86_64
 -DCMAKE_BUILD_TYPE=Release
 -DANDROID_NDK=/Users/haipengli/Library/Android/sdk/ndk-bundle

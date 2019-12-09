@@ -1,30 +1,18 @@
 package com.myapp;
 
-import android.telephony.PhoneNumberUtils;
-import android.text.TextUtils;
-
-import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.myapp.utils.PhoneUtil;
+
+import java.util.HashMap;
 
 public class FormatNumber {
 
     public static void main(String[] args) {
         System.out.println(formatNumber("+8617778115595"));
-        System.out.println(formatNumber("+12028710422"));
-        System.out.println(formatNumber("8"));
-        System.out.println(formatNumber("88"));
-        System.out.println(formatNumber("888"));
-        System.out.println(formatNumber("8888"));
-        System.out.println(formatNumber("88888"));
-        System.out.println(formatNumber("888888"));
-        System.out.println(formatNumber("8888888"));
-        System.out.println(formatNumber("88888888"));
-        System.out.println(formatNumber("888888888"));
-        System.out.println(formatNumber("8888888888"));
-        System.out.println(formatNumber("88888888888"));
-        System.out.println(formatNumber("888888888888"));
-        System.out.println(formatNumber("+16477272483"));
-        System.out.println(formatNumber("+13473291022"));
+        HashMap<String,Object> map=new HashMap<>();
+        map.put("ewjjl",333);
+        map.put("jjlj","3322");
+        map.put("jjjj",43l);
+        System.out.println(map.toString());
 
     }
 

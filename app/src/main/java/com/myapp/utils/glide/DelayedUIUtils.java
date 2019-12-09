@@ -25,6 +25,7 @@ public class DelayedUIUtils {
 //                    Log.d("打印时间差====", DivideUtils.getTopActivityInfo());
 
                 }
+//                Log.d("打印时间差====", x);
             }
         });
     }

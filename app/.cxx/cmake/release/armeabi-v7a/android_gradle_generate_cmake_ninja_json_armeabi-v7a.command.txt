@@ -3,7 +3,7 @@ arguments :
 -H/Users/haipengli/D/263/AndroidTest/app
 -B/Users/haipengli/D/263/AndroidTest/app/.cxx/cmake/release/armeabi-v7a
 -DANDROID_ABI=armeabi-v7a
--DANDROID_PLATFORM=android-19
+-DANDROID_PLATFORM=android-21
 -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/haipengli/D/263/AndroidTest/app/build/intermediates/cmake/release/obj/armeabi-v7a
 -DCMAKE_BUILD_TYPE=Release
 -DANDROID_NDK=/Users/haipengli/Library/Android/sdk/ndk-bundle

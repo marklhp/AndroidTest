@@ -14,7 +14,10 @@ import android.view.View;
 import com.myapp.R;
 import com.myapp.base.BaseActivity;
 import com.myapp.databinding.ActivityBluetoothBinding;
+import com.myapp.utils.AudioManagerUtils;
 import com.myapp.utils.LogUtils;
+
+import io.reactivex.functions.Consumer;
 
 public class BluetoothActivity extends BaseActivity<ActivityBluetoothBinding> implements View.OnClickListener {
 
@@ -54,10 +57,16 @@ public class BluetoothActivity extends BaseActivity<ActivityBluetoothBinding> im
                 registerReceiver(receiver5, bluetoothFilterConn5);
                 break;
             case R.id.bluetooth2:
+                AudioManagerUtils.getIns().getBluetooth(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) throws Exception {
+
+                    }
+                });
 
                 break;
             case R.id.bluetooth3:
-
+                LogUtils.d("打印蓝牙连接"+"-==-"+AudioManagerUtils.getIns().isBluetoothConnect());
                 break;
             case R.id.bluetooth4:
 

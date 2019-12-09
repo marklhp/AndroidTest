@@ -6,40 +6,91 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Handler;
 import android.os.PowerManager;
 import android.telephony.TelephonyManager;
+import android.widget.Toast;
 
 import com.myapp.App;
 import com.myapp.linphone.call.CallManager;
 
 import org.linphone.core.Address;
+import org.linphone.core.Call;
+import org.linphone.core.CallParams;
 import org.linphone.core.Core;
 import org.linphone.core.CoreException;
+import org.linphone.core.CoreListenerStub;
 import org.linphone.core.Factory;
 import org.linphone.core.GlobalState;
 import org.linphone.core.ProxyConfig;
 import org.linphone.core.TransportType;
+import org.linphone.core.Transports;
 import org.linphone.mediastream.Log;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import io.reactivex.functions.Consumer;
 
 public class SipUtils {
 
+    private static Core core;
+    private static Timer mTimer;
+    private static TimerTask lTask;
+    private static Handler handler=new Handler();
 
+    public static void init(CoreListenerStub coreListenerStub){
+        core = Factory.instance().createCore(App.application.getFilesDir().getAbsolutePath()+"/.linphonerc", App.application.getFilesDir().getAbsolutePath()+ "/assistant_create.rc",App.application);
+        core.setUserAgent("iTalkFamilyCloud_android_","1.0"+";"+"con:"+"wi"+",biz:fc,bid:"+10);
+        core.addListener(coreListenerStub);
+        setSipPore();
+        core.enableIpv6(false);
+        core.start();
+        lTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (core==null){
+                            if (mTimer!=null){
+                                mTimer.cancel();
+                            }
+                        }else {
+                            core.iterate();
+                        }
+                    }
+                });
+            }
+        };
+        /*use schedule instead of scheduleAtFixedRate to avoid iterate from being call in burst after cpu wake up*/
+        mTimer = new Timer("Linphone scheduler");
+        mTimer.schedule(lTask, 0, 100);
+    }
+    //port值可以自己指定，-1代表随机
+    public static void setSipPore() {
+        Transports transportPorts = core.getTransports();//端口
+        transportPorts.setUdpPort(-1);
+        transportPorts.setTcpPort(-1);
+        transportPorts.setTlsPort(-1);
+        core.setTransports(transportPorts);
 
+    }
     /**
      * 进行sip信息注册
      * tip 注册是否成功 调用 CoreListenerStub 回调判断
      * SipUtils.registerSip(sipinfo.getUsername(), "", sipinfo.getPassword(), sipinfo.getDisplaynumber(), null,null, sipinfo.getSipurl(), TransportType.Udp);
      * SipUtils.registerSip("69801006278", "", "101204375147#", "15235661546", null,null, "ose7.italkbb.com:10000", TransportType.Udp);
      */
-    public static boolean registerSip(Core core) {
+    public static boolean registerSip() {
 //        String username = "69802008619";
 //        String password = "101944957262#";
 //        String displayname = "17778115596";
 //        String domain = "ose7.italkbb.com:10000";
-        String username="69801006278";
-        String password="101204375147#";
-        String displayname="15235661546";
-        String domain="ose7.italkbb.com:10000";
+        String username="69801018931";
+        String password="102011203496#";
+        String displayname="3473291022";
+        String domain="cxc32.italkbb.com:10000";
         String userid="";
         String ha1=null;
         String prefix=null;
@@ -100,7 +151,7 @@ public class SipUtils {
      * 拨打电话
      * @param
      */
-    public static void call(Core core){
+    public static void call(){
         try {
             if (!acceptCallIfIncomingPending(core)){
                 newOutgoingCall(core,"69802008619",null);
@@ -178,32 +229,24 @@ public class SipUtils {
 //     * @param startFcCallActivity
 //     * @return
 //     */
-//    public static  boolean answer(boolean alreadyAcceptedOrDeniedCall, Call mCall, Consumer startFcCallActivity) {
-//        if (alreadyAcceptedOrDeniedCall) {
-//            return true;
-//        }
-//        CallParams params = LinphoneManager.getLc().createCallParams(mCall);
-//
-//        boolean isLowBandwidthConnection = !LinphoneUtils.isHighBandwidthConnection(LinphoneService.instance().getApplicationContext());
-//
-//        if (params != null) {
-//            params.enableLowBandwidth(isLowBandwidthConnection);
-//        } else {
-//            Log.e("Could not create call params for call");
-//        }
-//
-//        if (params == null || !LinphoneManager.getInstance().acceptCallWithParams(mCall, params)) {
-//            // the above method takes care of Samsung Galaxy S
-//            ToastUtil.showToastShort( R.string.couldnt_accept_call);
-//        } else {
-//            LinphoneManager.getInstance().routeAudioToReceiver();
-//            try {
-//                startFcCallActivity.accept("");
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return true;
-//    }
+    public static  boolean answer(boolean alreadyAcceptedOrDeniedCall, Call mCall, Consumer startFcCallActivity) {
+        if (alreadyAcceptedOrDeniedCall) {
+            return true;
+        }
 
+        return true;
+    }
+
+    public static void accept( Context context) {
+        CallParams params = core.createCallParams(core.getCurrentCall());
+        boolean isLowBandwidthConnection = !isHighBandwidthConnection(context);
+
+        if (params != null) {
+            params.enableLowBandwidth(isLowBandwidthConnection);
+            core.acceptCallWithParams(core.getCurrentCall(), params);
+        } else {
+            Log.e("Could not create call params for call");
+        }
+
+    }
 }

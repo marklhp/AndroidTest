@@ -2,15 +2,22 @@ package com.myapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 
+import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.base.BaseActivity;
 import com.myapp.databinding.ActivityLinphoneBinding;
 import com.myapp.linphone.SipUtils;
+import com.myapp.utils.AudioManagerUtils;
 
 import org.linphone.core.AuthInfo;
 import org.linphone.core.AuthMethod;
@@ -36,17 +43,19 @@ import org.linphone.core.ProxyConfig;
 import org.linphone.core.PublishState;
 import org.linphone.core.RegistrationState;
 import org.linphone.core.SubscriptionState;
+import org.linphone.core.Transports;
 import org.linphone.core.VersionUpdateCheckResult;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
+import io.reactivex.functions.Consumer;
+
+import static android.media.AudioManager.STREAM_VOICE_CALL;
+
 public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> implements View.OnClickListener {
 
-    Core core;
-    private Timer mTimer;
     Call call;
-
     @Override
     protected void initView() {
         binding.setClick(this);
@@ -65,43 +74,51 @@ public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> impl
         switch (v.getId()){
             case R.id.linphone_init:
                 long tempTime=System.currentTimeMillis();
-                core = Factory.instance().createCore(App.application.getFilesDir().getAbsolutePath()+"/.linphonerc", App.application.getFilesDir().getAbsolutePath()+ "/assistant_create.rc",App.application);
-                core.setUserAgent("softphone_android","4.0.1");
-                core.addListener(coreListenerStub);
-                core.start();
-                TimerTask lTask = new TimerTask() {
-                    @Override
-                    public void run() {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                core.iterate();
-                            }
-                        });
-                    }
-                };
-                /*use schedule instead of scheduleAtFixedRate to avoid iterate from being call in burst after cpu wake up*/
-                mTimer = new Timer("Linphone scheduler");
-                mTimer.schedule(lTask, 0, 20);
+                SipUtils.init(coreListenerStub);
                 Log.d("时间差", (System.currentTimeMillis()-tempTime)+"");
                 break;
             case R.id.linphone_register:
-                SipUtils.registerSip(core);
+                SipUtils.registerSip();
 
                 break;
             case R.id.linphone_call:
-                SipUtils.call(core);
+                SipUtils.call();
                 break;
             case R.id.linphone_accept:
-//                SipUtils.accept(call);
+                SipUtils.accept(App.context);
+                break;
+            case R.id.linphone_jilu:
+//                mode=AudioManagerUtils.getIns().getMode();
+//               isSpecOn= AudioManagerUtils.getIns().isSpeakerphoneOn();
+                AudioManagerUtils.getIns().zhenling();
+                break;
+            case R.id.linphone_huifu:
+                AudioManagerUtils.getIns().huifu(mode,isSpecOn);
+                break;
+            case  R.id.linphone_tingtong:
+                AudioManagerUtils.getIns().tingTong();
+                break;
+            case  R.id.linphone_mianti:
+                AudioManagerUtils.getIns().handFree();
+                break;
+            case R.id.linphone_lanya:
+                AudioManagerUtils.getIns().blueTooth(new Consumer<Boolean>() {
+                    @Override
+                    public void accept(Boolean aBoolean) throws Exception {
+
+                    }
+                });
                 break;
         }
     }
 
+
+    int mode;
+    boolean isSpecOn;
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        core=null;
     }
 
     CoreListenerStub coreListenerStub=new CoreListenerStub(){
@@ -114,7 +131,64 @@ public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> impl
         @Override
         public void onCallStateChanged(Core lc, Call call, Call.State cstate, String message) {
             super.onCallStateChanged(lc, call, cstate, message);
-            Log.d("linphone_34===", cstate.name()+"==="+message);
+            Log.d("linphone_34===", cstate.name()+"==="+message+"===="+AudioManagerUtils.getIns().getRingerMode());
+//            if (cstate== Call.State.IncomingReceived){
+//                AudioManagerUtils.getIns().startRinging();
+//            }else if (AudioManagerUtils.getIns().isRinging){
+//                AudioManagerUtils.getIns().stopRinging();
+//            }
+//
+//            if (cstate==Call.State.Connected){//来电音频调试
+//                if (lc.getCallsNb() == 1) {
+//                    //It is for incoming calls, because outgoing calls enter MODE_IN_COMMUNICATION immediately when they start.
+//                    //However, incoming call first use the MODE_RINGING to play the local ring.
+//                    if (call.getDir() == Call.Dir.Incoming) {
+//                        AudioManagerUtils.getIns().setAudioManagerInCallMode();
+//                        //mAudioManager.abandonAudioFocus(null);
+//                        AudioManagerUtils.getIns().requestAudioFocus(STREAM_VOICE_CALL);
+//                    }
+//                }
+//                AudioManagerUtils.getIns().adjustVolume(0);
+//            }
+//
+//            if (cstate == Call.State.End || cstate == Call.State.Error) {
+//                if (lc.getCallsNb() == 0) {
+//                    if (AudioManagerUtils.getIns().mAudioFocused) {
+//                        int res = AudioManagerUtils.getIns().abandonAudioFocus();
+//                        org.linphone.mediastream.Log.d("Audio focus released a bit later: " + (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED ? "Granted" : "Denied"));
+//                        AudioManagerUtils.getIns().mAudioFocused = false;
+//                    }
+//
+//                    TelephonyManager tm = (TelephonyManager) App.context.getSystemService(Context.TELEPHONY_SERVICE);
+//                    if (tm.getCallState() == TelephonyManager.CALL_STATE_IDLE) {
+//                        org.linphone.mediastream.Log.d("---AudioManager: back to MODE_NORMAL");
+//                        AudioManagerUtils.getIns().setMode(AudioManager.MODE_NORMAL);
+//                        org.linphone.mediastream.Log.d("All call terminated, routing back to earpiece");
+//                        AudioManagerUtils.getIns().routeAudioToReceiver();
+//                    }
+//                }
+//            }
+//
+//            if (cstate == Call.State.OutgoingInit) {
+//                //Enter the MODE_IN_COMMUNICATION mode as soon as possible, so that ringback
+//                //is heard normally in earpiece or bluetooth receiver.
+//                AudioManagerUtils.getIns().requestAudioFocus(STREAM_VOICE_CALL);
+//                AudioManagerUtils.getIns().blueTooth(new Consumer<Boolean>() {
+//                    @Override
+//                    public void accept(Boolean aBoolean) throws Exception {
+//
+//                    }
+//                });
+//            }
+//
+//            if (cstate == Call.State.StreamsRunning) {
+//                AudioManagerUtils.getIns().blueTooth(new Consumer<Boolean>() {
+//                    @Override
+//                    public void accept(Boolean aBoolean) throws Exception {
+//
+//                    }
+//                });
+//            }
         }
 
         @Override

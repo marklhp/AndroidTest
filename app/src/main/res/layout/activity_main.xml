@@ -21,6 +21,30 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="设备亮屏监听2"
+                android:onClick="@{click}"
+                android:id="@+id/liang_ping2"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="设备亮屏监听"
+                android:onClick="@{click}"
+                android:id="@+id/liang_ping"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="网络状态监听"
+                android:onClick="@{click}"
+                android:id="@+id/net_state"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="近邻感测"
+                android:onClick="@{click}"
+                android:id="@+id/proximity_sensing"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="测试网络"
                 android:onClick="@{click}"
                 android:id="@+id/check_net"

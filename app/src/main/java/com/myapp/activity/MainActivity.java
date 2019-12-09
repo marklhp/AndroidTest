@@ -1,7 +1,13 @@
 package com.myapp.activity;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -12,14 +18,19 @@ import android.widget.Toast;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.activity.fragment.FragmentActivity;
+import com.myapp.callback.IRequestPermission;
+import com.myapp.compatibility.Compatibility;
 import com.myapp.databinding.ActivityMainBinding;
 
 import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
 import com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity;
+import com.myapp.receiver.KeepAliveReceiver;
 import com.myapp.service.ServiceActivity;
 import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.DivideUtils;
 import com.myapp.utils.LogUtils;
+import com.myapp.utils.PermissionUtil;
+import com.myapp.utils.SDCardUtils;
 import com.myapp.utils.WifiManage;
 
 import java.util.HashMap;
@@ -33,6 +44,9 @@ import io.reactivex.functions.Consumer;
 
 public class MainActivity extends Activity implements View.OnClickListener {
     ActivityMainBinding binding;
+    Thread thread;
+    int num=0;
+    private IntentFilter mKeepAliveIntentFilter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +73,27 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.liang_ping2:
+                Intent newIntent = new Intent(App.context, KeepAliveReceiver.class);
+                PendingIntent keepAlivePendingIntent = PendingIntent.getBroadcast(App.context, 0, newIntent, PendingIntent.FLAG_ONE_SHOT);
+
+                AlarmManager alarmManager = ((AlarmManager) App.context.getSystemService(Context.ALARM_SERVICE));
+                Compatibility.scheduleAlarm(alarmManager, AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 1000, keepAlivePendingIntent);
+                break;
+            case R.id.liang_ping:
+                mKeepAliveIntentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+                mKeepAliveIntentFilter.addAction(Intent.ACTION_SCREEN_OFF);
+                registerReceiver(new KeepAliveReceiver(),mKeepAliveIntentFilter);
+                break;
+                case R.id.net_state:
+                skip(NetStateActivity.class);
+                break;
+
+            case R.id.proximity_sensing:
+                skip(MiePingActivity.class);
+                break;
+
+
             case R.id.check_net:
                 DeviceUtils.connectIsAvailable(new Consumer<Boolean>() {
                     @Override
@@ -66,6 +101,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         Toast.makeText(App.context,"网络是否可以用"+aBoolean,Toast.LENGTH_SHORT).show();
                     }
                 });
+                PermissionUtil.reqPermission(this, new IRequestPermission() {
+                    @Override
+                    public void accept() {
+                        thread = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                while (true){
+                                    SystemClock.sleep(500);
+                                    SDCardUtils.saveLogInfo2File(System.currentTimeMillis()+"",num+"");
+                                    num++;
+                                }
+                            }
+                        });
+                        thread.start();
+                    }
+                }, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 break;
             case R.id.bluetooth:
                 skip(BluetoothActivity.class);
