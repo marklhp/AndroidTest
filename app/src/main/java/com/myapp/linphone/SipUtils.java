@@ -45,6 +45,9 @@ public class SipUtils {
         core.addListener(coreListenerStub);
         setSipPore();
         core.enableIpv6(false);
+        core.clearProxyConfig();
+        core.clearAllAuthInfo();
+        core.clearCallLogs();
         core.start();
         lTask = new TimerTask() {
             @Override
@@ -248,5 +251,50 @@ public class SipUtils {
             Log.e("Could not create call params for call");
         }
 
+    }
+
+    public static void singout() {
+        core.clearCallLogs();
+        core.clearProxyConfig();
+        core.clearAllAuthInfo();
+    }
+
+    public static void setAccountEnabled(int n, boolean enabled) {
+        if (getLc() == null) return;
+        ProxyConfig prxCfg = getProxyConfig(n);
+        if (prxCfg == null) {
+//            LinphoneUtils.displayErrorAlert(getString(R.string.error), mContext);
+            return;
+        }
+        prxCfg.edit();
+        prxCfg.enableRegister(enabled);
+        prxCfg.done();
+
+        // If default proxy config is disabled, try to set another one as default proxy
+        if (!enabled && getLc().getDefaultProxyConfig().getIdentityAddress().equals(prxCfg.getIdentityAddress())) {
+            int count = getLc().getProxyConfigList().length;
+            if (count > 1) {
+                for (int i = 0; i < count; i++) {
+                    if (isAccountEnabled(i)) {
+                        getLc().setDefaultProxyConfig(getProxyConfig(i));
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    private static Core getLc(){
+        return core;
+    }
+
+    private static ProxyConfig getProxyConfig(int n) {
+        if (getLc() == null) return null;
+        ProxyConfig[] prxCfgs = getLc().getProxyConfigList();
+        if (n < 0 || n >= prxCfgs.length)
+            return null;
+        return prxCfgs[n];
+    }
+    public static boolean isAccountEnabled(int n) {
+        return getProxyConfig(n).registerEnabled();
     }
 }

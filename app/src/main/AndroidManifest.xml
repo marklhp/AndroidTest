@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.myapp">
-
+    <!-- Needed to route the audio to the bluetooth headset if available -->
     <application
         android:name=".App"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +10,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Apptheme">
-        <activity android:name=".activity.VpnActivity" />
-
+        <activity android:name=".activity.TestVpnActivity"></activity>
+        <activity android:name=".activity.TraceActivity" />
+        <activity android:name=".activity.FragmentSwitchActivity" />
+        <activity android:name=".activity.Bluetooth2Activity" />
+        <activity android:name=".activity.FileCheckActivity" />
+        <activity android:name=".vpn.ToyVpnClient" />
         <activity android:name=".activity.NetStateActivity" />
         <activity android:name=".activity.MiePingActivity" />
         <activity android:name=".activity.BluetoothActivity" />
@@ -79,6 +83,7 @@
         <activity android:name=".activity.RSAActivity" />
         <activity android:name=".activity.DelayedUIActivity" />
         <activity android:name=".activity.JetpackActivity" />
+
         <provider
             android:name=".TestContentProvider"
             android:authorities="TestContentProvider"
@@ -87,9 +92,19 @@
 
         <receiver android:name=".receiver.KeepAliveReceiver" />
 
-        <service android:exported="false" android:name=".service.MyVpnService" android:permission="android.permission.BIND_VPN_SERVICE" >
+        <service
+            android:name=".vpn.ToyVpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE">
             <intent-filter>
-                <action android:name="android.net.VpnService"/>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.MyVpnService"
+            android:exported="false"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
             </intent-filter>
         </service>
         <service android:name=".service.ScannerService" />
@@ -107,11 +122,10 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/accessibility_config" />
         </service>
-    </application> <!-- Needed to allow Linphone to install on tablets, since android.permission.CAMERA implies android.hardware.camera and android.hardware.camera.autofocus are required -->
+    </application>
     <meta-data
         android:name="firebase_messaging_auto_init_enabled"
-        android:value="false" />
-
+        android:value="false" /> <!-- Needed to pre fill the wizard email field (only if enabled in custom settings) -->
     <meta-data
         android:name="firebase_analytics_collection_enabled"
         android:value="false" />
@@ -121,32 +135,33 @@
         android:largeScreens="true"
         android:normalScreens="true"
         android:smallScreens="true"
-        android:xlargeScreens="true" /> <!-- Needed to store received images if the user wants to -->
+        android:xlargeScreens="true" />
     <uses-feature
         android:name="android.hardware.telephony"
-        android:required="false" /> <!-- Needed to use our own Contact editor -->
+        android:required="false" />
+
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" /> <!-- Needed to route the audio to the bluetooth headset if available -->
+        android:required="false" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.GET_TASKS" /> <!-- Needed to pre fill the wizard email field (only if enabled in custom settings) -->
-    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+    <uses-permission android:name="android.permission.GET_TASKS" /> <!-- Needed for in-app purchase -->
+    <!-- <uses-permission android:name="com.android.vending.BILLING"/> -->
+    <!-- Needed for overlay widget and floating notifications -->
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" /> <!-- Needed for kill application yourself -->
     <uses-permission
         android:name="android.permission.INTERNAL_SYSTEM_WINDOW"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- Needed for in-app purchase -->
-    <!-- <uses-permission android:name="com.android.vending.BILLING"/> -->
-    <!-- Needed for overlay widget and floating notifications -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Needed for kill application yourself -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- To access Google+ APIs: -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.VIBRATE" /> <!-- To access Google+ APIs: -->
-    <uses-permission android:name="android.permission.CAMERA" /> <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -164,7 +179,6 @@
     <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 

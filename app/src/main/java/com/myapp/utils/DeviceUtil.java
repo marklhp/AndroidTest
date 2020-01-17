@@ -15,12 +15,19 @@ import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.os.SystemClock;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
 import com.myapp.App;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
@@ -314,5 +321,32 @@ public class DeviceUtil {
         } catch (Exception e) {
             return false;
         }
+    }
+    public static boolean textNet(){
+
+        Observable.create(new ObservableOnSubscribe<Boolean>() {
+            @Override
+            public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
+                Runtime runtime = Runtime.getRuntime();
+                 Process p = runtime.exec("traceroute www.baidu.com");
+                p.waitFor();
+                BufferedInputStream bis = new BufferedInputStream(p.getInputStream());
+                ByteArrayOutputStream buf = new ByteArrayOutputStream();
+                int result = bis.read();
+                while(result != -1) {
+                    buf.write((byte) result);
+                    result = bis.read();
+                }
+                final String str = buf.toString();
+                LogUtils.d(str);
+                runtime = null;
+                p.destroy();
+                p=null;
+
+            }
+        }).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe();
+        return false;
     }
 }

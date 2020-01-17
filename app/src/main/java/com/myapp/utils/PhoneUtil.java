@@ -191,6 +191,7 @@ public class PhoneUtil {
                 try {
                     ShortNumberInfo shortNumberInfo = ShortNumberInfo.getInstance();
                     flag=shortNumberInfo.isValidShortNumber(phoneNumber);
+
                 }catch (Exception e1){}
             }
         } catch (Exception e) {
@@ -249,5 +250,16 @@ public class PhoneUtil {
             return "";
         }
 
+    }
+
+    public static String getCountryCode(String number) {
+        String code = null;
+        try {
+            Phonenumber.PhoneNumber phoneNumber =phoneNumberUtil.parse(number,"1");
+            code=phoneNumberUtil.getRegionCodeForNumber(phoneNumber);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return code;
     }
 }

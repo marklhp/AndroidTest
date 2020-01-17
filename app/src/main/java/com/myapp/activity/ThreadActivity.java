@@ -44,7 +44,7 @@ public class ThreadActivity extends BaseActivity<ActivityThreadBinding> implemen
 
                     }
                 });
-                LogUtils.d("thread状态"+thread.isAlive());
+                LogUtils.d("thread状态"+thread.isAlive()+"--"+thread.getPriority());
                 thread.start();
                 LogUtils.d("thread状态"+thread.isAlive());
                 break;
@@ -90,5 +90,6 @@ public class ThreadActivity extends BaseActivity<ActivityThreadBinding> implemen
             LogUtils.d("线程总数"+Thread.getAllStackTraces().size());
         }
         finalI++;
+        LogUtils.d("截止时间是我们定的，");
     }
 }

@@ -10,10 +10,9 @@ import android.media.AudioManager;
 import android.os.Build;
 import android.os.SystemClock;
 import android.os.Vibrator;
+import android.util.Log;
 
 import com.myapp.App;
-
-import org.linphone.mediastream.Log;
 
 import java.util.List;
 import java.util.Set;
@@ -28,7 +27,6 @@ import io.reactivex.schedulers.Schedulers;
 import static android.bluetooth.BluetoothDevice.BOND_BONDED;
 
 public class AudioManagerUtils {
-
     private BluetoothAdapter mBluetoothAdapter;
     private AudioManager mAudioManager = null;
     private static AudioManagerUtils audioManagerUtils;
@@ -85,35 +83,6 @@ public class AudioManagerUtils {
         mAudioManager.setMode( AudioManager.MODE_IN_COMMUNICATION);
     }
 
-    @SuppressLint("CheckResult")
-    public  void blueTooth(Consumer<Boolean> callBack){
-        final int[] num = {10};
-        Observable.create(new ObservableOnSubscribe<Boolean>() {
-            @Override
-            public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
-                if (mBluetoothAdapter.getProfileConnectionState(BluetoothProfile.HEADSET)
-                        != BluetoothProfile.STATE_DISCONNECTED){
-
-                    Set<BluetoothDevice> bondedDevices = mBluetoothAdapter.getBondedDevices();//返回一组表示已配对设备
-                    if (bondedDevices!=null) for (BluetoothDevice bondedDevice : bondedDevices) {
-                        if(bondedDevice.getBondState()==BOND_BONDED&&!mAudioManager.isBluetoothScoOn()){
-                            mAudioManager.setSpeakerphoneOn(false);
-                            mAudioManager.setBluetoothScoOn(true);
-                            mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
-                            mAudioManager.startBluetoothSco();
-                            emitter.onNext(isBluetoothScoOn());
-                            break;
-                        }
-                    }
-                }else {
-                    emitter.onNext(false);
-                }
-
-
-            }
-        }).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(callBack);
-    }
     public void stopBlueTooth(){
         mAudioManager.setMode(AudioManager.MODE_NORMAL);
         if (mAudioManager.isBluetoothScoOn()){
@@ -153,41 +122,14 @@ public class AudioManagerUtils {
                 AudioManager.FLAG_PLAY_SOUND | AudioManager.FLAG_SHOW_UI);
     }
 
-    @SuppressLint("CheckResult")
-    public void getBluetooth(Consumer<Boolean> consumer) {
-        Observable.create(new ObservableOnSubscribe<Boolean>() {
-            @Override
-            public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
-                if (mBluetoothAdapter.getProfileConnectionState(BluetoothProfile.HEADSET)
-                        != BluetoothProfile.STATE_DISCONNECTED){
 
-                    Set<BluetoothDevice> bondedDevices = mBluetoothAdapter.getBondedDevices();//返回一组表示已配对设备
-                    if (bondedDevices!=null) for (BluetoothDevice bondedDevice : bondedDevices) {
-                        if(bondedDevice.getBondState()==BOND_BONDED){
-                           LogUtils.d("打印蓝牙信息"+"-==-"+bondedDevice.getName()+"--"+bondedDevice.getAddress()+"==="+bondedDevice.getUuids()+"==="+
-                                   bondedDevice.getType()+"=="+bondedDevice.getBondState()
-                                   );
-                        }
-                    }
-                }else {
-                    emitter.onNext(false);
-                }
-
-
-            }
-        }).subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread()).subscribe(consumer);
-    }
 
     public boolean isBluetoothConnect(){
 
         return mBluetoothAdapter.getProfileConnectionState(BluetoothProfile.HEADSET) == BluetoothAdapter.STATE_CONNECTED;
     }
 
-    public void getBluetoothstate() {
-        LogUtils.d("打印蓝牙信息"+"-==-"+mBluetoothAdapter.isEnabled()
-        );
-    }
+
 
     public int getMode() {
         return mAudioManager.getMode();
@@ -204,10 +146,10 @@ public class AudioManagerUtils {
     }
 
     public synchronized void startRinging() {
-        mAudioManager.setSpeakerphoneOn(false);
-        mAudioManager.setMode(AudioManager.MODE_NORMAL);
-        //设置音频流类型
-        mAudioManager.requestAudioFocus(null, AudioManager.STREAM_RING, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE);
+//        mAudioManager.setSpeakerphoneOn(false);
+//        mAudioManager.setMode(AudioManager.MODE_NORMAL);
+//        //设置音频流类型
+//        mAudioManager.requestAudioFocus(null, AudioManager.STREAM_RING, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE);
         //设置震动
         if ((mAudioManager.getRingerMode() == AudioManager.RINGER_MODE_VIBRATE || mAudioManager.getRingerMode() == AudioManager.RINGER_MODE_NORMAL)
                 && mVibrator != null) {
@@ -229,10 +171,10 @@ public class AudioManagerUtils {
 
     public void setAudioManagerInCallMode() {
         if (mAudioManager.getMode() == AudioManager.MODE_IN_COMMUNICATION) {
-            Log.w("[AudioManager] already in MODE_IN_COMMUNICATION, skipping...");
+            android.util.Log.w("","[AudioManager] already in MODE_IN_COMMUNICATION, skipping...");
             return;
         }
-        Log.d("[AudioManager] Mode: MODE_IN_COMMUNICATION");
+        android.util.Log.d("","[AudioManager] Mode: MODE_IN_COMMUNICATION");
 
         mAudioManager.setMode(AudioManager.MODE_IN_COMMUNICATION);
     }
@@ -240,7 +182,7 @@ public class AudioManagerUtils {
     public void requestAudioFocus(int stream) {
         if (!mAudioFocused) {
             int res = mAudioManager.requestAudioFocus(null, stream, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_EXCLUSIVE);
-            Log.d("Audio focus requested: " + (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED ? "Granted" : "Denied"));
+            Log.d("","Audio focus requested: " + (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED ? "Granted" : "Denied"));
             if (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) mAudioFocused = true;
         }
     }
@@ -350,5 +292,9 @@ public class AudioManagerUtils {
 
     public boolean isUsingBluetoothAudioRoute() {
         return mBluetoothHeadset != null && mBluetoothHeadset.isAudioConnected(mBluetoothDevice) && isScoConnected;
+    }
+
+    public boolean isVolumeFixed() {
+        return mAudioManager.isVolumeFixed();
     }
 }

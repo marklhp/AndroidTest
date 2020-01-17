@@ -1,7 +1,5 @@
 package com.myapp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -16,7 +14,8 @@ import com.myapp.base.BaseActivity;
 import com.myapp.databinding.ActivityMiePingBinding;
 import com.myapp.utils.LogUtils;
 
-import org.linphone.mediastream.Log;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MiePingActivity extends BaseActivity<ActivityMiePingBinding> implements SensorEventListener {
     private SensorManager mSensorManager;
@@ -38,6 +37,14 @@ public class MiePingActivity extends BaseActivity<ActivityMiePingBinding> implem
         mSensorManager = (SensorManager) App.context.getSystemService(Context.SENSOR_SERVICE);
         mProximity = mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
         enableProximitySensing(true);
+        List<Sensor> sensorList;
+// 实例化传感器管理者
+// 得到设置支持的所有传感器的List
+        sensorList = mSensorManager.getSensorList(Sensor.TYPE_ALL);
+        List<String> sensorNameList = new ArrayList<String>();
+        for (Sensor sensor : sensorList) {
+            LogUtils.d("打印所有传感器"+ sensor.getName()+"---"+sensor.getType()+"------"+sensor.getVendor());
+        }
     }
 
     @Override
@@ -71,11 +78,11 @@ public class MiePingActivity extends BaseActivity<ActivityMiePingBinding> implem
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        if (event.timestamp == 0) return;
+//        if (event.timestamp == 0) return;
         if (isProximitySensorNearby(event)) {
             if (!mProximityWakelock.isHeld()) {
                 mProximityWakelock.acquire();
-                LogUtils.d("锁定");
+//                LogUtils.d("锁定");
             }
         } else {
             if (mProximityWakelock.isHeld()) {
@@ -86,7 +93,7 @@ public class MiePingActivity extends BaseActivity<ActivityMiePingBinding> implem
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
+        LogUtils.d("打印所有传感0器"+ sensor.getName());
     }
 
     public static Boolean isProximitySensorNearby(final SensorEvent event) {
@@ -101,5 +108,11 @@ public class MiePingActivity extends BaseActivity<ActivityMiePingBinding> implem
             threshold = maxDistance;
         }
         return distanceInCm < threshold;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogUtils.d("打印声明周期onPause");
     }
 }

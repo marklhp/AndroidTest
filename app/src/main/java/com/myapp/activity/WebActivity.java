@@ -11,6 +11,7 @@ import android.webkit.WebViewClient;
 
 import com.myapp.R;
 import com.myapp.base.BaseActivity;
+import com.myapp.customview.ProgressWebView;
 import com.myapp.databinding.ActivityWebBinding;
 import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.LogUtils;
@@ -38,7 +39,6 @@ public class WebActivity extends BaseActivity<ActivityWebBinding> implements Vie
 
 
 
-    private WebView mWebView;
 
 
 
@@ -46,16 +46,16 @@ public class WebActivity extends BaseActivity<ActivityWebBinding> implements Vie
 
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebView() {
-        this.mWebView = new WebView(this);
-        this.mWebView.getSettings().setJavaScriptEnabled(true);
+
+
+        binding.flView.getSettings().setJavaScriptEnabled(true);
 //        this.mWebView.getSettings().setCacheMode(LOAD_NO_CACHE);
 //        this.mWebView.getSettings().setUseWideViewPort(true);
 //        this.mWebView.getSettings().setLoadWithOverviewMode(true);
 //        this.mWebView.getSettings().setDomStorageEnabled(true);
 //        this.mWebView.getSettings().setBuiltInZoomControls(true);
 
-        this.mWebView.addJavascriptInterface(this, "Android");
-        binding.flView.addView(mWebView);
+        binding.flView.addJavascriptInterface(this, "Android");
     }
 
 
@@ -84,6 +84,7 @@ public class WebActivity extends BaseActivity<ActivityWebBinding> implements Vie
                 binding.url2.setTextColor(getResources().getColor(android.R.color.holo_orange_light));
                 break;
         }
-        mWebView.loadUrl(url);
+        url="https://accounts.google.com/signin/v2/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F&csig=AF-SEnYKj7IhH1gJw6ve%3A1578992372&flowName=GlifWebSignIn&flowEntry=AddSession";
+        binding.flView.loadUrl(url);
     }
 }

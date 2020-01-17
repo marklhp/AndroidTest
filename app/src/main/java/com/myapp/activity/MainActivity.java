@@ -9,8 +9,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
@@ -26,12 +28,15 @@ import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
 import com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity;
 import com.myapp.receiver.KeepAliveReceiver;
 import com.myapp.service.ServiceActivity;
+import com.myapp.utils.AudioManagerUtils;
+import com.myapp.utils.DeviceUtil;
 import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.DivideUtils;
 import com.myapp.utils.LogUtils;
 import com.myapp.utils.PermissionUtil;
 import com.myapp.utils.SDCardUtils;
 import com.myapp.utils.WifiManage;
+import com.myapp.vpn.ToyVpnClient;
 
 import java.util.HashMap;
 import java.util.List;
@@ -45,7 +50,7 @@ import io.reactivex.functions.Consumer;
 public class MainActivity extends Activity implements View.OnClickListener {
     ActivityMainBinding binding;
     Thread thread;
-    int num=0;
+    int num = 0;
     private IntentFilter mKeepAliveIntentFilter;
 
     @Override
@@ -58,6 +63,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         observableInt.set(R.mipmap.ic_launcher);
         binding.setSrc(observableInt);
         initData();
+        LogUtils.d("音频是否可以调整"+AudioManagerUtils.getIns().isVolumeFixed());
 
     }
 
@@ -65,7 +71,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         DeviceUtils.getIns().blueTooth(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
-                LogUtils.d("打印连接数量"+integer);
+                LogUtils.d("打印连接数量" + integer);
             }
         });
     }
@@ -73,6 +79,33 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.jumpto_application_detail:
+                try {
+                    Intent intent = new Intent();
+                    intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    intent.setData(Uri.fromParts("package", getPackageName(), null));
+                    startActivity(intent);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                break;
+            case R.id.vpn_activity2:
+                skip(TestVpnActivity.class);
+
+                break;
+            case R.id.vpn_activity:
+                skip(ToyVpnClient.class);
+                break;
+            case R.id.trace_route:
+                skip(TraceActivity.class);
+                break;
+                case R.id.fragmenttabhost:
+                skip(FragmentSwitchActivity.class);
+                break;
+
+            case R.id.file_check:
+                skip(FileCheckActivity.class);
+                break;
             case R.id.liang_ping2:
                 Intent newIntent = new Intent(App.context, KeepAliveReceiver.class);
                 PendingIntent keepAlivePendingIntent = PendingIntent.getBroadcast(App.context, 0, newIntent, PendingIntent.FLAG_ONE_SHOT);
@@ -83,9 +116,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.liang_ping:
                 mKeepAliveIntentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
                 mKeepAliveIntentFilter.addAction(Intent.ACTION_SCREEN_OFF);
-                registerReceiver(new KeepAliveReceiver(),mKeepAliveIntentFilter);
+                registerReceiver(new KeepAliveReceiver(), mKeepAliveIntentFilter);
                 break;
-                case R.id.net_state:
+            case R.id.net_state:
                 skip(NetStateActivity.class);
                 break;
 
@@ -98,7 +131,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 DeviceUtils.connectIsAvailable(new Consumer<Boolean>() {
                     @Override
                     public void accept(Boolean aBoolean) throws Exception {
-                        Toast.makeText(App.context,"网络是否可以用"+aBoolean,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(App.context, "网络是否可以用" + aBoolean, Toast.LENGTH_SHORT).show();
                     }
                 });
                 PermissionUtil.reqPermission(this, new IRequestPermission() {
@@ -107,9 +140,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         thread = new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                while (true){
+                                while (true) {
                                     SystemClock.sleep(500);
-                                    SDCardUtils.saveLogInfo2File(System.currentTimeMillis()+"",num+"");
+                                    SDCardUtils.saveLogInfo2File(System.currentTimeMillis() + "", num + "");
                                     num++;
                                 }
                             }
@@ -126,19 +159,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.thread_id:
                 skip(ThreadActivity.class);
-                LogUtils.d("打印网络类型"+DeviceUtils.connectTypeIsWifi());
+                LogUtils.d("打印网络类型" + DeviceUtils.connectTypeIsWifi());
                 break;
-                case R.id.flow_id:
+            case R.id.flow_id:
                 skip(TrafficStatsActivity.class);
-                    try {
-                        List<WifiInfo> read = WifiManage.Read();
-                        for (int i = 0; i < read.size(); i++) {
-                            LogUtils.d("打印Wi-Fi信息"+read.get(i).toString());
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                try {
+                    List<WifiInfo> read = WifiManage.Read();
+                    for (int i = 0; i < read.size(); i++) {
+                        LogUtils.d("打印Wi-Fi信息" + read.get(i).toString());
                     }
-                    break;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                break;
 
 
             case R.id.android_bg:

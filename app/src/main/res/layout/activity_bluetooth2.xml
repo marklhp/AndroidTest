@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.Bluetooth2Activity">
+        <TextView
+            android:id="@+id/bluetooth21"
+            style="@style/MyTextviewStyle"
+            android:text="bluetooth21"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth22"
+            style="@style/MyTextviewStyle"
+            android:text="蓝牙"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth23"
+            style="@style/MyTextviewStyle"
+            android:text="听筒"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/bluetooth24"
+            style="@style/MyTextviewStyle"
+            android:text="免提"
+            android:onClick="@{click}"
+            />
+    </LinearLayout>
+</layout>

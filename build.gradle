@@ -26,6 +26,9 @@ allprojects {
             name 'Sonatype SNAPSHOTs'
             url 'https://oss.sonatype.org/content/repositories/snapshots/'
         }
+        maven{
+            url 'http://211.100.75.201:8081/repository/ajsip-android/'
+        }
     }
 }
 

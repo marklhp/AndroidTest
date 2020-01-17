@@ -21,10 +21,50 @@
             >
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="跳转到当前应用的详情页面"
+                android:onClick="@{click}"
+                android:id="@+id/jumpto_application_detail"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="vpn2"
+                android:onClick="@{click}"
+                android:id="@+id/vpn_activity2"
+                />
+
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="vpn"
+                android:onClick="@{click}"
+                android:id="@+id/vpn_activity"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="traceroute"
+                android:onClick="@{click}"
+                android:id="@+id/trace_route"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="FragmentTabHost使用"
+                android:onClick="@{click}"
+                android:id="@+id/fragmenttabhost"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="判断文件路径"
+                android:onClick="@{click}"
+                android:id="@+id/file_check"
+                />
+
+
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="设备亮屏监听2"
                 android:onClick="@{click}"
                 android:id="@+id/liang_ping2"
                 />
+
             <TextView
                 style="@style/MyTextviewStyle"
                 android:text="设备亮屏监听"

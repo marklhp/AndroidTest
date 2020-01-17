@@ -7,7 +7,10 @@ import java.util.HashMap;
 public class FormatNumber {
 
     public static void main(String[] args) {
-        System.out.println(formatNumber("+8617778115595"));
+        System.out.println(formatNumber2("+8617778115595"));
+        System.out.println(formatNumber2("+8601010086"));
+        System.out.println(formatNumber2("+12028710422"));
+        System.out.println(formatNumber2("+1506"));
         HashMap<String,Object> map=new HashMap<>();
         map.put("ewjjl",333);
         map.put("jjlj","3322");
@@ -23,16 +26,8 @@ public class FormatNumber {
      * @return
      */
     public static String formatNumber2(String number) {
-        String format = PhoneUtil.format(number);//格式化号码
-        if (!format.equals("")) {//规范号码直接进行格式化处理，然后输出
-            return format;
-        } else if (!format.equals(PhoneUtil.format("+86" + number))) {//不规范号码添加+86再进行格式化处理，然后输出
-            return number;
-        } else if (!format.equals(PhoneUtil.format("+" + number))) { //看三星S10对不规范号码加+再进行格式化处理，然后输出
-            return number;
-        } else {
-            return "";
-        }
+        String format = PhoneUtil.getCountryCode(number);//格式化号码
+       return format;
     }
 
     /**

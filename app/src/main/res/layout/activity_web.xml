@@ -29,12 +29,12 @@
             android:padding="2dp"
             android:layout_margin="2dp"
             />
-        <FrameLayout
+        <com.myapp.customview.ProgressWebView
             android:id="@+id/fl_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".activity.WebActivity">
 
-        </FrameLayout>
+        </com.myapp.customview.ProgressWebView>
     </LinearLayout>
 </layout>

@@ -11,11 +11,11 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 
-import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.base.BaseActivity;
 import com.myapp.databinding.ActivityLinphoneBinding;
+import com.myapp.linphone.LinphoneManager;
 import com.myapp.linphone.SipUtils;
 import com.myapp.utils.AudioManagerUtils;
 
@@ -30,6 +30,7 @@ import org.linphone.core.ConfiguringState;
 import org.linphone.core.Content;
 import org.linphone.core.Core;
 import org.linphone.core.CoreException;
+import org.linphone.core.CoreListener;
 import org.linphone.core.CoreListenerStub;
 import org.linphone.core.EcCalibratorStatus;
 import org.linphone.core.Event;
@@ -55,7 +56,13 @@ import static android.media.AudioManager.STREAM_VOICE_CALL;
 
 public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> implements View.OnClickListener {
 
-    Call call;
+    String username="69801018931";
+    String password="102011203496#";
+    String displayname="3473291022";
+    String domain="cxc32.italkbb.com:10000";
+    //域名配置详细查看沙方洲发的"用户获取sip号码流程文档"
+    private String userAgentName = "iTalkFamilyCloud_android_";
+    private String userAgentversion = "1.0"+";"+"con:"+"wi"+",biz:fc,bid:"+10;
     @Override
     protected void initView() {
         binding.setClick(this);
@@ -74,40 +81,31 @@ public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> impl
         switch (v.getId()){
             case R.id.linphone_init:
                 long tempTime=System.currentTimeMillis();
-                SipUtils.init(coreListenerStub);
                 Log.d("时间差", (System.currentTimeMillis()-tempTime)+"");
+                SipUtils.init(coreListener);
                 break;
             case R.id.linphone_register:
                 SipUtils.registerSip();
 
                 break;
+            case R.id.linphone_xiaohui:
+//                LinphoneManager.signOut();
+                SipUtils.setAccountEnabled(0,false);
+                break;
             case R.id.linphone_call:
-                SipUtils.call();
+                SipUtils.setAccountEnabled(0,true);
                 break;
             case R.id.linphone_accept:
-                SipUtils.accept(App.context);
                 break;
             case R.id.linphone_jilu:
-//                mode=AudioManagerUtils.getIns().getMode();
-//               isSpecOn= AudioManagerUtils.getIns().isSpeakerphoneOn();
-                AudioManagerUtils.getIns().zhenling();
                 break;
             case R.id.linphone_huifu:
-                AudioManagerUtils.getIns().huifu(mode,isSpecOn);
                 break;
             case  R.id.linphone_tingtong:
-                AudioManagerUtils.getIns().tingTong();
                 break;
             case  R.id.linphone_mianti:
-                AudioManagerUtils.getIns().handFree();
                 break;
             case R.id.linphone_lanya:
-                AudioManagerUtils.getIns().blueTooth(new Consumer<Boolean>() {
-                    @Override
-                    public void accept(Boolean aBoolean) throws Exception {
-
-                    }
-                });
                 break;
         }
     }
@@ -121,80 +119,95 @@ public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> impl
         super.onDestroy();
     }
 
-    CoreListenerStub coreListenerStub=new CoreListenerStub(){
-        @Override
-        public void onCallCreated(Core lc, Call call) {
-            super.onCallCreated(lc, call);
-            Log.d("linphone_33===","==="+call.getUserData());
-        }
 
-        @Override
-        public void onCallStateChanged(Core lc, Call call, Call.State cstate, String message) {
-            super.onCallStateChanged(lc, call, cstate, message);
-            Log.d("linphone_34===", cstate.name()+"==="+message+"===="+AudioManagerUtils.getIns().getRingerMode());
-//            if (cstate== Call.State.IncomingReceived){
-//                AudioManagerUtils.getIns().startRinging();
-//            }else if (AudioManagerUtils.getIns().isRinging){
-//                AudioManagerUtils.getIns().stopRinging();
-//            }
-//
-//            if (cstate==Call.State.Connected){//来电音频调试
-//                if (lc.getCallsNb() == 1) {
-//                    //It is for incoming calls, because outgoing calls enter MODE_IN_COMMUNICATION immediately when they start.
-//                    //However, incoming call first use the MODE_RINGING to play the local ring.
-//                    if (call.getDir() == Call.Dir.Incoming) {
-//                        AudioManagerUtils.getIns().setAudioManagerInCallMode();
-//                        //mAudioManager.abandonAudioFocus(null);
-//                        AudioManagerUtils.getIns().requestAudioFocus(STREAM_VOICE_CALL);
-//                    }
-//                }
-//                AudioManagerUtils.getIns().adjustVolume(0);
-//            }
-//
-//            if (cstate == Call.State.End || cstate == Call.State.Error) {
-//                if (lc.getCallsNb() == 0) {
-//                    if (AudioManagerUtils.getIns().mAudioFocused) {
-//                        int res = AudioManagerUtils.getIns().abandonAudioFocus();
-//                        org.linphone.mediastream.Log.d("Audio focus released a bit later: " + (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED ? "Granted" : "Denied"));
-//                        AudioManagerUtils.getIns().mAudioFocused = false;
-//                    }
-//
-//                    TelephonyManager tm = (TelephonyManager) App.context.getSystemService(Context.TELEPHONY_SERVICE);
-//                    if (tm.getCallState() == TelephonyManager.CALL_STATE_IDLE) {
-//                        org.linphone.mediastream.Log.d("---AudioManager: back to MODE_NORMAL");
-//                        AudioManagerUtils.getIns().setMode(AudioManager.MODE_NORMAL);
-//                        org.linphone.mediastream.Log.d("All call terminated, routing back to earpiece");
-//                        AudioManagerUtils.getIns().routeAudioToReceiver();
-//                    }
-//                }
-//            }
-//
-//            if (cstate == Call.State.OutgoingInit) {
-//                //Enter the MODE_IN_COMMUNICATION mode as soon as possible, so that ringback
-//                //is heard normally in earpiece or bluetooth receiver.
-//                AudioManagerUtils.getIns().requestAudioFocus(STREAM_VOICE_CALL);
-//                AudioManagerUtils.getIns().blueTooth(new Consumer<Boolean>() {
-//                    @Override
-//                    public void accept(Boolean aBoolean) throws Exception {
-//
-//                    }
-//                });
-//            }
-//
-//            if (cstate == Call.State.StreamsRunning) {
-//                AudioManagerUtils.getIns().blueTooth(new Consumer<Boolean>() {
-//                    @Override
-//                    public void accept(Boolean aBoolean) throws Exception {
-//
-//                    }
-//                });
-//            }
-        }
 
+    CoreListenerStub coreListener = new CoreListenerStub() {
+        @Override
+        public void onGlobalStateChanged(Core lc, GlobalState gstate, String message) {
+            super.onGlobalStateChanged(lc, gstate, message);
+            Log.d("linphone_初始化状态=", gstate.name() + "===" + message+"---"+Thread.currentThread().getName());
+            /**
+             * 初始化成功
+             */
+            if (gstate == GlobalState.On) {
+                SipUtils.registerSip();
+
+
+            }
+        }
         @Override
         public void onRegistrationStateChanged(Core lc, ProxyConfig cfg, RegistrationState cstate, String message) {
             super.onRegistrationStateChanged(lc, cfg, cstate, message);
-            Log.d("linphone_35===", cstate.toString()+"==="+message);
+            Log.d("linphone_注册状态=", cstate.toString() + "===" + message);
+            //注册成功
+            if (cstate==RegistrationState.Ok){
+                LinphoneManager.getInstance(LinphoneActivity.this);
+                try {
+                    LinphoneManager.getInstance().initLiblinphone(lc);
+                    LinphoneManager.initLoggingService(true,true,getString(R.string.app_name));
+                } catch (CoreException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        @Override
+        public void onCallStateChanged(Core lc, Call call, Call.State state, String message) {
+            super.onCallStateChanged(lc, call, state, message);
+            Log.d("linphone_通话状态=", state.name() + "===" + message);
+            if (true) return;
+//            //通话状态
+            if (state==Call.State.IncomingReceived){
+                AudioManagerUtils.getIns().startRinging();
+//                AudioManagerUtils.getIns().blueTooth(new Consumer<Boolean>() {
+//                    @Override
+//                    public void accept(Boolean aBoolean) throws Exception {
+//
+//                    }
+//                });
+            }else if (AudioManagerUtils.getIns().isRinging){
+                AudioManagerUtils.getIns().stopRinging();
+            }
+
+            if (state==Call.State.Connected){//来电音频调试
+                if (lc.getCallsNb() == 1) {
+                    //It is for incoming calls, because outgoing calls enter MODE_IN_COMMUNICATION immediately when they start.
+                    //However, incoming call first use the MODE_RINGING to play the local ring.
+                    if (call.getDir() == Call.Dir.Incoming) {
+                        AudioManagerUtils.getIns().setAudioManagerInCallMode();
+                        //mAudioManager.abandonAudioFocus(null);
+                        AudioManagerUtils.getIns().requestAudioFocus(STREAM_VOICE_CALL);
+                    }
+                }
+                AudioManagerUtils.getIns().adjustVolume(0);
+            }
+
+            if (state == Call.State.End || state == Call.State.Error) {
+                if (lc.getCallsNb() == 0) {
+                    if (AudioManagerUtils.getIns().mAudioFocused) {
+                        int res = AudioManagerUtils.getIns().abandonAudioFocus();
+                        org.linphone.mediastream.Log.d("Audio focus released a bit later: " + (res == AudioManager.AUDIOFOCUS_REQUEST_GRANTED ? "Granted" : "Denied"));
+                        AudioManagerUtils.getIns().mAudioFocused = false;
+                    }
+
+                    TelephonyManager tm = (TelephonyManager) App.context.getSystemService(Context.TELEPHONY_SERVICE);
+                    if (tm!=null&&tm.getCallState() == TelephonyManager.CALL_STATE_IDLE) {
+                        org.linphone.mediastream.Log.d("---AudioManager: back to MODE_NORMAL");
+                        AudioManagerUtils.getIns().setMode(AudioManager.MODE_NORMAL);
+                        org.linphone.mediastream.Log.d("All call terminated, routing back to earpiece");
+                        AudioManagerUtils.getIns().routeAudioToReceiver();
+                    }
+                }
+            }
+
+            if (state == Call.State.OutgoingInit) {
+                //Enter the MODE_IN_COMMUNICATION mode as soon as possible, so that ringback
+                //is heard normally in earpiece or bluetooth receiver.
+                AudioManagerUtils.getIns().requestAudioFocus(STREAM_VOICE_CALL);
+            }
+
+            if (state == Call.State.StreamsRunning) {
+            }
         }
 
         @Override
@@ -203,11 +216,7 @@ public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> impl
             Log.d("linphone_36===", lc.getUserAgent()+"--"+status.toString()+"==="+message);
         }
 
-        @Override
-        public void onGlobalStateChanged(Core lc, GlobalState gstate, String message) {
-            super.onGlobalStateChanged(lc, gstate, message);
-            Log.d("linphone_37===", lc.getUserAgent()+"--"+gstate.toString()+"==="+message);
-        }
+
 
         @Override
         public void onTransferStateChanged(Core lc, Call transfered, Call.State newCallState) {
@@ -388,5 +397,6 @@ public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> impl
             super.onDtmfReceived(lc, call, dtmf);
             Log.d("linphone_31===", lc.getUserAgent());
         }
+
     };
 }

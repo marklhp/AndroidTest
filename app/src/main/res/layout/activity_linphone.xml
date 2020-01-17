@@ -38,6 +38,12 @@
                 android:onClick="@{click}"
                 />
             <TextView
+                android:id="@+id/linphone_xiaohui"
+                style="@style/MyTextviewStyle"
+                android:hint="销毁"
+                android:onClick="@{click}"
+                />
+            <TextView
                 android:id="@+id/linphone_call"
                 style="@style/MyTextviewStyle"
                 android:hint="打电话"

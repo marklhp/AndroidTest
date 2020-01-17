@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.myapp"
         minSdkVersion 21
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -24,12 +24,16 @@ android {
             path file('CMakeLists.txt')
         }
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 
 
 }
 repositories { flatDir { dirs 'libs' } }
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
     //noinspection GradleCompatible
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -75,9 +79,9 @@ dependencies {
     //    implementation "android.arch.lifecycle:extensions:1.1.1"
     //    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
     //    implementation "android.arch.persistence.room:runtime:1.1.1"
-    implementation(name: 'liblinphone-sdk', ext: 'aar')
     implementation 'com.googlecode.libphonenumber:prefixmapper:2.113'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.7'
     implementation 'com.googlecode.libphonenumber:carrier:1.103'
     implementation 'com.googlecode.libphonenumber:geocoder:2.113'
+    implementation 'com.google.android.gms:play-services-fitness:18.0.0'
 }
