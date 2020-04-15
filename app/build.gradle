@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 android {
-    compileSdkVersion 29
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.myapp"
         minSdkVersion 21
-        targetSdkVersion 29
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -33,7 +34,7 @@ android {
 }
 repositories { flatDir { dirs 'libs' } }
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
     //noinspection GradleCompatible
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -48,8 +49,8 @@ dependencies {
     implementation 'com.google.zxing:core:3.3.0'
     implementation 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
     implementation 'cn.bingoogolapple:bga-zxing:1.1.9@aar'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
-    implementation 'com.squareup.okio:okio:2.1.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.2.1'
+    implementation 'com.squareup.okio:okio:2.2.2'
     implementation 'com.google.android.material:material:1.1.0-alpha01'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.4'
@@ -67,6 +68,7 @@ dependencies {
     //    room.testing = "androidx.room:room-testing:$versions.room"
     implementation 'androidx.room:room-runtime:2.1.0-alpha03'
     implementation 'com.google.android.gms:play-services-plus:17.0.0'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
     annotationProcessor "androidx.room:room-compiler:2.1.0-alpha03"
     implementation 'androidx.room:room-rxjava2:2.1.0-alpha03'
     implementation 'androidx.room:room-guava:2.1.0-alpha03'
@@ -84,4 +86,5 @@ dependencies {
     implementation 'com.googlecode.libphonenumber:carrier:1.103'
     implementation 'com.googlecode.libphonenumber:geocoder:2.113'
     implementation 'com.google.android.gms:play-services-fitness:18.0.0'
+    implementation files('libs/pinyin4j-2.5.0.jar')
 }

@@ -38,5 +38,17 @@
             android:text="ExecutorService"
             android:onClick="@{click}"
             />
+        <TextView
+            android:id="@+id/thread_id5"
+            style="@style/MyTextviewStyle"
+            android:text="运行线程"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/thread_id6"
+            style="@style/MyTextviewStyle"
+            android:text="关闭线程池"
+            android:onClick="@{click}"
+            />
     </LinearLayout>
 </layout>

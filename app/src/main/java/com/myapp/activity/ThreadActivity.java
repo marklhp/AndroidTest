@@ -11,11 +11,13 @@ import com.myapp.R;
 import com.myapp.base.BaseActivity;
 import com.myapp.databinding.ActivityThreadBinding;
 import com.myapp.utils.LogUtils;
+import com.myapp.utils.ThreadPoolUtil;
 
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.ThreadFactory;
 import java.util.function.Consumer;
 
@@ -80,6 +82,12 @@ public class ThreadActivity extends BaseActivity<ActivityThreadBinding> implemen
                 }
                 LogUtils.d("打印数据"+COUNT_BITS+"===="+Integer.MAX_VALUE+"===="+Integer.SIZE+"----"+CAPACITY+"----"+num);
                 break;
+            case R.id.thread_id5:
+                getExecute();
+                break;
+            case R.id.thread_id6:
+                ThreadPoolUtil.shutdown();
+                break;
 
         }
     }
@@ -91,5 +99,18 @@ public class ThreadActivity extends BaseActivity<ActivityThreadBinding> implemen
         }
         finalI++;
         LogUtils.d("截止时间是我们定的，");
+    }
+    public void getExecute(){
+        Future<?> submit = ThreadPoolUtil.getSingleThread().submit(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    SystemClock.sleep(1000);
+                    LogUtils.d("打印时间值"+System.currentTimeMillis());
+                }
+            }
+        });
+
+
     }
 }

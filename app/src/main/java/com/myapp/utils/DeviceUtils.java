@@ -1,6 +1,7 @@
 package com.myapp.utils;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothProfile;
@@ -20,14 +21,9 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.common.Scopes;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.fitness.Fitness;
 import com.myapp.App;
 
+import java.util.List;
 import java.util.Set;
 
 import io.reactivex.Observable;
@@ -137,40 +133,83 @@ public class DeviceUtils {
     /**
      * 判断Google服务是否可用
      */
-    public void checkisSupportGoogleServices() {
-        GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
-        //是否支持Google服务
-        int resultCode = googleApiAvailability.isGooglePlayServicesAvailable(getMyContext());
-        if (resultCode == ConnectionResult.SUCCESS) {
-            GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(getMyContext())
-                    .addApi(Fitness.HISTORY_API)
-                    .addScope(new Scope(Scopes.FITNESS_ACTIVITY_READ_WRITE))
-                    .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
-                        @Override
-                        public void onConnected(@Nullable Bundle arg0) {
-                            LogUtils.d("判断google服务"+arg0);
-                        }
-
-                        @Override
-                        public void onConnectionSuspended(int arg0) {
-                        }
-
-                    })
-                    .addOnConnectionFailedListener(
-                            new GoogleApiClient.OnConnectionFailedListener() {
-                                @Override
-                                public void onConnectionFailed(@NonNull ConnectionResult arg0) {
-                                    LogUtils.d("判断google服务addOnConnectionFailedListener"+arg0.getErrorMessage());
-                                }
-                            }).build();
-            mGoogleApiClient.connect();
-        } else {
-            LogUtils.d("判断google服务===="+false);
-        }
-    }
+//    public void checkisSupportGoogleServices() {
+//        GoogleApiAvailability googleApiAvailability = GoogleApiAvailability.getInstance();
+//        //是否支持Google服务
+//        int resultCode = googleApiAvailability.isGooglePlayServicesAvailable(getMyContext());
+//        if (resultCode == ConnectionResult.SUCCESS) {
+//            GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(getMyContext())
+//                    .addApi(Fitness.HISTORY_API)
+//                    .addScope(new Scope(Scopes.FITNESS_ACTIVITY_READ_WRITE))
+//                    .addConnectionCallbacks(new GoogleApiClient.ConnectionCallbacks() {
+//                        @Override
+//                        public void onConnected(@Nullable Bundle arg0) {
+//                            LogUtils.d("判断google服务"+arg0);
+//                        }
+//
+//                        @Override
+//                        public void onConnectionSuspended(int arg0) {
+//                        }
+//
+//                    })
+//                    .addOnConnectionFailedListener(
+//                            new GoogleApiClient.OnConnectionFailedListener() {
+//                                @Override
+//                                public void onConnectionFailed(@NonNull ConnectionResult arg0) {
+//                                    LogUtils.d("判断google服务addOnConnectionFailedListener"+arg0.getErrorMessage());
+//                                }
+//                            }).build();
+//            mGoogleApiClient.connect();
+//        } else {
+//            LogUtils.d("判断google服务===="+false);
+//        }
+//    }
 
 
     private Context getMyContext() {
         return App.context;
+    }
+
+    /** 判断应用是否在运行
+* @param
+* @return
+        */
+    public static boolean isRun(String packageName){
+        ActivityManager am = (ActivityManager)App.context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningTaskInfo> list = am.getRunningTasks(100);
+        boolean isAppRunning = false;
+        //100表示取的最大的任务数，info.topActivity表示当前正在运行的Activity，info.baseActivity表系统后台有此进程在运行
+        for (ActivityManager.RunningTaskInfo info : list) {
+            if (info.topActivity.getPackageName().equals(packageName) || info.baseActivity.getPackageName().equals(packageName)) {
+                isAppRunning = true;
+                Log.i("ActivityService isRun()",info.topActivity.getPackageName() + " info.baseActivity.getPackageName()="+info.baseActivity.getPackageName());
+                break;
+            }
+        }
+        Log.i("ActivityService isRun()", "com.ad 程序  ...isAppRunning......"+isAppRunning);
+        return isAppRunning;
+    }
+
+
+
+    /**
+     * 判断应用是否已经启动
+     *
+     * @param context   上下文对象
+     * @param packageName 要判断应用的包名
+     * @return boolean
+     */
+    public static boolean isAppAlive(Context context, String packageName) {
+        ActivityManager activityManager =
+                (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> processInfos
+                = activityManager.getRunningAppProcesses();
+        for (int i = 0; i < processInfos.size(); i++) {
+            if (processInfos.get(i).processName.equals(packageName)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

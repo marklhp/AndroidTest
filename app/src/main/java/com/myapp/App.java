@@ -2,12 +2,16 @@ package com.myapp;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
+import android.text.TextUtils;
 
 import androidx.annotation.NonNull;
 import androidx.multidex.MultiDexApplication;
 
-import com.myapp.utils.ClipboardUtils;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.myapp.utils.LogUtils;
 import com.myapp.utils.glide.DelayedUIUtils;
 import com.scwang.smartrefresh.header.WaterDropHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -49,7 +53,7 @@ public class App extends MultiDexApplication {
         context = this;
         application = this;
         DelayedUIUtils.checkTime();
-        Log.d("打印provider数据1","=====");
+
     }
 
 }

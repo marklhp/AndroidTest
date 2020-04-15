@@ -36,7 +36,7 @@ public class WebSocketActivity extends Activity implements View.OnClickListener 
             public void run() {
                 Log.d("线程1",Thread.currentThread().getName().toString());
                 try {
-                    webSocketClient = new WebSocketClient(new URI("ws://172.18.44.23:2017"),new Draft_6455()) {
+                    webSocketClient = new WebSocketClient(new URI("mtalk.google.com:5228"),new Draft_6455()) {
                         @Override
                         public void onOpen(ServerHandshake handshakedata) {
                             Log.d("picher_log", "打开通道" + handshakedata.getHttpStatus());
@@ -68,7 +68,7 @@ public class WebSocketActivity extends Activity implements View.OnClickListener 
 
                         @Override
                         public void onError(Exception ex) {
-                            Log.d("picher_log", "链接错误");
+                            Log.d("picher_log", "链接错误"+ex.getMessage());
                         }
                     };
                     webSocketClient.connect();

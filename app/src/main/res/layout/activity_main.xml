@@ -14,11 +14,79 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <LinearLayout
+        <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
             >
+
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="sendmessage"
+                android:onClick="@{click}"
+                android:id="@+id/sendmessage"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="rxjava"
+                android:onClick="@{click}"
+                android:id="@+id/rxjava"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="内存使用情况"
+                android:onClick="@{click}"
+                android:id="@+id/memory_info"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="观察者模式"
+                android:onClick="@{click}"
+                android:id="@+id/observer_mode"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="获取系统联系人"
+                android:onClick="@{click}"
+                android:id="@+id/get_contact"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="flexbox换行"
+                android:onClick="@{click}"
+                android:id="@+id/flexbos_2222"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="应用信息"
+                android:onClick="@{click}"
+                android:id="@+id/applicationinfo"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="音频播放"
+                android:onClick="@{click}"
+                android:id="@+id/media_bofang"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="消息数据解析"
+                android:onClick="@{click}"
+                android:id="@+id/dataAnalySis"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="socket"
+                android:onClick="@{click}"
+                android:id="@+id/socket"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="加入白名单"
+                android:onClick="@{click}"
+                android:id="@+id/join_whitelist"
+                />
             <TextView
                 style="@style/MyTextviewStyle"
                 android:text="跳转到当前应用的详情页面"
@@ -371,7 +439,7 @@
                 android:onClick="@{click}"
                 android:id="@+id/recycler_nesting_recycler"
                 />
-        </LinearLayout>
+        </com.google.android.flexbox.FlexboxLayout>
     </ScrollView>
 
 </layout>

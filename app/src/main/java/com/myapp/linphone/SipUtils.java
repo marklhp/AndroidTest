@@ -157,7 +157,7 @@ public class SipUtils {
     public static void call(){
         try {
             if (!acceptCallIfIncomingPending(core)){
-                newOutgoingCall(core,"69802008619",null);
+                newOutgoingCall(core,"01116314400762",null);
             }
         } catch (CoreException e) {
             core.terminateCall(core.getCurrentCall());
@@ -296,5 +296,14 @@ public class SipUtils {
     }
     public static boolean isAccountEnabled(int n) {
         return getProxyConfig(n).registerEnabled();
+    }
+    public static int getAuths(){
+        return getLc().getAuthInfoList().length;
+    }
+
+    public static void removeAcount() {
+        getLc().clearAllAuthInfo();
+        getLc().clearProxyConfig();
+//        getLc().refreshRegisters();
     }
 }

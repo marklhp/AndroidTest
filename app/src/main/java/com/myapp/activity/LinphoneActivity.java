@@ -18,6 +18,8 @@ import com.myapp.databinding.ActivityLinphoneBinding;
 import com.myapp.linphone.LinphoneManager;
 import com.myapp.linphone.SipUtils;
 import com.myapp.utils.AudioManagerUtils;
+import com.myapp.utils.AutoDialNumber;
+import com.myapp.utils.LogUtils;
 
 import org.linphone.core.AuthInfo;
 import org.linphone.core.AuthMethod;
@@ -87,15 +89,16 @@ public class LinphoneActivity extends BaseActivity<ActivityLinphoneBinding> impl
             case R.id.linphone_register:
                 SipUtils.registerSip();
 
+
                 break;
             case R.id.linphone_xiaohui:
-//                LinphoneManager.signOut();
-                SipUtils.setAccountEnabled(0,false);
+
                 break;
             case R.id.linphone_call:
-                SipUtils.setAccountEnabled(0,true);
+                AutoDialNumber.autoDial();
                 break;
             case R.id.linphone_accept:
+                SipUtils.removeAcount();
                 break;
             case R.id.linphone_jilu:
                 break;

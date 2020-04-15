@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="click"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activity.WhiteListActivity">
+        <TextView
+            android:id="@+id/white_list_click1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/MyTextviewStyle"
+            android:text="点击获取所有应用信息"
+            android:onClick="@{click}"
+            />
+        <TextView
+            android:id="@+id/white_list_click2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/MyTextviewStyle"
+            android:text="取消"
+            android:onClick="@{click}"
+            />
+    </LinearLayout>
+</layout>

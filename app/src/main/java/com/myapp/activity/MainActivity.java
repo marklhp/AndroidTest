@@ -1,22 +1,34 @@
 package com.myapp.activity;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlarmManager;
+import android.app.Instrumentation;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.provider.Settings;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.gson.reflect.TypeToken;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.activity.fragment.FragmentActivity;
@@ -33,16 +45,25 @@ import com.myapp.utils.DeviceUtil;
 import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.DivideUtils;
 import com.myapp.utils.LogUtils;
+import com.myapp.utils.MemoryInfoUtils;
+import com.myapp.utils.MessageDataAnalysisUtils;
 import com.myapp.utils.PermissionUtil;
+import com.myapp.utils.PhoneContactsUtils;
 import com.myapp.utils.SDCardUtils;
+import com.myapp.utils.WhiteListUtils;
 import com.myapp.utils.WifiManage;
 import com.myapp.vpn.ToyVpnClient;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Observable;
+import java.util.concurrent.atomic.AtomicLong;
 
+import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ObservableInt;
+import androidx.recyclerview.widget.RecyclerView;
 
 import bean.WifiInfo;
 import io.reactivex.functions.Consumer;
@@ -63,8 +84,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         observableInt.set(R.mipmap.ic_launcher);
         binding.setSrc(observableInt);
         initData();
-        LogUtils.d("音频是否可以调整"+AudioManagerUtils.getIns().isVolumeFixed());
-
+        LogUtils.d("音频是否可以调整" + AudioManagerUtils.getIns().isVolumeFixed());
     }
 
     private void initData() {
@@ -74,18 +94,105 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 LogUtils.d("打印连接数量" + integer);
             }
         });
-    }
 
+
+        LogUtils.d("打印是否支持google服务=="+ GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(App.context));
+        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+            @Override
+            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                try {
+                    String firebase_push_token = null;
+                    boolean ispush = task.getException() == null && task.getResult() != null && !TextUtils.isEmpty(task.getResult().getToken());
+                    if (ispush) {
+                        firebase_push_token = task.getResult().getToken();
+                    } else {
+                    }
+                    if (!TextUtils.isEmpty(firebase_push_token)) {
+                        LogUtils.d("打印provider数据1=="+firebase_push_token);
+                    }
+                    LogUtils.d("打印provider数据==");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+    ArrayList<String> list=new ArrayList<>();
+    Instrumentation instrumentation=new Instrumentation();
+    AtomicLong atomicLong=new AtomicLong();
+    AtomicLong strSize=new AtomicLong();
+    String sz="2020-03-31 10:15:45.932 3948-14509/? D/SamsungAlarmManager: Cancel Alarm calling from uid:10218 pid :26234 / op:PendingIntent{51547: PendingIntentRecord{b79ed8b com.tencent.android.qqdownloader broadcastIntent}}";
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.sendmessage:
+
+                break;
+            case R.id.rxjava:
+                skip(RxjavaActivity.class);
+                break;
+            case R.id.memory_info:
+                MemoryInfoUtils.getMemoryInfo();
+                break;
+            case R.id.observer_mode:
+
+//                RecyclerView.Adapter
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        while (true){
+//                            if (list.size()>5000){
+//                                strSize.set(strSize.get()-list.get(0).length());
+//                                list.remove(0);
+//
+//                            }
+//                            list.add(sz);
+//                            strSize.set(strSize.get()+sz.length());
+//                            atomicLong.set(atomicLong.get()+1);
+//                            LogUtils.d("打印字节大小"+atomicLong.get()+"===="+strSize.get());
+//                        }
+//                    }
+//                }).start();
+                LogUtils.d("打印字节大小"+sz.length()+"===="+sz.getBytes().length);
+//                ActivityManager.getMyMemoryState();
+                break;
+            case R.id.get_contact:
+                PhoneContactsUtils.getPhone(this);
+                LogUtils.d("打印判断"+('.'-'H'));
+                LogUtils.d("打印判断"+('。'-'H'));
+                LogUtils.d("打印判断"+('，'-'H'));
+                break;
+            case R.id.flexbos_2222:
+                skip(FlexboxActivity.class);
+                break;
+            case R.id.applicationinfo:
+                skip(WhiteListActivity.class);
+                break;
+            case R.id.dataAnalySis:
+                MessageDataAnalysisUtils.dataAnalySis();
+                break;
+                case R.id.media_bofang:
+                skip(MediaPlayerActivity.class);
+                break;
+
+
+            case R.id.socket:
+                skip(SocketActivity.class);
+                break;
+            case R.id.join_whitelist:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (!WhiteListUtils.isIgnoringBatteryOptimizations()) {
+                        WhiteListUtils.requestIgnoreBatteryOptimizations(this);
+                    }
+                }
+                break;
             case R.id.jumpto_application_detail:
                 try {
                     Intent intent = new Intent();
                     intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
                     intent.setData(Uri.fromParts("package", getPackageName(), null));
                     startActivity(intent);
-                }catch (Exception e){
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 break;
@@ -99,7 +206,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.trace_route:
                 skip(TraceActivity.class);
                 break;
-                case R.id.fragmenttabhost:
+            case R.id.fragmenttabhost:
                 skip(FragmentSwitchActivity.class);
                 break;
 

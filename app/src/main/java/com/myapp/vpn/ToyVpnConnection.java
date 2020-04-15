@@ -297,7 +297,7 @@ public class ToyVpnConnection implements Runnable {
         }
         builder.setSession(mServerName).setConfigureIntent(mConfigureIntent);
         if (!TextUtils.isEmpty(mProxyHostName)) {
-            builder.setHttpProxy(ProxyInfo.buildDirectProxy(mProxyHostName, mProxyHostPort));
+//            builder.setHttpProxy(ProxyInfo.buildDirectProxy(mProxyHostName, mProxyHostPort));
         }
         synchronized (mService) {
             vpnInterface = builder.establish();

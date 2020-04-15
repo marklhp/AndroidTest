@@ -22,4 +22,10 @@ public class ThreadPoolUtil {
         }
         return singleExecutor;
     }
+
+    public static void shutdown(){
+        singleExecutor.shutdown();
+    }
+
+
 }
