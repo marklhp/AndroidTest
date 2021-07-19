@@ -34,7 +34,6 @@ public class ImageViewAdapter {
                 .load(url)
                 .apply(options)
                 .into(view);
-
     }
     /**
      * 普通加载类

@@ -30,12 +30,11 @@
         <activity android:name=".activity.TrafficStatsActivity" />
         <activity
             android:name=".activity.BgActivity"
+            android:process=":remote"
             android:theme="@style/ActivityTheme" />
         <activity android:name=".activity.AndroidHookActivity" />
         <activity android:name=".activity.JniActivity" />
         <activity android:name=".activity.TestFragmentActivity" />
-        <activity android:name=".activity.PhoneNumberActivity" />
-        <activity android:name=".activity.LinphoneActivity" />
         <activity android:name=".activity.NewWordActivity" />
         <activity android:name=".activity.RoomActivity" />
         <activity android:name=".activity.fragment.FragmentActivity" />
@@ -53,7 +52,9 @@
         <activity android:name=".mvc_mvp_mvvm.mvc.MVCActivity" />
         <activity
             android:name=".activity.MainActivity"
-            android:theme="@style/ActivityTheme">
+            android:theme="@style/ActivityTheme"
+            android:launchMode="singleTask"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -80,28 +81,20 @@
         <activity android:name=".activity.DateTimePickerActivity" />
         <activity android:name=".activity.WebSocketActivity" />
         <activity android:name=".activity.FloatingWindowActivity" />
-        <activity android:name=".activity.ScanActivity" />
-        <activity android:name=".service.ServiceActivity" />
         <activity android:name=".activity.ZxingScanActivity" />
-        <activity android:name=".activity.LocalScanActivity" />
         <activity android:name=".activity.JsonActivity" />
         <activity android:name=".activity.RSAActivity" />
         <activity android:name=".activity.DelayedUIActivity" />
         <activity android:name=".activity.JetpackActivity" />
 
-        <provider
-            android:name=".TestContentProvider"
-            android:authorities="TestContentProvider"
-            android:enabled="true"
-            android:exported="true" />
-
-        <receiver android:name=".receiver.KeepAliveReceiver" />
-
-        <service android:name=".source.MyService">
+        <receiver android:name=".receiver.KeepAliveReceiver"
+            android:permission="com.eestorm.cefsdk.receiver"
+            >
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="aa.bb.cc"/>
             </intent-filter>
-        </service>
+        </receiver>
+
         <service
             android:name=".vpn.ToyVpnService"
             android:permission="android.permission.BIND_VPN_SERVICE">
@@ -117,7 +110,6 @@
                 <action android:name="android.net.VpnService" />
             </intent-filter>
         </service>
-        <service android:name=".service.ScannerService" />
         <service
             android:name=".service.AccessibilitySampleService"
             android:exported="true"

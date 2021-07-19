@@ -48,6 +48,7 @@ public class Bluetooth2Activity extends BaseActivity<ActivityBluetooth2Binding> 
 
         binding.bluetooth21.setText(getstateStr());
 
+
     }
 
     @Override

@@ -16,6 +16,8 @@ import com.myapp.databinding.ActivityWebBinding;
 import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.LogUtils;
 
+import java.util.HashMap;
+
 import static android.webkit.WebSettings.LOAD_NO_CACHE;
 
 public class WebActivity extends BaseActivity<ActivityWebBinding> implements View.OnClickListener {
@@ -29,6 +31,7 @@ public class WebActivity extends BaseActivity<ActivityWebBinding> implements Vie
         if (getSupportActionBar()!=null){
             getSupportActionBar().hide();
         }
+        String s="jfa;djadfa;";
 
     }
 

@@ -12,7 +12,9 @@
         android:layout_height="match_parent"
         tools:context=".activity.BgActivity"
         android:background="@drawable/bg_app2"
+        android:id="@+id/bg_view"
         >
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

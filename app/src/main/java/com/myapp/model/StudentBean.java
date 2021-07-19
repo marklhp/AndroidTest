@@ -7,7 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
 import androidx.databinding.Observable;
+import androidx.room.Entity;
 
+@Entity
 public class StudentBean extends BaseObservable implements Observable {
     String sname;
     String sage;

@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ComponentCallbacks;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.RemoteCallbackList;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
 
@@ -21,7 +24,10 @@ public class BgActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_bg);
+
         setCustomDensity(true);
+        Looper.prepareMainLooper();
+//        findViewById(R.id.bg_view).post()
 
     }
     /**
@@ -36,7 +42,6 @@ public class BgActivity extends AppCompatActivity {
                     sNoncompatDensity = metrics.density;
                     sNoncompatScaledDensity = metrics.scaledDensity;
                     App.context.registerComponentCallbacks(componentCallbacks);
-
                 }
 
                 DisplayMetrics activityDisplayMetrics = getResources().getDisplayMetrics();

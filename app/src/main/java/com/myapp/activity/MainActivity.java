@@ -1,69 +1,60 @@
 package com.myapp.activity;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.AlarmManager;
 import android.app.Instrumentation;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.media.MediaPlayer;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.RemoteCallbackList;
 import android.os.SystemClock;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.util.Log;
+import android.view.Choreographer;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.gms.common.GoogleApiAvailability;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.iid.FirebaseInstanceId;
-import com.google.firebase.iid.InstanceIdResult;
-import com.google.gson.reflect.TypeToken;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableInt;
+
+import com.github.moduth.blockcanary.BlockCanary;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.activity.fragment.FragmentActivity;
 import com.myapp.callback.IRequestPermission;
-import com.myapp.compatibility.Compatibility;
 import com.myapp.databinding.ActivityMainBinding;
-
+import com.myapp.java.MyFrameCallback;
 import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
 import com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity;
 import com.myapp.receiver.KeepAliveReceiver;
-import com.myapp.service.ServiceActivity;
 import com.myapp.utils.AudioManagerUtils;
-import com.myapp.utils.DeviceUtil;
 import com.myapp.utils.DeviceUtils;
 import com.myapp.utils.DivideUtils;
 import com.myapp.utils.LogUtils;
 import com.myapp.utils.MemoryInfoUtils;
 import com.myapp.utils.MessageDataAnalysisUtils;
 import com.myapp.utils.PermissionUtil;
-import com.myapp.utils.PhoneContactsUtils;
 import com.myapp.utils.SDCardUtils;
 import com.myapp.utils.WhiteListUtils;
 import com.myapp.utils.WifiManage;
 import com.myapp.vpn.ToyVpnClient;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Observable;
 import java.util.concurrent.atomic.AtomicLong;
-
-import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
-import androidx.databinding.ObservableInt;
-import androidx.recyclerview.widget.RecyclerView;
 
 import bean.WifiInfo;
 import io.reactivex.functions.Consumer;
@@ -85,37 +76,33 @@ public class MainActivity extends Activity implements View.OnClickListener {
         binding.setSrc(observableInt);
         initData();
         LogUtils.d("音频是否可以调整" + AudioManagerUtils.getIns().isVolumeFixed());
+//        long t=System.currentTimeMillis();
+//        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.ceshi);
+//        long t1=System.currentTimeMillis()-t;
+//        long t2=System.currentTimeMillis();
+//        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.agyn4y44un);
+//        long t3=System.currentTimeMillis()-t2;
+//        LogUtils.d("打印日志" + bitmap.getByteCount()+"---"+bitmap1.getByteCount()+"--"+t1+"=="+t3);
+    IntentFilter intentFilter=new IntentFilter();
+    intentFilter.addAction("aa.bb.cc");
+    registerReceiver(new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            LogUtils.d("===---==//"+intent.getAction()+"---"+Thread.currentThread());
+        }
+    },intentFilter);
     }
 
+
     private void initData() {
+
         DeviceUtils.getIns().blueTooth(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) throws Exception {
                 LogUtils.d("打印连接数量" + integer);
             }
         });
-
-
-        LogUtils.d("打印是否支持google服务=="+ GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(App.context));
-        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-            @Override
-            public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                try {
-                    String firebase_push_token = null;
-                    boolean ispush = task.getException() == null && task.getResult() != null && !TextUtils.isEmpty(task.getResult().getToken());
-                    if (ispush) {
-                        firebase_push_token = task.getResult().getToken();
-                    } else {
-                    }
-                    if (!TextUtils.isEmpty(firebase_push_token)) {
-                        LogUtils.d("打印provider数据1=="+firebase_push_token);
-                    }
-                    LogUtils.d("打印provider数据==");
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
+        Choreographer.getInstance().postFrameCallback(new MyFrameCallback());
     }
     ArrayList<String> list=new ArrayList<>();
     Instrumentation instrumentation=new Instrumentation();
@@ -125,8 +112,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.sendmessage:
+            case R.id.sendthreadbroadcast:
+                Intent broadintent=new Intent();
+                broadintent.setClass(MainActivity.this,KeepAliveReceiver.class);
+                sendBroadcast(broadintent,"com.eestorm.cefsdk.receiver");
+                ThreadLocal threadLocal=new ThreadLocal();
+                threadLocal.set("000");
+                break;
 
+            case R.id.sendmessage:
+                RemoteCallbackList list=new RemoteCallbackList();
+                SystemClock.sleep(10000);
+                Toast.makeText(this,"----",Toast.LENGTH_LONG).show();
                 break;
             case R.id.rxjava:
                 skip(RxjavaActivity.class);
@@ -156,12 +153,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 LogUtils.d("打印字节大小"+sz.length()+"===="+sz.getBytes().length);
 //                ActivityManager.getMyMemoryState();
                 break;
-            case R.id.get_contact:
-                PhoneContactsUtils.getPhone(this);
-                LogUtils.d("打印判断"+('.'-'H'));
-                LogUtils.d("打印判断"+('。'-'H'));
-                LogUtils.d("打印判断"+('，'-'H'));
-                break;
+
             case R.id.flexbos_2222:
                 skip(FlexboxActivity.class);
                 break;
@@ -212,13 +204,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             case R.id.file_check:
                 skip(FileCheckActivity.class);
-                break;
-            case R.id.liang_ping2:
-                Intent newIntent = new Intent(App.context, KeepAliveReceiver.class);
-                PendingIntent keepAlivePendingIntent = PendingIntent.getBroadcast(App.context, 0, newIntent, PendingIntent.FLAG_ONE_SHOT);
-
-                AlarmManager alarmManager = ((AlarmManager) App.context.getSystemService(Context.ALARM_SERVICE));
-                Compatibility.scheduleAlarm(alarmManager, AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 1000, keepAlivePendingIntent);
                 break;
             case R.id.liang_ping:
                 mKeepAliveIntentFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
@@ -296,13 +281,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.test_fragment:
                 skip(TestFragmentActivity.class);
                 break;
-
-            case R.id.phonenumber:
-                skip(PhoneNumberActivity.class);
-                break;
-            case R.id.linphone:
-                skip(LinphoneActivity.class);
-                break;
             case R.id.room:
                 skip(RoomActivity.class);
                 break;
@@ -331,14 +309,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.json_gson:
                 skip(JsonActivity.class);
                 break;
-            case R.id.local_scan:
-                skip(LocalScanActivity.class);
-                break;
             case R.id.zxing_scan_listenee:
                 skip(ZxingScanActivity.class);
-                break;
-            case R.id.scan_listenee:
-                skip(ServiceActivity.class);
                 break;
             case R.id.floating_window:
                 skip(FloatingWindowActivity.class);
@@ -403,9 +375,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.popupwendow:
 
                 break;
-            case R.id.scrollto_scrollby:
-
-                break;
             case R.id.coordinator:
                 skip(CoordinatorActivity.class);
                 break;
@@ -439,5 +408,32 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void skip(Class clazz) {
         startActivity(new Intent(this, clazz));
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("生命周期","onRestart");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("生命周期","onStart");
+
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.d("生命周期","onNewIntent");
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("生命周期","onResume");
+
     }
 }

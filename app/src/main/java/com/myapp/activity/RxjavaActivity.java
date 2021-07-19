@@ -2,6 +2,7 @@ package com.myapp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,12 +18,17 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
+import okhttp3.OkHttpClient;
 
 public class RxjavaActivity extends BaseActivity<ActivityRxjavaBinding> implements View.OnClickListener {
 
     @Override
     protected void initView() {
         binding.setClick(this);
+        OkHttpClient client = new OkHttpClient.Builder()
+//                .dns(OkHttpDns.getInstance(getApplicationContext()))
+                .build();
+
     }
 
     @Override
@@ -54,6 +60,9 @@ public class RxjavaActivity extends BaseActivity<ActivityRxjavaBinding> implemen
                         LogUtils.d("打印数据-"+aBoolean+"---"+Thread.currentThread().getName());
                     }
                 });
+                Intent intent=new Intent();
+                intent.setClass(this,MainActivity.class);
+                startActivity(intent);
                 break;
         }
     }

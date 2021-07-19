@@ -1,22 +1,12 @@
 package com.myapp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.os.Bundle;
-import android.os.SystemClock;
 import android.view.View;
 
-import com.google.common.util.concurrent.ServiceManager;
 import com.myapp.R;
 import com.myapp.base.BaseActivity;
 import com.myapp.databinding.ActivityTestVpnBinding;
-import com.myapp.databinding.ActivityVpnBinding;
 import com.myapp.utils.LogUtils;
 import com.myapp.vpn.VpnUtil;
-
-import java.lang.reflect.Field;
 
 public class TestVpnActivity extends BaseActivity<ActivityTestVpnBinding> implements View.OnClickListener {
     private static Class vpnProfileClz;

@@ -82,7 +82,8 @@
         <activity android:name="com.myapp.mvc_mvp_mvvm.mvp.MvpActivity" />
         <activity android:name="com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity" />
         <activity android:name="com.myapp.mvc_mvp_mvvm.mvc.MVCActivity" />
-        <activity android:name="com.myapp.activity.MainActivity" >
+        <activity android:name="com.myapp.activity.RxjavaActivity"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -108,10 +109,7 @@
         <activity android:name="com.myapp.activity.DateTimePickerActivity" />
         <activity android:name="com.myapp.activity.WebSocketActivity" />
         <activity android:name="com.myapp.activity.FloatingWindowActivity" />
-        <activity android:name="com.myapp.activity.ScanActivity" />
-        <activity android:name="com.myapp.service.ServiceActivity" />
 
-        <service android:name="com.myapp.service.ScannerService" />
 
         <activity android:name="com.myapp.activity.ZxingScanActivity" />
         <activity android:name="com.myapp.activity.LocalScanActivity" />

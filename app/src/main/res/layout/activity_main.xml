@@ -20,7 +20,18 @@
             app:flexDirection="row"
             app:flexWrap="wrap"
             >
-
+            <ImageView
+                style="@style/MyTextviewStyle"
+                android:text="sendthreadbroadcast"
+                android:onClick="@{click}"
+                android:id="@+id/iv_test"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="sendthreadbroadcast"
+                android:onClick="@{click}"
+                android:id="@+id/sendthreadbroadcast"
+                />
             <TextView
                 style="@style/MyTextviewStyle"
                 android:text="sendmessage"
@@ -45,12 +56,7 @@
                 android:onClick="@{click}"
                 android:id="@+id/observer_mode"
                 />
-            <TextView
-                style="@style/MyTextviewStyle"
-                android:text="获取系统联系人"
-                android:onClick="@{click}"
-                android:id="@+id/get_contact"
-                />
+
             <TextView
                 style="@style/MyTextviewStyle"
                 android:text="flexbox换行"
@@ -123,14 +129,6 @@
                 android:text="判断文件路径"
                 android:onClick="@{click}"
                 android:id="@+id/file_check"
-                />
-
-
-            <TextView
-                style="@style/MyTextviewStyle"
-                android:text="设备亮屏监听2"
-                android:onClick="@{click}"
-                android:id="@+id/liang_ping2"
                 />
 
             <TextView
@@ -206,12 +204,7 @@
                 android:onClick="@{click}"
                 android:id="@+id/test_fragment"
                 />
-            <TextView
-                style="@style/MyTextviewStyle"
-                android:text="PhoneNumber"
-                android:onClick="@{click}"
-                android:id="@+id/phonenumber"
-                />
+
             <TextView
                 style="@style/MyTextviewStyle"
                 android:text="linphone"
@@ -276,21 +269,9 @@
                 />
             <TextView
                 style="@style/MyTextviewStyle"
-                android:text="bendi扫码"
-                android:onClick="@{click}"
-                android:id="@+id/local_scan"
-                />
-            <TextView
-                style="@style/MyTextviewStyle"
                 android:text="zxing扫码"
                 android:onClick="@{click}"
                 android:id="@+id/zxing_scan_listenee"
-                />
-            <TextView
-                style="@style/MyTextviewStyle"
-                android:text="扫描"
-                android:onClick="@{click}"
-                android:id="@+id/scan_listenee"
                 />
             <TextView
                 style="@style/MyTextviewStyle"
@@ -378,12 +359,6 @@
                 android:text="popupwendow"
                 android:onClick="@{click}"
                 android:id="@+id/popupwendow"
-                />
-            <TextView
-                style="@style/MyTextviewStyle"
-                android:text="scrollto_scrollby"
-                android:onClick="@{click}"
-                android:id="@+id/scrollto_scrollby"
                 />
             <TextView
                 style="@style/MyTextviewStyle"
