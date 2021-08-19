@@ -112,7 +112,6 @@
 
 
         <activity android:name="com.myapp.activity.ZxingScanActivity" />
-        <activity android:name="com.myapp.activity.LocalScanActivity" />
         <activity android:name="com.myapp.activity.JsonActivity" />
         <activity android:name="com.myapp.activity.RSAActivity" />
         <activity android:name="com.myapp.activity.DelayedUIActivity" />

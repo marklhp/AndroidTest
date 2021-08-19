@@ -20,5 +20,23 @@
             android:id="@+id/rxjava_map"
             android:onClick="@{click}"
             />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="creatfile"
+            android:id="@+id/creatfile"
+            android:onClick="@{click}"
+            />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="permission"
+            android:id="@+id/requestpermision"
+            android:onClick="@{click}"
+            />
+        <TextView
+            style="@style/MyTextviewStyle"
+            android:text="getvalue"
+            android:id="@+id/getvalue"
+            android:onClick="@{click}"
+            />
     </LinearLayout>
 </layout>

@@ -28,6 +28,12 @@
                 />
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="启动主界面"
+                android:onClick="@{click}"
+                android:id="@+id/startmain"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="sendthreadbroadcast"
                 android:onClick="@{click}"
                 android:id="@+id/sendthreadbroadcast"

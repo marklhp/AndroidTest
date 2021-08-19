@@ -31,6 +31,7 @@ import com.github.moduth.blockcanary.BlockCanary;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.activity.fragment.FragmentActivity;
+import com.myapp.base.BaseActivity;
 import com.myapp.callback.IRequestPermission;
 import com.myapp.databinding.ActivityMainBinding;
 import com.myapp.java.MyFrameCallback;
@@ -59,17 +60,15 @@ import java.util.concurrent.atomic.AtomicLong;
 import bean.WifiInfo;
 import io.reactivex.functions.Consumer;
 
-public class MainActivity extends Activity implements View.OnClickListener {
-    ActivityMainBinding binding;
+public class MainActivity extends BaseActivity<ActivityMainBinding> implements View.OnClickListener {
+
     Thread thread;
     int num = 0;
     private IntentFilter mKeepAliveIntentFilter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+    @Override
+    protected void initView() {
         binding.setClick(this);
         ObservableInt observableInt = new ObservableInt();
         observableInt.set(R.mipmap.ic_launcher);
@@ -83,14 +82,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
 //        Bitmap bitmap1 = BitmapFactory.decodeResource(getResources(),R.drawable.agyn4y44un);
 //        long t3=System.currentTimeMillis()-t2;
 //        LogUtils.d("打印日志" + bitmap.getByteCount()+"---"+bitmap1.getByteCount()+"--"+t1+"=="+t3);
-    IntentFilter intentFilter=new IntentFilter();
-    intentFilter.addAction("aa.bb.cc");
-    registerReceiver(new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            LogUtils.d("===---==//"+intent.getAction()+"---"+Thread.currentThread());
-        }
-    },intentFilter);
+        IntentFilter intentFilter=new IntentFilter();
+        intentFilter.addAction("aa.bb.cc");
+        registerReceiver(new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                LogUtils.d("===---==//"+intent.getAction()+"---"+Thread.currentThread());
+            }
+        },intentFilter);
+    }
+
+    @Override
+    public int getLayoutId() {
+        return  R.layout.activity_main;
     }
 
 
@@ -112,6 +116,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.startmain:
+                skip(MainActivity.class);
+                break;
             case R.id.sendthreadbroadcast:
                 Intent broadintent=new Intent();
                 broadintent.setClass(MainActivity.this,KeepAliveReceiver.class);
@@ -410,30 +417,5 @@ public class MainActivity extends Activity implements View.OnClickListener {
         startActivity(new Intent(this, clazz));
     }
 
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d("生命周期","onRestart");
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d("生命周期","onStart");
-
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        super.onNewIntent(intent);
-        Log.d("生命周期","onNewIntent");
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("生命周期","onResume");
-
-    }
 }
