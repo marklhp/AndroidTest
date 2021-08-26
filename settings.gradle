@@ -1,2 +1,3 @@
 include ':app'
 //include 'liblinphone-sdk'
+include ':javalib'

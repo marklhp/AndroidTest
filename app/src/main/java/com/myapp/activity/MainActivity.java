@@ -37,6 +37,7 @@ import com.myapp.databinding.ActivityMainBinding;
 import com.myapp.java.MyFrameCallback;
 import com.myapp.mvc_mvp_mvvm.mvc.MVCActivity;
 import com.myapp.mvc_mvp_mvvm.ordinary.OrdinaryActivity;
+import com.myapp.proxy.ProxyUtils;
 import com.myapp.receiver.KeepAliveReceiver;
 import com.myapp.utils.AudioManagerUtils;
 import com.myapp.utils.DeviceUtils;
@@ -116,6 +117,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements V
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.dynamic_proxy:
+                ProxyUtils.proxyUse();
+                break;
             case R.id.startmain:
                 skip(MainActivity.class);
                 break;

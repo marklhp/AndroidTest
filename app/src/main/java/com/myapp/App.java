@@ -18,7 +18,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.d("打印内容=====",this.toString());
+        Log.d("打印内容=====",this+"");
         context=this;
         application=this;
         getResources();

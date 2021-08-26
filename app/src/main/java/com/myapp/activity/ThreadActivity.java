@@ -1,9 +1,5 @@
 package com.myapp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Build;
-import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
 
@@ -13,18 +9,18 @@ import com.myapp.databinding.ActivityThreadBinding;
 import com.myapp.utils.LogUtils;
 import com.myapp.utils.ThreadPoolUtil;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.ThreadFactory;
-import java.util.function.Consumer;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class ThreadActivity extends BaseActivity<ActivityThreadBinding> implements View.OnClickListener {
-
+    ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(1, 4, 0, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(1));
     Thread thread;
     int finalI = 0;
+
     @Override
     protected void initView() {
         binding.setClick(this);
@@ -46,41 +42,59 @@ public class ThreadActivity extends BaseActivity<ActivityThreadBinding> implemen
 
                     }
                 });
-                LogUtils.d("thread状态"+thread.isAlive()+"--"+thread.getPriority());
+                LogUtils.d("thread状态" + thread.isAlive() + "--" + thread.getPriority());
                 thread.start();
-                LogUtils.d("thread状态"+thread.isAlive());
+                LogUtils.d("thread状态" + thread.isAlive());
                 break;
             case R.id.thread_id2:
-                LogUtils.d("thread状态"+thread.isAlive());
+                poolExecutor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        LogUtils.d("thread" + 1);
+
+                        SystemClock.sleep(5000);
+                    }
+                });
+                poolExecutor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        LogUtils.d("thread" + 2);
+                    }
+                });
+                poolExecutor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        LogUtils.d("thread" + 3);
+                    }
+                });
                 break;
             case R.id.thread_id3:
-                final long difTime=System.currentTimeMillis();
+                final long difTime = System.currentTimeMillis();
                 ExecutorService executorService = null;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                    executorService = Executors.newSingleThreadExecutor( );
+                    executorService = Executors.newSingleThreadExecutor();
                 }
-                for (int i=0;i<1000;i++){
+                for (int i = 0; i < 1000; i++) {
 
                     executorService.execute(new Runnable() {
                         @Override
                         public void run() {
-                            LogUtils.d("线程名=="+finalI+"=="+Thread.currentThread().getName());
+                            LogUtils.d("线程名==" + finalI + "==" + Thread.currentThread().getName());
                             acountNum(difTime);
                         }
                     });
                 }
 
 
-
                 break;
             case R.id.thread_id4:
-                 int COUNT_BITS = Integer.SIZE - 3;
-                int CAPACITY   = (1 << COUNT_BITS) - 1;
-                int num=1;
-                for (int i=0;i<COUNT_BITS;i++){
-                    num=num*2;
+                int COUNT_BITS = Integer.SIZE - 3;
+                int CAPACITY = (1 << COUNT_BITS) - 1;
+                int num = 1;
+                for (int i = 0; i < COUNT_BITS; i++) {
+                    num = num * 2;
                 }
-                LogUtils.d("打印数据"+COUNT_BITS+"===="+Integer.MAX_VALUE+"===="+Integer.SIZE+"----"+CAPACITY+"----"+num);
+                LogUtils.d("打印数据" + COUNT_BITS + "====" + Integer.MAX_VALUE + "====" + Integer.SIZE + "----" + CAPACITY + "----" + num);
                 break;
             case R.id.thread_id5:
                 getExecute();
@@ -93,20 +107,21 @@ public class ThreadActivity extends BaseActivity<ActivityThreadBinding> implemen
     }
 
     private synchronized void acountNum(long difTime) {
-        if (finalI ==999){
-            LogUtils.d("截止时间"+(System.currentTimeMillis()-difTime));
-            LogUtils.d("线程总数"+Thread.getAllStackTraces().size());
+        if (finalI == 999) {
+            LogUtils.d("截止时间" + (System.currentTimeMillis() - difTime));
+            LogUtils.d("线程总数" + Thread.getAllStackTraces().size());
         }
         finalI++;
         LogUtils.d("截止时间是我们定的，");
     }
-    public void getExecute(){
+
+    public void getExecute() {
         Future<?> submit = ThreadPoolUtil.getSingleThread().submit(new Runnable() {
             @Override
             public void run() {
-                while (true){
+                while (true) {
                     SystemClock.sleep(1000);
-                    LogUtils.d("打印时间值"+System.currentTimeMillis());
+                    LogUtils.d("打印时间值" + System.currentTimeMillis());
                 }
             }
         });

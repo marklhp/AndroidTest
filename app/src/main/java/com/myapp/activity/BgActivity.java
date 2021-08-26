@@ -26,7 +26,7 @@ public class BgActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bg);
 
         setCustomDensity(true);
-        Looper.prepareMainLooper();
+
 //        findViewById(R.id.bg_view).post()
 
     }

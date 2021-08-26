@@ -16,6 +16,7 @@ import android.view.View;
 
 import com.myapp.R;
 import com.myapp.base.BaseActivity;
+import com.myapp.danli.Singleton;
 import com.myapp.databinding.ActivityRxjavaBinding;
 import com.myapp.utils.LogUtils;
 
@@ -87,6 +88,8 @@ public class RxjavaActivity extends BaseActivity<ActivityRxjavaBinding> implemen
 
         switch (v.getId()){
             case R.id.rxjava_map:
+                Singleton.getInstance();
+                if (true) return;
                 Observable.create(new ObservableOnSubscribe<Integer>() {
                     @Override
                     public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
@@ -113,7 +116,6 @@ public class RxjavaActivity extends BaseActivity<ActivityRxjavaBinding> implemen
                 break;
             case R.id.creatfile:
                 String authority = "content://com.rivi.baidu.maps.MultiProcess";
-                String PATH_WILDCARD = "/";   //分割符
                 String path1 = "mapdata";       //对应的xml文件名
                 String path2 = "commit";      //动作
                 Uri uri = Uri.withAppendedPath(Uri.withAppendedPath(Uri.parse(authority), path1), path2);
