@@ -31,6 +31,9 @@ import com.github.moduth.blockcanary.BlockCanary;
 import com.myapp.App;
 import com.myapp.R;
 import com.myapp.activity.fragment.FragmentActivity;
+import com.myapp.apt.AThread;
+import com.myapp.apt.BThread;
+import com.myapp.apt.IastingHolder;
 import com.myapp.base.BaseActivity;
 import com.myapp.callback.IRequestPermission;
 import com.myapp.databinding.ActivityMainBinding;
@@ -53,6 +56,7 @@ import com.myapp.vpn.ToyVpnClient;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.lang.annotation.ElementType;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -114,11 +118,51 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements V
     AtomicLong atomicLong=new AtomicLong();
     AtomicLong strSize=new AtomicLong();
     String sz="2020-03-31 10:15:45.932 3948-14509/? D/SamsungAlarmManager: Cancel Alarm calling from uid:10218 pid :26234 / op:PendingIntent{51547: PendingIntentRecord{b79ed8b com.tencent.android.qqdownloader broadcastIntent}}";
+    Thread enterThread;
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.threadinter1:
+               new Thread(new Runnable() {
+                   @Override
+                   public void run() {
+                       AThread.get();
+                   }
+               }).start();
+               new Thread(new Runnable() {
+                   @Override
+                   public void run() {
+                       BThread.get();
+                   }
+               }).start();
+                break;
+            case R.id.threadinter:
+                enterThread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            int num=0;
+                            for (int i=0;i<100;i++){
+                                num++;
+                                SystemClock.sleep(1000);
+                                LogUtils.d("线程中断"+num+"=="+enterThread.isInterrupted());
+                                if (i>8){
+                                    Thread.interrupted();
+                                }
+                            }
+                        }catch (Exception e){
+                            LogUtils.d("线程"+e.getMessage());
+                        }
+                    }
+                });
+                enterThread.start();
+                break;
             case R.id.dynamic_proxy:
                 ProxyUtils.proxyUse();
+                LogUtils.d("======"+IastingHolder.Settings.getBoolean("jjjll",false));
+                IastingHolder.Settings.addBoolean("jjj==",true);
+                LogUtils.d("======"+IastingHolder.Settings.getBoolean("jjj==",false));
                 break;
             case R.id.startmain:
                 skip(MainActivity.class);

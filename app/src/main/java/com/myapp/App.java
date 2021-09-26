@@ -2,14 +2,7 @@ package com.myapp;
 
 import android.app.Application;
 import android.content.Context;
-import android.os.Binder;
-import android.os.IBinder;
 import android.util.Log;
-
-import com.myapp.receiver.MyExceptionHandler;
-
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 
 public class App extends Application {
     public static Context context;
@@ -24,6 +17,14 @@ public class App extends Application {
         getResources();
 //        MyExceptionHandler exceptionHandler=new MyExceptionHandler();
 //        Thread.setDefaultUncaughtExceptionHandler(exceptionHandler);
-
+//        listenReportGenerateStatus();
     }
+
+//    public void listenReportGenerateStatus() {
+//        KOOM.getInstance().setHeapReportUploader(file -> {
+//            // Upload the report or do something else.
+//            // File is deleted automatically when callback is done by default.
+//            Log.d("内存问题打印","==="+file.getPath());
+//        });
+//    }
 }

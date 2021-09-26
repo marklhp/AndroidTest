@@ -2,7 +2,7 @@ package com.myapp.apt;
 
 import java.util.ArrayList;
 
-class Test {
+public class Test {
         public static void main(String[] args)  {
             ArrayList objArray = new ArrayList();
             ArrayList objArray2 = new ArrayList();

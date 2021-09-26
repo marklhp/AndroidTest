@@ -28,6 +28,19 @@
                 />
             <TextView
                 style="@style/MyTextviewStyle"
+                android:text="线程中断后触发"
+                android:onClick="@{click}"
+                android:id="@+id/threadinter1"
+                />
+            <TextView
+                style="@style/MyTextviewStyle"
+                android:text="线程中断"
+                android:onClick="@{click}"
+                android:id="@+id/threadinter"
+                />
+
+            <TextView
+                style="@style/MyTextviewStyle"
                 android:text="proxy"
                 android:onClick="@{click}"
                 android:id="@+id/dynamic_proxy"
