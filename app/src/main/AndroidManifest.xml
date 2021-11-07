@@ -196,4 +196,5 @@
     <uses-permission android:name="com.nrivi.baidu.maps.read"/>
     <uses-permission android:name="com.nrivi.baidu.maps.write"/>
     <uses-permission android:name="com.nrivi.baidu.maps.all"/>
+    
 </manifest>
